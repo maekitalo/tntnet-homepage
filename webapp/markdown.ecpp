@@ -1,0 +1,9 @@
+<%pre>
+#include <tnthp/markdown.h>
+</%pre>
+<%cpp>
+
+tnthp::Markdown markdown;
+return markdown(request, reply, qparam);
+
+</%cpp>

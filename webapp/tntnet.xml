@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This is the main configuration file for tntnet.
+
+  You can find documentation about the parameters in the man page tntnet.xml(7)
+  -->
+<tntnet>
+  <mappings>
+    <mapping>
+      <target>static@tntnet</target>
+      <url>^/static/(.*)</url>
+      <pathinfo>static/$1</pathinfo>
+    </mapping>
+    <mapping>
+      <target>main@tntnet-homepage</target>
+      <url>^/$</url>
+      <args>
+        <next>pages/index</next>
+      </args>
+    </mapping>
+    <mapping>
+      <target>main@tntnet-homepage</target>
+      <url>^/(.*)\.html$</url>
+      <args>
+        <next>pages/$1</next>
+      </args>
+    </mapping>
+    <mapping>
+      <target>main@tntnet-homepage</target>
+      <url>^/howto/(.*)\.html$</url>
+      <pathinfo>htdocs/howto/$1.markdown</pathinfo>
+      <args>
+        <next>markdown</next>
+      </args>
+    </mapping>
+    <mapping>
+      <target>main@tntnet-homepage</target>
+      <url>^/man./(.*)\.html$</url>
+      <pathinfo>htdocs/man/$1.html</pathinfo>
+      <args>
+        <next>static@tntnet</next>
+      </args>
+    </mapping>
+    <mapping>
+      <target>main@tntnet-homepage</target>
+      <url>^/(.*)\.html$</url>
+      <pathinfo>htdocs/$1.html</pathinfo>
+      <args>
+        <next>static@tntnet</next>
+      </args>
+    </mapping>
+  </mappings>
+
+  <!-- listen to a port (empty string means any local interface) -->
+  <listeners>
+    <listener>
+      <port>8000</port>
+    </listener>
+  <!-- a certificate enables ssl -->
+  <!--
+    <listener>
+      <port>8443</port>
+      <certificate>tntnet.pem</certificate>
+    </listener>
+    -->
+  </listeners>
+
+  <logging>
+    <rootlogger>INFO</rootlogger>
+
+    <loggers>
+      <logger>
+        <category>tntnet</category>
+        <level>INFO</level>
+      </logger>
+      <logger>
+        <category>component.main</category>
+        <level>INFO</level>
+      </logger>
+      <logger>
+        <category>tntnet.static</category>
+        <level>INFO</level>
+      </logger>
+      <logger>
+        <category>tnthp</category>
+        <level>DEBUG</level>
+      </logger>
+    </loggers>
+
+    <file>tntnet.log</file>
+    <maxfilesize>10M</maxfilesize>
+    <maxbackupindex>2</maxbackupindex>
+
+  </logging>
+
+  <!-- <maxRequestSize>65536</maxRequestSize> -->
+  <!-- <maxRequestTime>600</maxRequestTime> -->
+  <!-- <user>tntnet</user> -->
+  <!-- <group>tntnet</group> -->
+  <!-- <dir>/</dir> -->
+  <!-- <chrootdir>/var/safedir</chrootdir> -->
+  <!-- <pidfile>/var/run/tntnet.pid</pidfile> -->
+  <!-- <daemon>0</daemon> -->
+  <!-- <minThreads>5</minThreads> -->
+  <!-- <maxThreads>100</maxThreads> -->
+  <!-- <threadStartDelay>10</threadStartDelay> -->
+  <!-- <queueSize>1000</queueSize> -->
+  <!--
+  <compPath>
+    <entry>path1</entry>
+    <entry>path2</entry>
+  </compPath>
+   -->
+  <!-- <bufferSize>16384</bufferSize> -->
+  <!-- <socketReadTimeout>10</socketReadTimeout> -->
+  <!-- <socketWriteTimeout>10000</socketWriteTimeout> -->
+  <!-- <keepAliveTimeout>15000</keepAliveTimeout> -->
+  <!-- <keepAliveMax>1000</keepAliveMax> -->
+  <!-- <sessionTimeout>300</sessionTimeout> -->
+  <!-- <listenBacklog>64</listenBacklog> -->
+  <!-- <listenRetry>5</listenRetry> -->
+  <!-- <enableCompression>no</enableCompression> -->
+  <!-- <mimeDb>/etc/mime.types</mimeDb> -->
+  <!-- <minCompressSize>1024</minCompressSize> -->
+  <!-- <maxUrlMapCache>8192</maxUrlMapCache> -->
+  <!-- <defaultContentType>text/html; charset=UTF-8</defaultContentType> -->
+  <!-- <accessLog>/var/log/tntnet/access.log</accessLog> -->
+  <!-- <errorLog>/var/log/tntnet/error.log</errorLog> -->
+  <!-- <maxBackgroundTasks>5</maxBackgroundTasks> -->
+
+  <compPath>
+    <entry>.libs</entry>
+  </compPath>
+</tntnet>

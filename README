@@ -1,0 +1,16 @@
+This is a sample tntnet project using autotools.
+
+The project is split into a library, which should contain the business logic
+and a webapplication, which represents the presentation layer.
+
+As an example a class "Foo" in the namespace "my" was generated and put into
+the session scope of a web form.
+
+To compile the application, run ./autogen.sh once, which generates a
+configure script. Running the configure script generates Makefiles.
+Running make, finally compiles the application.
+
+To run the application, change to the webapp directory and enter "tntnet".
+You find your webapplication on port 8000.
+
+You may want to add your e-mail adress to the AC_INIT macro in configure.in.

@@ -1,0 +1,28 @@
+AC_INIT(tntnet-homepage, 0.1, [])
+AM_INIT_AUTOMAKE
+
+abi_current=0
+abi_revision=0
+abi_age=0
+sonumber=${abi_current}:${abi_revision}:${abi_age}
+AC_SUBST(sonumber)
+
+AC_CONFIG_HEADERS([lib/config.h])
+AC_CONFIG_SRCDIR([lib/tnthp/markdown.cpp])
+
+AC_PROG_CXX
+AC_PROG_LIBTOOL
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+AC_PROG_RANLIB
+
+AC_LANG(C++)
+AC_CHECK_HEADER([tnt/tntnet.h], , AC_MSG_ERROR([tntnet headers not found]))
+AC_CHECK_PROGS(ECPPC, [ecppc])
+
+AC_CONFIG_FILES([Makefile
+                 include/Makefile
+                 lib/Makefile
+                 webapp/Makefile])
+AC_OUTPUT

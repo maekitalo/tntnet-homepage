@@ -1,0 +1,75 @@
+<%pre>
+#include <tnt/savepoint.h>
+#include <tnt/httperror.h>
+</%pre>
+% tnt::Savepoint s(reply);
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tntnet homepage</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="description" content="all about the tntnet project">
+    <#link rel="icon" href="/static/favicon.ico" type="image/x-icon">#>
+    <link rel="stylesheet" href="/static/tntnet.css" type="text/css">
+    <#<script type="text/javascript" src="/static/tntnet.js"></script>#>
+  </head>
+  <body>
+
+    <div id="header">
+      <a href="/" name="top">Tntnet - C++ web services</a>
+      <img id="logo" src="/static/tntnet.png">
+    </div>
+
+    <div id="content">
+<%cpp>
+  std::string next = request.getArg("next");
+  if (!next.empty())
+  {
+    log_debug("call next component: \"" << next << "\" pathInfo=\"" << request.getPathInfo() << '"');
+    try
+    {
+      unsigned ret = callComp(next, request, reply, qparam);
+      if (ret != HTTP_OK)
+      {
+        log_debug("return code not HTTP_OK: " << ret);
+        return ret;
+      }
+    }
+    catch (const tnt::HttpError&)
+    {
+      return DECLINED;
+    }
+  }
+</%cpp>
+    </div>
+
+
+    <div id="menu">
+      <div class="navtop">Tntnet</div>
+      <div class="navitems">
+        <a href="/">Tntnet project</a><br>
+        <a href="/tntnet.html">Tntnet server</a><br>
+        <a href="/cxxtools.html">Cxxtools</a><br>
+        <a href="/tntdb.html">Tntdb</a><br>
+      </div>
+
+      <div class="navtop">Documentation</div>
+      <div class="navitems">
+        <a href="/man.html">Man pages</a><br>
+        <a href="/howtos.html">Howtos</a><br>
+      </div>
+
+      <div class="navtop">Other stuff</div>
+      <div class="navitems">
+        <a href="/license.html">License</a><br>
+        <a href="/faq.html">FAQ</a><br>
+        <a href="/news.html">News</a><br>
+        <a href="/download.html">Downloads</a><br>
+        <a href="/repository.html">Source repository</a><br>
+        <a href="/contact.html">Contact</a><br>
+      </div>
+    </div>
+
+  </body>
+</html>
+% s.commit();

@@ -1,0 +1,13 @@
+<h1 id="ecppll-1-quot-2006-07-23-quot-Tntnet-quot-Tntnet-users-guide-quot">ecppll 1 &quot;2006-07-23&quot; Tntnet &quot;Tntnet users guide&quot;</h1><h2 id="NAME">NAME</h2><p>ecppll - language-linker for ecpp</p><h2 id="SYNOPSIS">SYNOPSIS</h2><p><code>ecppll</code> [<code>-I</code> <em>dir</em>] [<code>-F</code>] [<code>-o</code> <em>output-filename</em>] <em>ecpp-filename</em> [<code>translated-data</code>]</p><h2 id="DESCRIPTION">DESCRIPTION</h2><p>Ecppll is the language-linker for ecpp. This program combines the data of a
+ecpp-file with translated phrases from a source-file and generates a data-file
+used by tntnet to look up translated data. The translated data file must contain
+the original phrase and the translated version separated by tab line by line.</p><p>To generate a language file the generated files of all components of a
+component-library must be zipped. The resulting zip-file must have the same
+basename as the component-library and the language-code as the extension. Tntnet
+tries to find the langage library by first appending the value of the query
+parameter LANG to the name of the componentlibrary. If the file is not found,
+the environment-variable LANG is used. If that is neither found, the default
+data from the original component is used.</p><h2 id="OPTIONS">OPTIONS</h2><dl><dt><code>-F</code></dt><dd>Fail on warning. If a phrase is not found in the language-data or in
+language-data is a phrase not used it the ecpp-file, ecppll warns about it to
+standard output. If this flag is set, ecppll returns a non-zero return-code.</dd></dl><dl><dt><code>-I</code> <em>dir</em></dt><dd>Search include-files in directory. This option can be passed multiple times.
+All specified directories are searched in turn for include-files.</dd></dl><dl><dt><code>-o</code> <em>filename</em></dt><dd>Specify output filename</dd></dl><h2 id="AUTHOR">AUTHOR</h2><p>This manual page was written by Tommi Mäkitalo <a href="mailto:tommi@tntnet.org">tommi@tntnet.org</a>.</p><h2 id="SEE-ALSO">SEE ALSO</h2><p><a class="manpage-reference" href="../man8/tntnet.8.html">tntnet(8)</a>, <a class="manpage-reference" href="../man7/ecpp.7.html">ecpp(7)</a>, <a class="manpage-reference" href="../man1/ecppl.1.html">ecppl(1)</a></p>
