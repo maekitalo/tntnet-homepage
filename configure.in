@@ -1,4 +1,4 @@
-AC_INIT(tntnet-homepage, 0.1, [])
+AC_INIT(tntnet-homepage, 0.1, [Tommi Maekitalo <tommi@tntnet.org>])
 AM_INIT_AUTOMAKE
 
 abi_current=0
@@ -19,6 +19,7 @@ AC_PROG_RANLIB
 
 AC_LANG(C++)
 AC_CHECK_HEADER([tnt/tntnet.h], , AC_MSG_ERROR([tntnet headers not found]))
+AC_CHECK_HEADER([boost/regex.h], , AC_MSG_ERROR([boost regex headers not found]))
 AC_CHECK_PROGS(ECPPC, [ecppc])
 
 AC_CONFIG_FILES([Makefile
