@@ -12,6 +12,7 @@
 #include <cxxtools/cache.h>
 #include <cxxtools/log.h>
 #include <fstream>
+#include <sstream>
 
 log_define("tnthp.markdown")
 
