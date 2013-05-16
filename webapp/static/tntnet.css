@@ -3,7 +3,8 @@
 body {
     padding: 0px;
     margin: 0px;
-    background-color: #ABD;
+    /*background-color: #ABD;*/
+    /*background-color: #EEE;*/
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
 }
 
@@ -16,24 +17,22 @@ body {
     padding-left: 50px;
     margin: 0px;
     height: 100px;
-    background-color: #003687;
     border-bottom: 2px solid #ea7400;
 }
 
 #header a {
     font-size: 30px;
     font-weight: bold;
-    padding: 15px 0 17px 20px;
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 #header a:visited {
-    color: white;
+    color: black;
 }
 
 #menu {
-    position: absolute;
+    position: fixed;
     top: 120px;
     float: left;
     padding: 10px;
@@ -54,7 +53,7 @@ body {
 
 .navitems a {
     text-decoration: none;
-    color: #ea7400;
+    color: #003687;
     margin: 15px;
     font-size: 90%;
 }
@@ -64,7 +63,7 @@ body {
 }
 
 .navitems a:visited {
-    color: #ea7400;
+    color: #003687;
 }
 
 #content {
