@@ -24,3 +24,4 @@ stamp-h1
 *.swp
 lib/config.h
 lib/config.h.in
+tntnet.xml

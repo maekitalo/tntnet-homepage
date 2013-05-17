@@ -9,13 +9,29 @@
     <mapping>
       <target>static@tntnet</target>
       <url>^/static/(.*)</url>
-      <pathinfo>static/$1</pathinfo>
+      <pathinfo>@top_srcdir@/webapp/static/$1</pathinfo>
     </mapping>
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/$</url>
       <args>
         <next>pages/index</next>
+      </args>
+    </mapping>
+    <mapping>
+      <target>main@tntnet-homepage</target>
+      <url>^/howto/(.*)\.html$</url>
+      <pathinfo>@top_srcdir@/htdocs/howto/$1.markdown</pathinfo>
+      <args>
+        <next>markdown</next>
+      </args>
+    </mapping>
+    <mapping>
+      <target>main@tntnet-homepage</target>
+      <url>^/faq\.html$</url>
+      <pathinfo>@top_srcdir@/htdocs/faq.markdown</pathinfo>
+      <args>
+        <next>markdown</next>
       </args>
     </mapping>
     <mapping>
@@ -27,16 +43,8 @@
     </mapping>
     <mapping>
       <target>main@tntnet-homepage</target>
-      <url>^/howto/(.*)\.html$</url>
-      <pathinfo>htdocs/howto/$1.markdown</pathinfo>
-      <args>
-        <next>markdown</next>
-      </args>
-    </mapping>
-    <mapping>
-      <target>main@tntnet-homepage</target>
       <url>^/man./(.*)\.html$</url>
-      <pathinfo>htdocs/man/$1.html</pathinfo>
+      <pathinfo>@top_srcdir@/htdocs/man/$1.html</pathinfo>
       <args>
         <next>static@tntnet</next>
       </args>
@@ -44,7 +52,7 @@
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/(.*)\.html$</url>
-      <pathinfo>htdocs/$1.html</pathinfo>
+      <pathinfo>@top_srcdir@/htdocs/$1.html</pathinfo>
       <args>
         <next>static@tntnet</next>
       </args>
@@ -74,6 +82,10 @@
         <level>INFO</level>
       </logger>
       <logger>
+        <category>tntnet.dispatcher</category>
+        <level>DEBUG</level>
+      </logger>
+      <logger>
         <category>component.main</category>
         <level>INFO</level>
       </logger>
@@ -87,9 +99,11 @@
       </logger>
     </loggers>
 
+    <!--
     <file>tntnet.log</file>
     <maxfilesize>10M</maxfilesize>
     <maxbackupindex>2</maxbackupindex>
+    -->
 
   </logging>
 
@@ -129,6 +143,6 @@
   <!-- <maxBackgroundTasks>5</maxBackgroundTasks> -->
 
   <compPath>
-    <entry>.libs</entry>
+    <entry>@top_srcdir@/webapp/.libs</entry>
   </compPath>
 </tntnet>

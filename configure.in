@@ -25,5 +25,7 @@ AC_CHECK_PROGS(ECPPC, [ecppc])
 AC_CONFIG_FILES([Makefile
                  include/Makefile
                  lib/Makefile
-                 webapp/Makefile])
+                 webapp/Makefile
+                 tntnet.xml
+                 ])
 AC_OUTPUT
