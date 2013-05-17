@@ -33,9 +33,15 @@ namespace
 unsigned Markdown::operator() (tnt::HttpRequest& request, tnt::HttpReply& reply, tnt::QueryParams& qparam)
 {
   std::string fname = request.getArg("file", request.getPathInfo());
+
+  log_debug("read markdown file \"" << fname << '"');
+
   std::ifstream in(fname.c_str());
   if (!in)
+  {
+    log_debug("could not read markdown file");
     return DECLINED;
+  }
 
   /*
   markdown::Document doc;
