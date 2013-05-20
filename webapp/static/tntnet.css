@@ -36,19 +36,33 @@ body {
     top: 120px;
     float: left;
     padding: 10px;
+    width: 160px;
 }
 
 .navtop {
     background-color: #003687;
     color: white;
     font-weight: bold;
+    margin-top: 5px;
     padding: 5px;
     padding-left: 10px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-topright: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .navitems {
     background-color: #F0F0F0;
     border: 1px solid #CCC;
+    -webkit-border-bottom-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .navitems a {
@@ -67,7 +81,9 @@ body {
 }
 
 #content {
-    margin: 0px 180px;
+    /*margin: 0px 180px;*/
+    margin-left: 180px;
+    max-width: 660px;
     width: auto;
     color: #333;
 }
@@ -77,4 +93,18 @@ body {
     padding: 5px;
     background-color: #ccc;
     border: 1px solid #ea7400;
+}
+
+@media (max-width: 600px) {
+    #menu {
+        position: static;
+        top: 120px;
+        float: none;
+        padding: 10px;
+        width: 160px;
+    }
+
+    #content {
+        margin: 10px 20px;
+}
 }

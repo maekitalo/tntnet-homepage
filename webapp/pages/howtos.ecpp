@@ -1,3 +1,6 @@
 <h1>Howto</h1>
 
 <a href="howto/rpc-howto.html">RPC with cxxtools</a><br>
+<a href="howto/argument-parsing-howto.html">Argument parsing</a><br>
+<a href="howto/logging-howto.html">Logging</a><br>
+<a href="howto/tntdb.html">Tntdb</a><br>
