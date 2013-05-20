@@ -17,7 +17,10 @@ body {
     padding-left: 50px;
     margin: 0px;
     height: 100px;
-    border-bottom: 2px solid #ea7400;
+    background-image: -moz-linear-gradient(top, white 30%, #fdb 60%, #fb0 99%);
+    background-image: -webkit-linear-gradient(top, white 30%, #fdb 60%, #fb0 99%);
+    background-image: -ms-linear-gradient(top, white 30%, #fdb 60%, #fb0 99%);
+    background-image: -o-linear-gradient(top, white 30%, #fdb 60%, #fb0 99%);
 }
 
 #header a {
