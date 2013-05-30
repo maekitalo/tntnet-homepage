@@ -3,8 +3,6 @@
 body {
     padding: 0px;
     margin: 0px;
-    /*background-color: #ABD;*/
-    /*background-color: #EEE;*/
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
 }
 
@@ -13,14 +11,18 @@ body {
 }
 
 #header {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
     padding: 10px;
     padding-left: 50px;
     margin: 0px;
-    height: 100px;
-    background-image: -moz-linear-gradient(top, white 30%, #fdb 60%, #fb0 99%);
-    background-image: -webkit-linear-gradient(top, white 30%, #fdb 60%, #fb0 99%);
-    background-image: -ms-linear-gradient(top, white 30%, #fdb 60%, #fb0 99%);
-    background-image: -o-linear-gradient(top, white 30%, #fdb 60%, #fb0 99%);
+    height: 80px;
+    background-image: -moz-linear-gradient(top, white 30%, #fdb 70%, #fb0 100%);
+    background-image: -webkit-linear-gradient(top, white 30%, #fdb 70%, #fb0 100%);
+    background-image: -ms-linear-gradient(top, white 30%, #fdb 70%, #fb0 100%);
+    background-image: -o-linear-gradient(top, white 30%, #fdb 70%, #fb0 100%);
 }
 
 #header a {
@@ -36,15 +38,18 @@ body {
 
 #menu {
     position: fixed;
-    top: 120px;
+    top: 100px;
     float: left;
     padding: 10px;
     width: 160px;
 }
 
 .navtop {
-    background-color: #003687;
-    color: white;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    color: #fb0;
     font-weight: bold;
     margin-top: 5px;
     padding: 5px;
@@ -58,8 +63,8 @@ body {
 }
 
 .navitems {
-    background-color: #F0F0F0;
-    border: 1px solid #CCC;
+    background-color: #eee;
+    border: 1px solid #ccc;
     -webkit-border-bottom-right-radius: 8px;
     -webkit-border-bottom-left-radius: 8px;
     -moz-border-radius-bottomright: 8px;
@@ -70,7 +75,7 @@ body {
 
 .navitems a {
     text-decoration: none;
-    color: #003687;
+    color: #038;
     margin: 15px;
     font-size: 90%;
 }
@@ -80,11 +85,11 @@ body {
 }
 
 .navitems a:visited {
-    color: #003687;
+    color: #038;
 }
 
 #content {
-    /*margin: 0px 180px;*/
+    margin-top: 100px;
     margin-left: 180px;
     max-width: 660px;
     width: auto;
@@ -94,8 +99,12 @@ body {
 #content pre {
     margin: 10px;
     padding: 5px;
-    background-color: #ccc;
-    border: 1px solid #ea7400;
+    background-color: #eee;
+    border: 1px solid #fb0;
+}
+
+#content a:visited {
+    color: #038;
 }
 
 @media (max-width: 600px) {

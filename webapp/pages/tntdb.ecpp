@@ -1,1 +1,25 @@
 <h1>Tntdb</h1>
+
+<p>Tntdb is a C++ library which makes accessing SQL databases easy and robust.
+Just a few lines of code is enough to connect to the database and accessing
+data.</p>
+
+<p>Tntdb has drivers for <i>Postgresql</i>, <i>sqlite3</i>, <i>mysql</i> and
+<i>oracle</i>.<p>
+
+<p>Resources are handled automatically. The developer can't forget to free
+resources like disconnecting from the database. All objects used in tntdb are
+internally reference counted so that copying around objects is cheap and
+easy.</p>
+
+<p>Prepared statements are fully supported to prevent problems with SQL
+injection. Where prepared statements are not supported by the database, tntdb
+emulates the use.</p>
+
+<p>Tntdb is thread safe and supports connection pooling and caches prepared
+statements for best performance.</p>
+
+<p>Errors are handles by throwing exceptions, which makes developing robust
+database applications a no brainer.</p>
+
+<p>To learn more about tntdb read <a href="howto/tntdb.html">the tntdb howto</a></p>

@@ -1,1 +1,7 @@
 <h1>The tntnet server</h1>
+
+<p>
+Tntnet is a web server which allows users to develop web applications using C++.
+It has a template language <i>ecpp</i> where C++ code can be embedded into html
+similar to php or jsp. The pages are compiled and linked into a shared library.
+The result is a native web application which is compact and fast.  </p>

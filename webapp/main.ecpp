@@ -23,14 +23,14 @@
     <div id="menu">
       <div class="navtop">Tntnet</div>
       <div class="navitems">
-        <a href="/">Tntnet project</a><br>
-        <a href="/tntnet.html">Tntnet server</a><br>
+        <a href="/">Tntnet</a><br>
         <a href="/cxxtools.html">Cxxtools</a><br>
         <a href="/tntdb.html">Tntdb</a><br>
       </div>
 
       <div class="navtop">Documentation</div>
       <div class="navitems">
+        <a href="/quick-start-guide.html">Quick start guide</a><br>
         <a href="/man.html">Man pages</a><br>
         <a href="/howtos.html">Howtos</a><br>
       </div>
@@ -51,7 +51,7 @@
   std::string next = request.getArg("next");
   if (!next.empty())
   {
-    log_debug("call next component: \"" << next << "\" pathInfo=\"" << request.getPathInfo() << '"');
+    log_info("call next component: \"" << next << "\" pathInfo=\"" << request.getPathInfo() << '"');
     try
     {
       unsigned ret = callComp(next, request, reply, qparam);

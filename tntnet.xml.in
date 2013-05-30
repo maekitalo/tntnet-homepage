@@ -15,7 +15,7 @@
       <target>main@tntnet-homepage</target>
       <url>^/$</url>
       <args>
-        <next>pages/index</next>
+        <next>pages/tntnet</next>
       </args>
     </mapping>
     <mapping>
