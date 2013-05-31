@@ -89,7 +89,7 @@ When you read this, it is very presumable, that you sit in front of a program, w
 
 ### How many developers tntnet has?
 
-Almost all of tntnet was developed by a single person - Tommi M&auml;kitalo.
+Almost all of tntnet was developed by a single person - Tommi Mäkitalo.
 
 Normally you should really think if you really want to trust a application written and maintained by a single person.
 
@@ -97,11 +97,13 @@ A single person assures, that you have the same code quality all over the system
 
 ### Why www.tntnet.org is not running tntnet?
 
-The homepage of tntnet are just static pages. It is not the core business of tntnet to serve static pages. There are other web servers, which do just a good job here. We use apache for that.
+This is not any more the case - www.tntnet.org runs with tntnet since in
+December 2012. It was not possible before since we did not have the
+infrastructure.
 
-Also on the server, where the page is hosted, there are other web sites, which need technologies not offered by tntnet, so to run the site with tntnet we need at least a unique IP address, which we currently do not have.
-
-But you are really right - tntnet should anyhow run with tntnet. I hope, that I can switch some day.
+Now we have a shiny new homepage with modern design and architecture running
+tntnet. The software, which runs the homepage can be found at github as well. It
+is also a showcase for using tntnet as a web server with dynamic content.
 
 ### Can I use tntnet in commercial applications?
 

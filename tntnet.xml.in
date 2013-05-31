@@ -6,49 +6,27 @@
   -->
 <tntnet>
   <mappings>
-    <mapping>
-      <target>static@tntnet</target>
-      <url>^/static/(.*)</url>
-      <pathinfo>@top_srcdir@/webapp/static/$1</pathinfo>
-    </mapping>
+    <!-- start page -->
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/$</url>
-      <args>
-        <next>pages/tntnet</next>
-      </args>
-    </mapping>
-    <mapping>
-      <target>main@tntnet-homepage</target>
-      <url>^/howto/(.*)\.html$</url>
-      <pathinfo>@top_srcdir@/htdocs/howto/$1.markdown</pathinfo>
+      <pathinfo>@top_srcdir@/htdocs/tntnet.markdown</pathinfo>
       <args>
         <next>markdown</next>
       </args>
     </mapping>
-    <mapping>
-      <target>main@tntnet-homepage</target>
-      <url>^/faq\.html$</url>
-      <pathinfo>@top_srcdir@/htdocs/faq.markdown</pathinfo>
-      <args>
-        <next>markdown</next>
-      </args>
-    </mapping>
+
+    <!-- lookup markdown pages -->
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/(.*)\.html$</url>
+      <pathinfo>@top_srcdir@/htdocs/$1.markdown</pathinfo>
       <args>
-        <next>pages/$1</next>
+        <next>markdown</next>
       </args>
     </mapping>
-    <mapping>
-      <target>main@tntnet-homepage</target>
-      <url>^/man./(.*)\.html$</url>
-      <pathinfo>@top_srcdir@/htdocs/man/$1.html</pathinfo>
-      <args>
-        <next>static@tntnet</next>
-      </args>
-    </mapping>
+
+    <!-- lookup html pages -->
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/(.*)\.html$</url>
@@ -57,6 +35,23 @@
         <next>static@tntnet</next>
       </args>
     </mapping>
+
+    <!-- lookup html pages in ecpp -->
+    <mapping>
+      <target>main@tntnet-homepage</target>
+      <url>^/(.*)\.html$</url>
+      <args>
+        <next>$1</next>
+      </args>
+    </mapping>
+
+    <!-- lookup static pages from htdocs -->
+    <mapping>
+      <target>static@tntnet</target>
+      <url>^/(.+)</url>
+      <pathinfo>@top_srcdir@/htdocs/$1</pathinfo>
+    </mapping>
+
   </mappings>
 
   <!-- listen to a port (empty string means any local interface) -->

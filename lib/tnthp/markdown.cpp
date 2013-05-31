@@ -13,6 +13,7 @@
 #include <cxxtools/log.h>
 #include <fstream>
 #include <sstream>
+#include <sys/stat.h>
 
 log_define("tnthp.markdown")
 
@@ -50,16 +51,23 @@ unsigned Markdown::operator() (tnt::HttpRequest& request, tnt::HttpReply& reply,
   return HTTP_OK;
   */
 
+  struct stat st;
+  int ret = ::stat(fname.c_str(), &st);
+
   std::pair<bool, Page> r = renderedPages.getx(fname);
-  if (!r.first)
+
+  if (!r.first || ret != 0 || st.st_mtime != r.second.mtime)
   {
-    log_debug("cache miss");
+    log_debug("r.first=" << r.first << " ret=" << ret << " st.st_mtime=" << st.st_mtime << " mtime=" << r.second.mtime);
+    log_debug("cache miss or modified");
     std::ostringstream out;
     markdown::Document doc;
     doc.read(in);
     doc.write(out);
 
     r.second.htmlContent = out.str();
+    r.second.mtime = st.st_mtime;
+    renderedPages.erase(fname);
     renderedPages.put(fname, r.second);
   }
   else

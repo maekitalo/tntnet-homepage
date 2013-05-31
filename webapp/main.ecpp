@@ -9,15 +9,15 @@
     <title>Tntnet homepage</title>
     <meta charset="utf-8">
     <meta name="description" content="all about the tntnet project">
-    <#link rel="icon" href="/static/favicon.ico" type="image/x-icon">#>
-    <link rel="stylesheet" href="/static/tntnet.css" type="text/css">
-    <#<script type="text/javascript" src="/static/tntnet.js"></script>#>
+    <#link rel="icon" href="/favicon.ico" type="image/x-icon">#>
+    <link rel="stylesheet" href="/tntnet.css" type="text/css">
+    <#<script type="text/javascript" src="/tntnet.js"></script>#>
   </head>
   <body>
 
     <div id="header">
       <a href="/" name="top">Tntnet - C++ web services</a>
-      <img id="logo" src="/static/tntnet.png">
+      <img id="logo" src="/tntnet.png">
     </div>
 
     <div id="menu">
@@ -32,7 +32,7 @@
       <div class="navitems">
         <a href="/quick-start-guide.html">Quick start guide</a><br>
         <a href="/man.html">Man pages</a><br>
-        <a href="/howtos.html">Howtos</a><br>
+        <a href="/howto.html">Howto</a><br>
       </div>
 
       <div class="navtop">Other stuff</div>

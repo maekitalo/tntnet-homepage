@@ -4,19 +4,10 @@ AUTOMAKE_OPTIONS = subdir-objects
 pkglib_LTLIBRARIES = tntnet-homepage.la
 
 ecppSources = \
-	pages/index.ecpp \
-	pages/contact.ecpp \
-	pages/cxxtools.ecpp \
-	pages/download.ecpp \
-	pages/faq.ecpp \
-	pages/howtos.ecpp \
-	pages/man.ecpp \
-	pages/news.ecpp \
-	pages/repository.ecpp \
-	pages/tntdb.ecpp \
-	pages/tntnet.ecpp \
+	howto.ecpp \
 	markdown.ecpp \
-	main.ecpp
+	main.ecpp \
+	news.ecpp
 
 tntnet_homepage_la_SOURCES = \
 	$(ecppSources)
