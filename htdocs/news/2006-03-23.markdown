@@ -1,0 +1,6 @@
+development version 1.5.1pre1 of Tntnet
+=======================================
+
+
+SSL and internationalization didn't work at all in 1.5.0. This release fixes it. An updated quick-start-guide is included. Some unused code has been removed. Building of static libraries is suppressed, because it does not make sense with Tntnet.
+

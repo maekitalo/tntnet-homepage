@@ -1,0 +1,7 @@
+stable version tntnet 1.6.2
+===========================
+
+A shutdown bug is fixed. And all the small fixes from the development
+branch is released here in the stable version. The major ones are the fixes
+of GnuTLS and http-auth.
+

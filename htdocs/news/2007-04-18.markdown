@@ -1,0 +1,6 @@
+development versions cxxtools 1.4.3.5 and tntnet 1.5.3.4
+========================================================
+
+
+Some serious bugs were fixed, wich resulted in a crash or hang in tntnet under high load. Some code-adjustements has been made to compile both with for Sun Studio under Solaris.
+

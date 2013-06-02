@@ -1,0 +1,9 @@
+Tntnet and cxxtools version 1.2.2
+=================================
+
+changes
+-------
+
+  *  improved and simplified logging-library in cxxtools 
+  *  minor protocol-fix in Tntnet 
+

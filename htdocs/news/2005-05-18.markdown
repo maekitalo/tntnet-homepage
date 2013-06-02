@@ -1,0 +1,9 @@
+Tntnet version 1.3.1
+====================
+
+changes
+-------
+
+This is a bugfix-release. There was a probem with
+`tnt::httprequest::getPeerAddr().`
+

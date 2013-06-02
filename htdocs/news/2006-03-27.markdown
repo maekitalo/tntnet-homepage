@@ -1,0 +1,14 @@
+development version 1.5.1pre2 of Tntnet and new version 0.6.1 of Tntdb
+======================================================================
+
+
+Here is another development-version of Tntnet. This version teaches the
+precompiler to generate #line-directives. Error-messages of the c++-compiler
+now point directly into to ecpp-source instead of the (intermediate) output of the
+precompiler.
+
+
+Tntdb 0.6.1 fixes some minor bugs and makes some small improvements.
+The postgresql-driver allows now cursors outside transactions. Passing
+date-, datetime- and time-classes to statements may be null.
+

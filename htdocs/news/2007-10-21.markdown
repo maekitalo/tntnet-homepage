@@ -1,0 +1,10 @@
+new development versions of cxxtools 1.4.5.1 and tntnet 1.6.0.4
+===============================================================
+
+Cxxtools gets a fast template based signal-slot implementation from Marc.
+Libltdl is replaced by a simple dlopen-wrapper. The smart pointer gets an
+additional destroy policy.
+
+Most of the code of tntnet is moved to libtntnet to make it possible to
+embed tntnet in applications.
+

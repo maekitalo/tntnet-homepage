@@ -1,0 +1,30 @@
+new stable versions, cxxtools 1.4.6, tntnet 1.6.1, tntdb 0.9.5
+==============================================================
+
+The features released in the development releases are considered stable
+now.
+
+Cxxtools have got some feature enhancements like support for signal-slot
+and wrappers for atomic functions. Locking in logger-classes is reduced, so
+that threads do not need to wait for other threads when logging. Logging may be
+passed to a subprocess, which can run under a different user, when the main
+process starts as root.
+
+Tntdb has support for blobs. And this time the archive is complete. The
+0.9.4 release lacked some important files, so if you had problems with that it
+was purely my fault ;-).
+
+The main enhancement in tntnet was the move of most of the tntnet-code into
+the library, so it is easy to use tntnet in applications. Also a wrapper for
+fork was added, since it is somewhat dangerous to start subprocesses without
+that, since subprocesses will block restarts, since they inherit listener
+ports. To fork subprocesses in tntnet-applications use this:
+
+<pre>
+  if (request.getApplication().forkProcess())
+  {
+    // here we are in child process
+    exit(0);  // this or exec... is mandatory!!!
+  }
+</pre>
+

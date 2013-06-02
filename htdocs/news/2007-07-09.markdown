@@ -1,0 +1,18 @@
+new version 1.4.5 of cxxtools
+=============================
+
+A policy-based smart-pointer-class is included here. I have used this implementation
+in tntdb for some time and copied it to many projects since then. Therefore I decided
+to finally include it into my toolbox. The default policy is intrusive reference counted,
+which is the safest model. The objects held need to have methods "addRef" and "release".
+This is easily done by using `cxxtools::RefCounted` as a (additional?) base-class.
+
+I have rewritten the parser for ini-files. The new parser is much cleaner. The
+parser is separated from the data-structure, which makes it possible to use the
+parser separately. The interface to the class has changed heavily, so you need to
+port your application to the new class, if you have used this part of cxxtools.
+
+I also wrote a parser for property-files, which are quite popular in the java-world.
+They have the advantage to support hieracial structures, while beeing still easily
+readable and writable.
+

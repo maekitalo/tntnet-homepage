@@ -1,0 +1,5 @@
+new article about using xmlrpc in cxxtools (> 1.99)
+===================================================
+
+A new Howto document about using xmlrpc with cxxtools is available [here](howto_xmlrpc.html)
+

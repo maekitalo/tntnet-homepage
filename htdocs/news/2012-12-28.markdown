@@ -1,0 +1,6 @@
+Tntnet homepage runs now tntnet
+===============================
+
+As a kind of christmas present I got a second IP address for the server. This makes it possible
+to run the tntnet homepage with tntnet.
+

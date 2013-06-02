@@ -1,0 +1,6 @@
+Tntnet version 1.2.0
+====================
+
+
+Some feature enhancements and bugfixes. Needs cxxtools &gt;=1.2.0.
+

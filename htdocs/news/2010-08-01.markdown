@@ -1,0 +1,20 @@
+stable versions cxxtools 2.0, tntnet 2.0 and tntdb 1.1 released
+===============================================================
+
+After more than 2 years new without stable releases it is time for updates.
+Cxxtools has hot huge improvements and feature enhancements like xmlrpc, a
+signal slot framework, anynchronous I/O and others.
+
+This implied some API changes. Still most of the existing code should run.
+Tntnet and tntdb needed some changes for this, so that the new tntnet and tntdb
+releases need cxxtools 2.0.
+
+Tntnet has got many small feature and performance enhancements. Luckily
+there was no much need for API changes. Almost applications should run out of
+the box by recompiling.
+
+Tntdb got some feature enhancements. Most important are maybe the support
+for auto incremented values using the method
+`tntdb::Connection::lastInsertId(std::string)` and support for user defined
+types by overloading 2 operators.
+

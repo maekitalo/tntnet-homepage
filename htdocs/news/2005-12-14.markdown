@@ -1,0 +1,9 @@
+Tntnet version 1.5.0pre6 and cxxtools 1.4.0pre4
+===============================================
+
+
+  This is a major upgrade for Tntnet. Tntnet now supports end-tags in
+  componentcalls. With this it is easier to build components, which wrap some
+  html-content.
+  Tntnet now supports gzip-encoding.
+

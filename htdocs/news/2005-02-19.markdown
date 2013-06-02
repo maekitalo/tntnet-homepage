@@ -1,0 +1,13 @@
+cxxtools version 1.3.0
+======================
+
+changes
+-------
+
+The socket-classes got some improvements. It handles timeout better now.
+
+
+cxxtools-config is a configuration-script, to help compile against cxxtools
+(escpecially cxxtools-log) easier. It also has the ability to generate a
+suitable configurationfile for the underlying logging-library.
+

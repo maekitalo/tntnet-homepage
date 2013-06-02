@@ -16,6 +16,15 @@
       </args>
     </mapping>
 
+    <!-- lookup html pages in ecpp -->
+    <mapping>
+      <target>main@tntnet-homepage</target>
+      <url>^/(.*)\.html$</url>
+      <args>
+        <next>$1</next>
+      </args>
+    </mapping>
+
     <!-- lookup markdown pages -->
     <mapping>
       <target>main@tntnet-homepage</target>
@@ -33,15 +42,6 @@
       <pathinfo>@top_srcdir@/htdocs/$1.html</pathinfo>
       <args>
         <next>static@tntnet</next>
-      </args>
-    </mapping>
-
-    <!-- lookup html pages in ecpp -->
-    <mapping>
-      <target>main@tntnet-homepage</target>
-      <url>^/(.*)\.html$</url>
-      <args>
-        <next>$1</next>
       </args>
     </mapping>
 

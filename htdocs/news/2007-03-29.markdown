@@ -1,0 +1,6 @@
+development version 1.5.3.3 of tntnet
+=====================================
+
+
+License is changed from GPL to LGPL, which allows creation of closed source webapplications. Poll is replaced with epoll on platforms where available, which improves performance significantly on boxes with high load. Urls are now decoded. Listener-threads are removed, which removes a context-switch when new connections arrive. A racing-condition is fixed, which caused tntnet to segfault on MP-boxes under high load.
+

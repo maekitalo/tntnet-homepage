@@ -1,0 +1,7 @@
+development version 1.4.3.4 of cxxtools
+=======================================
+
+
+Improve Pool-class: replace semaphore with condition and make maximum size
+settable.
+

@@ -1,0 +1,11 @@
+Tntnet version 1.5.0pre2
+========================
+
+changes
+-------
+
+  * one level of indirection of factory-pointer removed (binary incompatible
+     to 1.5.0pre1!).
+  * detection of cxxtools- and zlib-headers fixed. Missing headers trigger a
+     error at configure-time.
+

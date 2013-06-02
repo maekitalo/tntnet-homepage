@@ -1,0 +1,7 @@
+Release version 1.5.2 of tntnet
+===============================
+
+
+It is just time to declare tntnet 1.5.2 stable. The most notable
+change is a complete set of man-pages.
+

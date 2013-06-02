@@ -1,0 +1,12 @@
+development version 1.4.3.2 of cxxtools
+=======================================
+
+
+I was active this time. New small bugfixes and new features were added. These are:
+
+  * new wrappers for fork(2) and pipe(2)
+  * `cxxtools::Pipestream:` a `std::iostream` using pipe(2) (look at demo/pipestream.cpp for useage for these 3 features
+  * support for udp-broadcast
+  * offset is settable in `cxxtools::Hdostream`
+  * `cxxtools::Condition::timedwait`
+

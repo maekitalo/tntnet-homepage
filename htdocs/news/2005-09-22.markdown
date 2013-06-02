@@ -1,0 +1,8 @@
+Tntnet version 1.5.0pre1 and cxxtools 1.4.0pre1
+===============================================
+
+changes
+-------
+
+Namingconvention: all classnames starting uppercase, methodnames lowercase.
+

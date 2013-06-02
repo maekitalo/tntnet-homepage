@@ -1,1 +1,37 @@
+<%pre>
+#include <cxxtools/directory.h>
+#include <cxxtools/regex.h>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <markdown/markdown.h>
+</%pre>
 <h1>News</h1>
+
+<%cpp>
+
+cxxtools::Directory dir("htdocs/news");
+static cxxtools::Regex re("htdocs/news/([0-9]+-[0-9]+-[0-9]+).markdown");
+
+std::vector<std::string> files;
+for (cxxtools::Directory::const_iterator it = dir.begin(); it != dir.end(); ++it)
+{
+  files.push_back(it.path());
+}
+
+std::sort(files.begin(), files.end(), std::greater<std::string>());
+
+for (unsigned n = 0; n < files.size(); ++n)
+{
+  cxxtools::RegexSMatch m;
+  if (!re.match(files[n], m))
+    continue;
+
+  reply.out() << "<div class='news'><span class='newsdate'>" << m[1] << "</span>\n";
+  std::ifstream in(files[n].c_str());
+  markdown::Document doc;
+  doc.read(in);
+  doc.write(reply.out());
+  reply.out() << "</div>\n";
+}
+</%cpp>

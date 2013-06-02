@@ -1,0 +1,6 @@
+new development versions of cxxtools 1.4.5.3
+============================================
+
+This adds functions for handling endianess and wrappers for fast atomic
+operations for various processors.
+

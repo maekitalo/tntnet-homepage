@@ -1,0 +1,8 @@
+development version 1.5.3.2 of tntnet
+=====================================
+
+
+A redesign of the main-application-class is the major part of this release.
+Process-handling is now in a separate class and uses the new fork(2)- and pipe(2)-wrappers
+of cxxtools 1.4.3.2.
+

@@ -1,0 +1,7 @@
+Release version 1.5.3 of tntnet
+===============================
+
+
+Major bug-fix to 1.5.2: POST-requests did not work at all in the default
+configuration.
+

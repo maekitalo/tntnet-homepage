@@ -1,0 +1,7 @@
+new develpment version 1.6.0.3 of tntnet
+========================================
+
+This version adds a parameter-scope to components, which receives named
+parameters of any type when called. Also the generated class gets a prefix, so
+that reserved words like "template" are now allowed for component names.
+

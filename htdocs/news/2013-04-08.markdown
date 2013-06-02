@@ -1,0 +1,5 @@
+New release candidates are available for download on the download page. Please test.
+====================================================================================
+
+The plan is to make a final release within one week.
+

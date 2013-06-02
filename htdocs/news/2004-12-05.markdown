@@ -1,0 +1,13 @@
+cxxtools version 1.2.1
+======================
+
+changes
+-------
+
+  *  removed obsolete timeclass.cpp
+  *  switched dl-classes to libtool for better portability 
+  *  skip iconvstream if libiconv is not installed 
+  *  new library: logging-wrapper for log4cplus (log4cxx-support will follow) 
+  *  simple lightweight logging-library as a alternative for log4cplus 
+  *  tested with FreeBSD 5.3/gcc 3.4.2
+

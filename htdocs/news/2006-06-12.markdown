@@ -1,0 +1,7 @@
+development version 1.5.2pre2 of Tntnet
+=======================================
+
+Since Tntnet is GPL and OpenSSL is not, I decided to port Tntnet to gnutls,
+which is LGPL. This version let you choose at configure-time, which ssl-library
+to use if any.
+

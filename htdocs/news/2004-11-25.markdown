@@ -1,0 +1,7 @@
+cxxtools version 1.2.0
+======================
+
+
+Code-cleanup. All classes are in namespace cxxtools now.
+Most classes have doxygen-style comments.
+

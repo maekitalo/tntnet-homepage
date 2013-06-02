@@ -1,0 +1,21 @@
+Development version 1.5.2pre3 of Tntnet
+=======================================
+
+Tntnet has now thread-scoped variables as a addition to applicatin-
+session- and request-scope. Just declare a section &lt;%thread&gt; and
+put your variables there. This is useful, e.g. for databaseconnections.
+Escpecially for sqlite3, where connections can't be used in other threads,
+than the one, who issued sqlite3_open.
+
+Tntnet handles http-headers and cookies case-insensitive know. It was
+a bug, not to do it.
+
+Components aren't deleted any more before the thread ends. Until know
+Tntnet had a special cleaner thread, which deleted components,
+which aren't used any more. This was not that useful, because components
+don't eat much memory and it is really a waste of time to do asyncronous
+cleanup without gaining much.
+
+Tntnet has new demos: calcajax and chat shows, how to use ajax with
+Tntnet; alldemos shows a (configurable) page with links to all other demos.
+

@@ -1,0 +1,7 @@
+development version 1.5.2pre1 of Tntnet, version 1.4.2pre1 of cxxtools
+======================================================================
+
+These are bugfix-releases. Applications based on cxxtools (like Tntnet)
+failed to start on systems without IPv6. Some warnings are removed. Tntnet
+compiles now with OpenSSL on OpenBSD.
+

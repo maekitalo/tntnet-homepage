@@ -1,0 +1,20 @@
+stable versions cxxtools 1.4.8, tntnet 1.6.3 and tntdb 1.0.1
+============================================================
+
+These versions mainly fix some bugs found in the last weeks.
+
+The regex-wrapper classes from tntnet are now copied to cxxtools and are
+fully functional now. Cxxtools also got a set of conversion functions as easy
+to use wrappers around `std::stringstream.` The so-number is increased to
+indicate binary incompatiblity to older versions (at least &lt;= 1.4.6)
+
+Clearing cookies was broken since about a year. This is fixed now. Quotes
+and double quotes in c++ comments in ecpp files was not handled correctly.
+Initialization of scoped variables may expand to multiple lines now (this was
+actually intended behaviour before, but incorrectly implemented). Here also the
+so-number was increased.
+
+The sqlite-driver of tntdb had 2 small bugs. Setting strings in statements
+did not lead to equality when compared to columns. Using multiple cursors for
+one statement crashed tntdb when the cursors were released in reverse order.
+

@@ -1,0 +1,11 @@
+development versions cxxtools 1.99.4, tntnet 1.6.99 and tntdb 1.0.99
+====================================================================
+
+Cxxtools has make a quantum leap forward to a general purpose C++ library.
+This version adds a fast template based signal slot framework, a serialization
+system, asyncronous I/O with iostreams, a http server and a improved http
+client, XML reader and writer, and a great XMLRCP client and server.
+
+Tntnet and Tntdb has got some minor bug fixes and are adjusted to the API
+changes in cxxtools (which are quite small).
+

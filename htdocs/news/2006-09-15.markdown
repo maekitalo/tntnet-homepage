@@ -1,0 +1,9 @@
+Release version 0.9.0 of tntdb
+==============================
+
+
+The jump in the version number indicates, that tntdb has proven
+to be stable. License changed to LGPL, so that it is usable in
+close-source applications. Compared to the previous version only
+some minor bugfixes has happened.
+

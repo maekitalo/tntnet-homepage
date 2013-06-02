@@ -1,0 +1,13 @@
+Tntnet version 1.4.0pre1
+========================
+
+changes
+-------
+
+This version adds automatic session-handling through cookies and scoped
+variables. Statevariables can be of any (almost) any type.
+
+
+And I'm finally writing documentation. I'm not good in writing and I would
+appreciate any help I can help. Please contact me at tommi@Tntnet.org.
+

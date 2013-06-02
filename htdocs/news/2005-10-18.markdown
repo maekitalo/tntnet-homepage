@@ -1,0 +1,9 @@
+Tntnet version 1.5.0pre3
+========================
+
+
+  * fixed bug in generation of components with compressed data.
+
+
+This is hopefully the last prerelease before 1.5.0.
+

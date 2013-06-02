@@ -1,0 +1,9 @@
+Tntnet version 1.2.1
+====================
+
+
+
+  *  use cxxtools-1.2.1-logging 
+  *  typed arguments 
+  *  added quick-start-guide (incomplete) 
+

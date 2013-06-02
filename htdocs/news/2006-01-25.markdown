@@ -1,0 +1,7 @@
+tntdb version 0.6.0, Tntnet version 1.5.0pre7, cxxtools 1.4.0pre5
+=================================================================
+
+
+  This version adds a driver for sqlite3, a connectionpool, a introductio
+  and lots of smaller fixes and improvements.
+

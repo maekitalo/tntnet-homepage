@@ -1,0 +1,8 @@
+new development version of tntnet 1.6.0.6
+=========================================
+
+After some small fixes tntnet compiles with the Sun Studio compiler.
+A chapter about stand alone webapplications with tntnet was added into the
+documentation. After changing fonts in the documents, filesizes got much
+smaller.
+

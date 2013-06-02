@@ -1,0 +1,6 @@
+development version tntnet 1.6.0.1
+==================================
+
+
+This version adds support for HTTP basic authetication. A new tag &lt;%doc&gt; for block-comments in templates is added. Tntnet uses now standard locale instead of failing to run, if locale passed in LANG is invalid. Sessions are now valid in all urls instead of being url-specific. This was actually a bug, because it was intended initially the way, it is now.
+

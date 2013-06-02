@@ -1,0 +1,8 @@
+Tntnet version 1.5.0pre5 and cxxtools 1.4.0pre3
+===============================================
+
+
+  Thread-class in cxxtools is now split into DetachedThread and AttachedThread.
+  In Tntnet the workers are derived from DetachedThread. This fixes a major
+  bug, which could trigger a unnecesery emergency-restart.
+

@@ -1,0 +1,12 @@
+tntdb updated to 0.6.4
+======================
+
+Tntdb has got a driver for oracle. Now it supports sqlite, mysql, postgresql
+and oracle. The driver is not compiled by default, but must be activated by
+passing --with-oracle to the configure-script.
+
+Another fine update is support for decimals (thank you Mark Write).
+
+And for those of you, who misses tntdb 0.6.3: I once packed a 0.6.3, but I
+discovered some bugs before announcement, so I decided just to skip it.
+

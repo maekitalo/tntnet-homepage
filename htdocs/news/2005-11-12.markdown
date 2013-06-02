@@ -1,0 +1,6 @@
+tntdb version 0.5.2
+===================
+
+
+  Make databasedrivers optional at configure-time.
+

@@ -1,0 +1,7 @@
+Tntnet version 1.5.0pre4
+========================
+
+New health-check - if a thread takes too long for processing (default: 10
+   minutes), the thread is considered hanging and Tntnet is restarted
+   automatically.
+

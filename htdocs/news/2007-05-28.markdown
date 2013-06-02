@@ -1,0 +1,9 @@
+stable version 1.6.0 of Tntnet, version 1.4.4 of cxxtools
+=========================================================
+
+
+Here is the most stable version of Tntnet. Since Tntnet has matured since
+1.5.3 more than ever before, I decided to take a jump in the version-number.
+Thank you for the users, which greatly has helped me finding bugs and giving
+feedback for improvements.
+

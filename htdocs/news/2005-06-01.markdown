@@ -1,0 +1,18 @@
+Tntnet version 1.4.0pre2
+========================
+
+changes
+-------
+
+Removed boost dependency. Tntnet uses now the POSIX.2-regex instead of
+boost-regex. This greatly simplifies installation and also reduces
+binary-size. Also a memory-leak in 1.4.0pre1 was fixed.
+
+
+There is a users-guide (in open-office-format) and a yet unfinished
+configuration-guide.
+
+
+I tested this release successfully with gcc-4.0.1, which greatly improves
+performance (about 20% faster compared to 3.3.4).
+

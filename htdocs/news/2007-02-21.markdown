@@ -1,0 +1,6 @@
+development version 1.4.3.3 of cxxtools
+=======================================
+
+
+fix bug in `cxxtools::net::Stream:` partial write from os was reported as eof instead of polling socket.
+

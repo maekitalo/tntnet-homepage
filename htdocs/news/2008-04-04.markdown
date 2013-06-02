@@ -1,0 +1,7 @@
+development version tntnet 1.6.1.3
+==================================
+
+This version brings some bugfixes. GnuTLS-support is much more robust and
+also faster now. OpenSsl supports certificate chains. Http-Auth does not cache
+usernames and passwords in keep-alive requests any more.
+

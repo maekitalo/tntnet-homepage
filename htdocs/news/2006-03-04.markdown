@@ -1,0 +1,17 @@
+Tntnet version 1.5.0, cxxtools 1.4.0
+====================================
+
+
+ I finally declared Tntnet 1.5.0 and cxxtools 1.4.0 as stable, just because
+ they are. Tntnet 1.5.0 is faster than ever and has gone through many
+ stability- and speed-tests, which makes it rock-solid and incredibly fast.
+
+
+ Cxxtools got a new logging-feature, which speeds up logging quite
+ significantly. The parameter "flushdelay" enables a background-thread,
+ which flushes the outputfile asynchronously. The logentries don't trigger
+ a flush, so may logentries are written with one system-call.
+ This results in a 15% speed-up of Tntnet in simple cases. Without it
+ dynamic pages are just as fast as static pages in apache2. With
+ delayed flush Tntnet is well ahead of apache2.
+

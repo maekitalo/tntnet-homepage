@@ -1,0 +1,8 @@
+new develpment version 1.6.0.2 of tntnet
+========================================
+
+In this version the locale can be set in components with SET_LANG
+(e.g. SET_LANG("de_DE") ). Http-classes are restructured.
+`HttpReply::notAuthorized` and `HttpReply::redirect` throw exceptions to make it
+easy to call them in subcomponents.
+

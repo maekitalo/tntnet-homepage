@@ -1,0 +1,7 @@
+development version 1.5.1pre4 of Tntnet, version 1.4.1pre2 of cxxtools
+======================================================================
+
+This releases adds support for IPv6. You can just pass IPv6-addresses to
+socket-classes. License-statements were added in files to make Cxxtools and
+Tntnet ready for debian
+

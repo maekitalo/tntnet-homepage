@@ -1,0 +1,13 @@
+development version 1.5.3.1 of tntnet
+=====================================
+
+
+I've done some tweaks and enhancements in Tntnet, which improoves usability as well as performance.
+The most major improvements are:
+
+  * VMapUrl for virtual host specific url-mapping
+  * use epoll instead of poll when available, which improves scalability
+  * option "-I dir" to specify include-directory for ecppc
+  * building of sdk and demos can be supressed, when building tntnet
+  * remove global factory-symbol, which removes naming-conflicts in different shared libraries
+

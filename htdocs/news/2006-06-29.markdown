@@ -1,0 +1,7 @@
+Release version 1.4.2 of cxxtools
+=================================
+
+Cxxtools is now updated to 1.4.2. Not too much changes here, but
+a big step: cxxtools is LGPL now! You can link it with your closed source
+or differently licensed software.
+

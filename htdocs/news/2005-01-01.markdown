@@ -1,0 +1,7 @@
+log4shell 0.1 - comand-line-interface to log4cxx
+================================================
+
+
+log4shell is a quick hack, which enables shell-scripts to log with
+log4cxx.
+

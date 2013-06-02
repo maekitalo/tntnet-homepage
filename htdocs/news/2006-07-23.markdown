@@ -1,0 +1,7 @@
+New version 0.6.3 of Tntdb
+==========================
+
+The main reason for this is a license-change. Postgresql is linked against
+OpenSSL and the license of tntdb is extended to allow this.
+The Sqlite3-driver got some minor fixes.
+

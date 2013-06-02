@@ -1,0 +1,10 @@
+cooperation with FreeWRT
+========================
+
+
+We have started a cooperation with [FreeWRT](http://www.freewrt.org/) to
+port Tntnet to this nice embedded platform. This will show, how embedded systems with
+less powerful CPUs will profit from the low cpu-usage of Tntnet. We will be at
+[Linuxtag](http://www.linuxtag.de/2007/) in Berlin from May 30th to June 2nd 2007
+to show some results of our efforts. A presentation on June 2nd is also planned.
+

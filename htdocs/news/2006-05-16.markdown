@@ -1,0 +1,6 @@
+stable version 1.5.1 of Tntnet, version 1.4.1 of cxxtools
+=========================================================
+
+The latest development-versions 1.5.1pre4 of Tntnet and 1.4.1pre2 of
+cxxtools are released (almost) unchanged.
+

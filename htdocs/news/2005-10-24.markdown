@@ -1,0 +1,6 @@
+tntdb version 0.5
+=================
+
+Tntdb is a c++-library for easy access to databases. It supports dynamic
+loading of drivers. Currently drivers for postgresql and mysql are available.
+

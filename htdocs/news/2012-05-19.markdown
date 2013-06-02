@@ -1,0 +1,5 @@
+bugfix release 2.1.1 of cxxtools released
+=========================================
+
+This release fixes some bugs occured after the last 2.1 release. No features are added here and it is binary compatible to version 2.1.
+

@@ -1,0 +1,7 @@
+stable version tntdb 1.0.0
+==========================
+
+[Tntdb](tntdb.html) has reached version 1.0.0. That means, that tntdb does not have
+any known bugs and the API as well as the ABI will be kept as stable as
+possible.
+

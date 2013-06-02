@@ -1,0 +1,18 @@
+development version 1.5.1pre3 of Tntnet, version 1.4.1pre1 of cxxtools and
+version 0.6.2 of Tntdb
+=================================================================================================
+
+Logging with Cxxtools is optimized. This results in a 30% speed-up. A new
+`std::ostream-derived` class `cxxtools::Streamcounter` is included, which just counts the
+characters, which are printed. The rolling-file-appender uses it to monitor filesize,
+which make flushdelay to work with it.
+
+In Tntdb 0.6.2 the mysql-driver got some bugfixes. Fetching some datatypes (e.g. timestamp)
+resulted in a crash, because the Mysql-API returns too small lengths (or I misunderstand
+the API;-) ).
+
+Tntnet extends the license to allow linking with openssl. Some ANSI-C++-violations
+are fixed. A new demo newsdb is added, which demonstrates, how to access a database with
+Tntdb from a web application. The documentation was reformatted to use only standard fonts,
+which reduces the size of the tarball.
+

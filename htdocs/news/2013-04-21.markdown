@@ -1,0 +1,11 @@
+releases for cxxtools, tntnet and tntdb
+=======================================
+
+Today releases for cxxtools 2.2, tntnet 2.2 and tntdb 1.3 are available for download. See the release notes in the packages for details about the changes.
+
+The release notes are also available for download at:
+
+  * [http://www.tntnet.org/download/cxxtools-2.2/Releasenotes-2.2.markdown](/download/cxxtools-2.2/Releasenotes-2.2.markdown)
+  * [http://www.tntnet.org/download/tntnet-2.2/Releasenotes-2.2.markdown](/download/tntnet-2.2/Releasenotes-2.2.markdown)
+  * [http://www.tntnet.org/download/tntdb-1.3/Releasenotes-1.3.markdown](/download/tntdb-1.3/Releasenotes-1.3.markdown)
+

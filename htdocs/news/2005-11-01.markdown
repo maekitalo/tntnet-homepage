@@ -1,0 +1,6 @@
+tntdb version 0.5.1
+===================
+
+This version has some minor bugfixes in the mysql-driver (handling
+MYSQL_TYPE_LONGLONG is working now).
+

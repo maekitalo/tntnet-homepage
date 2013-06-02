@@ -1,0 +1,6 @@
+Development version 1.5.2pre4 of Tntnet
+=======================================
+
+
+Tntnet has man-pages now.
+

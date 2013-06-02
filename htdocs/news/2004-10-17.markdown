@@ -1,0 +1,12 @@
+Tntnet version 1.1.1
+====================
+
+
+I recreated version 1.1.1 due to build-problems in last version.
+
+
+2004-10-17
+
+
+New version 1.1.1. Now autoconfigurated. Installation with the usual "configure; make; make install".
+

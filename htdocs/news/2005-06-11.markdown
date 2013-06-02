@@ -1,0 +1,9 @@
+Tntnet version 1.4.0pre3
+========================
+
+changes
+-------
+
+Simplified api for calling subcomponents in c++-mode. Ecpp-compiler ecppc can
+now automatically generate dependencies for Makefile (with -M).
+

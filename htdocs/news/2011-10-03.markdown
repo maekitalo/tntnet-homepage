@@ -1,0 +1,8 @@
+Wiki available
+==============
+
+We started a wiki about tntnet, tntdb and cxxtools. Articles, howtos
+and other information will be collected there.
+
+You can find the wiki at [at sourceforge](http://sourceforge.net/apps/mediawiki/tntnet/index.php).
+
