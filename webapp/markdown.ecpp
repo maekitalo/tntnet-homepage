@@ -4,6 +4,16 @@
 <%cpp>
 
 tnthp::Markdown markdown;
-return markdown(request, reply, qparam);
+
+std::string fname = request.getArg("file", request.getPathInfo());
+
+try
+{
+  markdown.toHtml(reply.out(), fname);
+}
+catch (const std::exception&)
+{
+  return DECLINED;
+}
 
 </%cpp>

@@ -1,4 +1,8 @@
-## Basics
+FAQ
+===
+
+Basics
+------
 
 ### Is tntnet stable?
 Tntnet has been in active development since 2003. Code quality is one of the main things, which was held in mind when tntnet was developed. It was used in several commercial applications with high demand for stability.
@@ -9,9 +13,11 @@ Unfortunately there is no long list of known users of tntnet. We hope to get mor
 
 Just to name some, here is a short list:
 
-  * http://www.hotspotcenter.de/
-  * http://www.vdr-wiki.de/wiki/index.php/Live-plugin
+  * Deutsche Börse AG
+  * Indexium AG
+  * http://live.vdr-developer.org/
   * http://www.openzim.org/
+  * http://www.hotspotcenter.de/
 
 ### Is tntnet fast?
 
@@ -65,7 +71,8 @@ No. Tntnet do not run under windows. Until now nobody was willing to port tntnet
 
 Tntnet run under posix compatible systems. I know applications running under various kinds of linux, open-BSD, AIX and Solaris.
 
-## C++
+C++
+---
 
 ### Why C++?
 
@@ -85,7 +92,8 @@ And most important: learn C++. Read good books about C++.
 
 When you read this, it is very presumable, that you sit in front of a program, written in C++. Most of the applications we use in our day to day work are written in C++. The problem is, that C++ programs do not tell, that they are written in C++. They do not need to install a C++ run time engine to run C++ applications. C++ programs also look just as programs should look like.
 
-## Infrastructure
+Infrastructure
+--------------
 
 ### How many developers tntnet has?
 
@@ -113,7 +121,8 @@ Tntnet is licensed under the LGPL with a template exception. This makes it possi
 
 Most web applications are written in interpreted languages like PHP, Ruby, Python or Perl, where the source is the application itself. So it is technologically necessary to deliver the source for your uses. That is not the case with tntnet. Tntnet applications are compiled into binary code and the source is not needed at run time. This makes it possible to deliver your application binary only. And the LGPL allows you to do that also.
 
-## Development
+Development
+-----------
 
 ### After adding tntdb (or something else) to my tntnet application, the page is not loaded any more. What can I do?
 
