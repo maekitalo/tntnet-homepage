@@ -6,14 +6,16 @@
 #ifndef TNTHP_MARKDOWN_H
 #define TNTHP_MARKDOWN_H
 
-#include <tnt/component.h>
+#include <iosfwd>
+#include <string>
 
 namespace tnthp
 {
-  class Markdown : public tnt::Component
+  class Markdown
   {
     public:
-      unsigned operator() (tnt::HttpRequest& request, tnt::HttpReply& reply, tnt::QueryParams& qparam);
+      void toHtml(std::ostream& out, const std::string& fname);
+      std::string toHtml(const std::string& fname);
   };
 
 }

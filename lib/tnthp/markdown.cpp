@@ -5,20 +5,45 @@
 
 #include <tnthp/markdown.h>
 #include <markdown/markdown.h>
-#include <tnt/httprequest.h>
-#include <tnt/httpreply.h>
-#include <tnt/http.h>
-#include <tnt/httperror.h>
+
 #include <cxxtools/cache.h>
 #include <cxxtools/log.h>
+
+#include <stdexcept>
 #include <fstream>
 #include <sstream>
+
 #include <sys/stat.h>
 
 log_define("tnthp.markdown")
 
 namespace tnthp
 {
+
+#ifdef NO_MARKDOWN_CACHE
+void Markdown::toHtml(std::ostream& out, const std::string& fname)
+{
+  log_debug("read markdown file \"" << fname << '"');
+
+  std::ifstream in(fname.c_str());
+  if (!in)
+  {
+    log_debug("could not read markdown file");
+    throw std::runtime_error("could not read markdown file \"" + fname + '"');
+  }
+
+  markdown::Document doc;
+  doc.read(in);
+  doc.write(reply.out());
+}
+
+std::string Markdown::toHtml(const std::string& fname)
+{
+  std::ostringstream s;
+  toHtml(s, fname);
+  return s.str();
+}
+#else
 
 namespace
 {
@@ -31,25 +56,21 @@ namespace
   cxxtools::Cache<std::string, Page> renderedPages(32);
 }
 
-unsigned Markdown::operator() (tnt::HttpRequest& request, tnt::HttpReply& reply, tnt::QueryParams& qparam)
+void Markdown::toHtml(std::ostream& out, const std::string& fname)
 {
-  std::string fname = request.getArg("file", request.getPathInfo());
+  out << toHtml(fname);
+}
 
+std::string Markdown::toHtml(const std::string& fname)
+{
   log_debug("read markdown file \"" << fname << '"');
 
   std::ifstream in(fname.c_str());
   if (!in)
   {
     log_debug("could not read markdown file");
-    return DECLINED;
+    throw std::runtime_error("could not read markdown file \"" + fname + '"');
   }
-
-  /*
-  markdown::Document doc;
-  doc.read(in);
-  doc.write(reply.out());
-  return HTTP_OK;
-  */
 
   struct stat st;
   int ret = ::stat(fname.c_str(), &st);
@@ -73,8 +94,9 @@ unsigned Markdown::operator() (tnt::HttpRequest& request, tnt::HttpReply& reply,
   else
     log_debug("cache hit");
 
-  reply.out() << r.second.htmlContent;
-  return HTTP_OK;
+  return r.second.htmlContent;
 }
+
+#endif
 
 }
