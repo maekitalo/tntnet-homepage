@@ -34,7 +34,7 @@ void Markdown::toHtml(std::ostream& out, const std::string& fname)
 
   markdown::Document doc;
   doc.read(in);
-  doc.write(reply.out());
+  doc.write(out);
 }
 
 std::string Markdown::toHtml(const std::string& fname)
@@ -65,13 +65,6 @@ std::string Markdown::toHtml(const std::string& fname)
 {
   log_debug("read markdown file \"" << fname << '"');
 
-  std::ifstream in(fname.c_str());
-  if (!in)
-  {
-    log_debug("could not read markdown file");
-    throw std::runtime_error("could not read markdown file \"" + fname + '"');
-  }
-
   struct stat st;
   int ret = ::stat(fname.c_str(), &st);
 
@@ -79,6 +72,13 @@ std::string Markdown::toHtml(const std::string& fname)
 
   if (!r.first || ret != 0 || st.st_mtime != r.second.mtime)
   {
+    std::ifstream in(fname.c_str());
+    if (!in)
+    {
+      log_debug("could not read markdown file");
+      throw std::runtime_error("could not read markdown file \"" + fname + '"');
+    }
+
     log_debug("r.first=" << r.first << " ret=" << ret << " st.st_mtime=" << st.st_mtime << " mtime=" << r.second.mtime);
     log_debug("cache miss or modified");
     std::ostringstream out;
