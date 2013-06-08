@@ -21,7 +21,7 @@
     </div>
 
     <div id="menu">
-      <div class="navtop">Tntnet</div>
+      <div class="navtop">Overview</div>
       <div class="navitems">
         <a href="/">Tntnet</a><br>
         <a href="/cxxtools.html">Cxxtools</a><br>
@@ -35,13 +35,13 @@
         <a href="/howto.html">Howto</a><br>
       </div>
 
-      <div class="navtop">Other stuff</div>
+      <div class="navtop">Resources</div>
       <div class="navitems">
-        <a href="/license.html">License</a><br>
         <a href="/faq.html">FAQ</a><br>
         <a href="/news.html">News</a><br>
         <a href="/download.html">Downloads</a><br>
-        <a href="/repository.html">Source repository</a><br>
+        <a href="/development.html">Development</a><br>
+        <a href="/license.html">License</a><br>
         <a href="/contact.html">Contact</a><br>
       </div>
     </div>

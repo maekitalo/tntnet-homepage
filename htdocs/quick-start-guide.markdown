@@ -1,6 +1,4 @@
-﻿
-
-Tntnet quick start
+﻿Tntnet quick start
 ==================
 Authors: Tommi Mäkitalo, Andreas Welchlin
 
