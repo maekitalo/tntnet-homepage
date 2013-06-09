@@ -1,5 +1,4 @@
 <%pre>
-#include <tnt/savepoint.h>
 #include <tnt/httperror.h>
 </%pre>
 <%cpp>
@@ -22,4 +21,3 @@
     }
   }
 </%cpp>
-    </div>
