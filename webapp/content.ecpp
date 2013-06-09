@@ -1,0 +1,25 @@
+<%pre>
+#include <tnt/savepoint.h>
+#include <tnt/httperror.h>
+</%pre>
+<%cpp>
+  std::string next = request.getArg("next");
+  if (!next.empty())
+  {
+    log_info("call next component: \"" << next << "\" pathInfo=\"" << request.getPathInfo() << '"');
+    try
+    {
+      unsigned ret = callComp(next, request, reply, qparam);
+      if (ret != HTTP_OK)
+      {
+        log_debug("return code not HTTP_OK: " << ret);
+        return ret;
+      }
+    }
+    catch (const tnt::HttpError&)
+    {
+      return DECLINED;
+    }
+  }
+</%cpp>
+    </div>
