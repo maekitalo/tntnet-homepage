@@ -1,33 +1,45 @@
 /* tntnet.css */
 
+/* Main body */
 body {
-    padding: 0px;
-    margin: 0px;
+    background: #eee; 
+    color: #404040; 
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
-    font-size: 0.90em;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    font-size: 90%;
 }
 
+/* Main wrap */
+#wrap {
+    position: relative;
+    background: #fff; 
+    color: #404040; 
+    margin: 0 auto; 
+    width: 980px;
+    height: 100%;
+    top: -10px;
+    left: 0;
+    right: 0;
+}
+
+/* Main header */
 #logo {
-    float: right;
+    height: 100px; 
 }
 
 #header {
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    padding: 10px;
-    padding-left: 50px;
-    margin: 0px;
-    height: 80px;
-    background-image: -moz-linear-gradient(top, white 30%, #fdb 70%, #fb0 100%);
-    background-image: -webkit-linear-gradient(top, white 30%, #fdb 70%, #fb0 100%);
-    background-image: -ms-linear-gradient(top, white 30%, #fdb 70%, #fb0 100%);
-    background-image: -o-linear-gradient(top, white 30%, #fdb 70%, #fb0 100%);
+    padding: 30px;
+    padding-left: 10px;
+    margin: 0px auto;
+    height: 70px;
 }
 
 #header a {
-    font-size: 30px;
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    font-size: 20px;
     font-weight: bold;
     color: black;
     text-decoration: none;
@@ -37,113 +49,111 @@ body {
     color: black;
 }
 
+/* Main menu */
 #menu {
-    position: fixed;
-    top: 100px;
-    float: left;
-    padding: 10px;
-    width: 160px;
+    position: absolute;
+    display: block;
+    margin-top: 10px;
 }
 
-.navtop {
+.nav {
+    display: block;
+    float: none;
+    list-style: none;
     background-color: #fff;
-    border-top: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    color: #f90;
+}
+
+.nav .header {
+    color: #ff7600;
     font-weight: bold;
-    margin-top: 5px;
-    padding: 5px;
-    padding-left: 10px;
-    -webkit-border-top-left-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
-    -moz-border-radius-topleft: 8px;
-    -moz-border-radius-topright: 8px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 }
 
-.navitems {
-    background-color: #eee;
-    border: 1px solid #ccc;
-    -webkit-border-bottom-right-radius: 8px;
-    -webkit-border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
-    -moz-border-radius-bottomleft: 8px;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+.nav li { 
 }
 
-.navitems a {
+.nav a {
     text-decoration: none;
-    color: #038;
+    color: #6d6d6d; 
     margin: 15px;
-    font-size: 90%;
 }
 
-.navitems a:hover {
-    background-color: #C0C0C0;
+.nav a:hover {
+    background-color: #ddd;
 }
 
-.navitems a:visited {
-    color: #038;
+.nav a:visited {
+    color: #6d6d6d; 
 }
 
+/* Main content */
 #content {
-    margin-top: 100px;
-    margin-left: 180px;
-    max-width: 660px;
-    width: auto;
-    color: #333;
+    margin-top: 10px;
+    margin-left: 220px;
+    margin-right: 10px;
+    position: relative;
+    color: #555;
 }
 
 #content pre {
-    margin: 10px;
-    padding: 5px;
+    margin: 0;
+    padding: 10px;
     background-color: #eee;
-    border: 1px solid #f90;
+    color: #333;
+    border: 1px solid #ff7600;
+    font-size: 0.9em;
+    white-space: pre-wrap;
 }
 
 #content a:visited {
-    color: #038;
-}
-
-@media (max-width: 600px) {
-    #menu {
-        position: static;
-        margin-top: 100px;
-        float: none;
-        padding: 10px;
-        width: 160px;
-    }
-
-    #content {
-        margin: 10px 20px;
-}
+    color: #6d6d6d; /*#038;*/
 }
 
 .news {
     border: 1px solid #ccc;
     margin-bottom: 20px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
     padding-top: 5px;
 }
 
 .news .newsdate {
     font-style: italic;
     font-weight: bold;
-    font-size: 90%;
 }
 
 .news h1 {
     font-size: 120%;
     background-color: #eee;
-    color: #f90;
+    color: #ff7600;
     padding: 5px;
 }
 
 .news p {
     padding-left: 5px;
+}
+
+/* responsive layout */
+@media (max-width: 768px) {
+    #menu {
+      position: static;
+      display: inline-block;    
+    }
+
+    .nav {
+      display: inline-block;
+      float: left;
+    }
+
+    #content {
+      margin: 10px 20px;
+      position: static;
+    }
+
+    #wrap {  
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {  
+    #wrap {  
+        width: 100%;
+    }
 }

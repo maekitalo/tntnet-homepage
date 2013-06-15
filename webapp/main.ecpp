@@ -1,47 +1,55 @@
+<%pre>
+#include <tnt/savepoint.h>
+</%pre>
+% tnt::Savepoint s(reply);
 <!DOCTYPE html>
 <html>
   <head>
     <title>Tntnet homepage</title>
     <meta charset="utf-8">
     <meta name="description" content="all about the tntnet project">
+    <link rel="stylesheet" href="/normalize.css" type="text/css">
     <link rel="stylesheet" href="/tntnet.css" type="text/css">
   </head>
   <body>
+    <div id="wrap">
 
-    <div id="header">
-      <a href="/" name="top">Tntnet - C++ web services</a>
-      <img id="logo" src="/tntnet.png">
-    </div>
-
-    <div id="menu">
-      <div class="navtop">Overview</div>
-      <div class="navitems">
-        <a href="/">Tntnet</a><br>
-        <a href="/cxxtools.html">Cxxtools</a><br>
-        <a href="/tntdb.html">Tntdb</a><br>
+      <div id="header">
+        <a href="/" name="top">Tntnet - C++ web services</a>
+        <img id="logo" src="/tntnet.png">
       </div>
 
-      <div class="navtop">Documentation</div>
-      <div class="navitems">
-        <a href="/quick-start-guide.html">Quick start guide</a><br>
-        <a href="/man.html">Man pages</a><br>
-        <a href="/howto.html">Howto</a><br>
+      <div id="menu">
+        <ul class="nav">
+          <li class="header">Overview</li>
+          <li><a href="/">Tntnet</a></li>
+          <li><a href="/cxxtools.html">Cxxtools</a></li>
+          <li><a href="/tntdb.html">Tntdb</a></li>
+        </ul>
+
+        <ul class="nav">
+          <li class="header">Documentation</li>
+          <li><a href="/quick-start-guide.html">Quick start guide</a></li>
+          <li><a href="/man.html">Man pages</a></li>
+          <li><a href="/howto.html">Howto</a></li>
+        </ul>
+
+        <ul class="nav">
+          <li class="header">Resources</li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/news.html">News</a></li>
+          <li><a href="/download.html">Downloads</a></li>
+          <li><a href="/development.html">Development</a></li>
+          <li><a href="/license.html">License</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
       </div>
 
-      <div class="navtop">Resources</div>
-      <div class="navitems">
-        <a href="/faq.html">FAQ</a><br>
-        <a href="/news.html">News</a><br>
-        <a href="/download.html">Downloads</a><br>
-        <a href="/development.html">Development</a><br>
-        <a href="/license.html">License</a><br>
-        <a href="/contact.html">Contact</a><br>
+      <div id="content">
+      <%include>content.ecpp</%include>
       </div>
-    </div>
 
-    <div id="content">
-    <%include>content.ecpp</%include>
     </div>
-
   </body>
 </html>
+% s.commit();
