@@ -15,8 +15,8 @@
     <div id="wrap">
 
       <div id="header">
-        <a href="/" name="top">Tntnet - C++ web services</a>
-        <img id="logo" src="/tntnet.png">
+        <a href="/">Tntnet - C++ web services</a>
+        <img id="logo" src="/tntnet.png" alt="Tntnet logo">
       </div>
 
       <div id="menu">
