@@ -13,14 +13,14 @@ body {
 /* Main wrap */
 #wrap {
     position: relative;
-    background: #fff; 
-    color: #404040; 
+    background-color: #fff; 
     margin: 0 auto; 
     width: 980px;
     height: 100%;
     top: -10px;
     left: 0;
     right: 0;
+    min-height: 800px;
 }
 
 /* Main header */
