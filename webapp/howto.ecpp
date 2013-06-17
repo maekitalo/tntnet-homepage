@@ -6,8 +6,14 @@
 </%pre>
 <%cpp>
 
-cxxtools::Directory dir("htdocs/howto");
-static cxxtools::Regex re("htdocs/howto/(.*).markdown");
+std::string basedir = request.getArg("htdocs");
+if (!basedir.empty())
+  basedir += '/';
+basedir += "howto";
+log_info("read howtos from directory \"" << basedir << '"');
+
+cxxtools::Directory dir(basedir);
+static cxxtools::Regex re("/howto/(.*).markdown$");
 
 std::vector<std::pair<std::string, std::string> > howtos;
 

@@ -22,6 +22,7 @@
       <url>^/(.*)\.html$</url>
       <args>
         <next>$1</next>
+        <htdocs>htdocs</htdocs>
       </args>
     </mapping>
 
