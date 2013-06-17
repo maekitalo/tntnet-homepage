@@ -29,13 +29,15 @@ std::sort(howtos.begin(), howtos.end());
 </%cpp>
 <h1>Howto</h1>
 
+<ul>
 <%cpp>
 for (unsigned n = 0; n < howtos.size(); ++n)
 {
   std::string title = howtos[n].first;
   std::string basename = howtos[n].second;
 </%cpp>
-<a href="howto/<$ basename $>.html"><$ title $></a><br>
+<li><a href="howto/<$ basename $>.html"><$ title $></a></li>
 <%cpp>
 }
 </%cpp>
+</ul>

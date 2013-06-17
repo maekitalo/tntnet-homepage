@@ -1,5 +1,5 @@
-Tntnet server
-=============
+Tntnet
+======
 
 Tntnet is a web server which allows users to develop web applications using C++.
 It has a template language *ecpp* where C++ code can be embedded into html
