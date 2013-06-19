@@ -1,9 +1,13 @@
 /* tntnet.css */
 
+html {
+    overflow-y: scroll;
+}
+
 /* Main body */
 body {
-    background: #eee; 
-    color: #404040; 
+    background: #eee;
+    color: #404040;
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     padding: 0;
@@ -13,8 +17,8 @@ body {
 /* Main wrap */
 #wrap {
     position: relative;
-    background-color: #fff; 
-    margin: 0 auto; 
+    background-color: #fff;
+    margin: 0 auto;
     width: 980px;
     height: 100%;
     top: -10px;
@@ -25,7 +29,7 @@ body {
 
 /* Main header */
 #logo {
-    height: 100px; 
+    height: 100px;
 }
 
 #header {
@@ -68,12 +72,12 @@ body {
     font-weight: bold;
 }
 
-.nav li { 
+.nav li {
 }
 
 .nav a {
     text-decoration: none;
-    color: #6d6d6d; 
+    color: #6d6d6d;
     margin: 15px;
 }
 
@@ -82,7 +86,7 @@ body {
 }
 
 .nav a:visited {
-    color: #6d6d6d; 
+    color: #6d6d6d;
 }
 
 /* Main content */
@@ -135,7 +139,7 @@ body {
     }
     #menu {
       position: static;
-      display: inline-block;    
+      display: inline-block;
     }
 
     .nav {
@@ -148,13 +152,13 @@ body {
       position: static;
     }
 
-    #wrap {  
+    #wrap {
         width: 100%;
     }
 }
 
-@media (max-width: 1024px) {  
-    #wrap {  
+@media (max-width: 1024px) {
+    #wrap {
         width: 100%;
     }
 }
