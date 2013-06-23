@@ -33,17 +33,19 @@ body {
 }
 
 #header {
-    padding: 30px;
-    padding-left: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
     margin: 0px auto;
-    height: 70px;
+    height: 90px;
+    box-shadow: 0 8px 10px -10px black;
 }
 
 #header a {
     position: absolute;
-    top: 75px;
-    left: 20%;
-    font-size: 24px;
+    top: 35px;
+    left: 22%;
+    font-size: 36px;
     font-weight: bold;
     color: black;
     text-decoration: none;
@@ -65,6 +67,7 @@ body {
     float: none;
     list-style: none;
     background-color: #fff;
+    padding-left: 30px;
 }
 
 .nav .header {
