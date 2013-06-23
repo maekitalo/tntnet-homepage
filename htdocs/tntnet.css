@@ -29,7 +29,7 @@ body {
 
 /* Main header */
 #logo {
-    height: 100px;
+    height: 80px;
 }
 
 #header {
@@ -37,16 +37,15 @@ body {
     padding-left: 20px;
     padding-bottom: 20px;
     margin: 0px auto;
-    height: 90px;
+    height: 70px;
     box-shadow: 0 8px 10px -10px black;
 }
 
 #header a {
     position: absolute;
-    top: 35px;
+    top: 25px;
     left: 22%;
-    font-size: 36px;
-    font-weight: bold;
+    font-size: 32px;
     color: black;
     text-decoration: none;
 }
@@ -136,10 +135,26 @@ body {
     padding-left: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 512px) {
+    #logo {
+        height: 60px;
+    }
+    #header a {
+      top: 15px;
+      font-size: 18px;
+      left: 120px;
+    }
+    #header {
+        height: 50px;
+    }
+
+}
+@media (min-width: 513px) and (max-width: 768px) {
     #header a {
       left: 150px;
     }
+}
+@media (max-width: 768px) {
     #menu {
       position: static;
       display: inline-block;
