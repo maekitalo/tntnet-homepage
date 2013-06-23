@@ -1,16 +1,16 @@
 Development
 ===========
 
-The source code for development can be found ag github.
+Git on github is used for development. You can check out the latest versions using:
 
 Tntnet
 ------
-[tntnet on github](https://github.com/maekitalo/tntnet)
+ * git clone [https://github.com/maekitalo/tntnet](https://github.com/maekitalo/tntnet)
 
 Cxxtools
 --------
-[cxxtools on github](https://github.com/maekitalo/cxxtools)
+ * git clone [https://github.com/maekitalo/cxxtools](https://github.com/maekitalo/cxxtools)
 
 Tntdb
 -----
-[tntdb on github](https://github.com/maekitalo/tntdb)
+ * git clone [https://github.com/maekitalo/tntdb](https://github.com/maekitalo/tntdb)
