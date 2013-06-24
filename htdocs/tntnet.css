@@ -70,7 +70,7 @@ body {
 }
 
 .nav .header {
-    color: #ff7600;
+    color: #0076ff;
     font-weight: bold;
 }
 
@@ -103,9 +103,9 @@ body {
 
 #content pre {
     padding: 8px;
-    background-color: #eec;
+    background-color: #bcf;
     color: #222;
-    border: 1px solid #ff7600;
+    border: 1px solid #0076ff;
     white-space: pre-wrap;
 }
 
@@ -127,7 +127,7 @@ body {
 .news h1 {
     font-size: 120%;
     background-color: #eee;
-    color: #ff7600;
+    color: #0076ff;
     padding: 5px;
 }
 
@@ -142,7 +142,7 @@ body {
     #header a {
       top: 15px;
       font-size: 18px;
-      left: 80px;
+      left: 110px;
     }
     #header {
         height: 30px;
