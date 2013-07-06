@@ -103,7 +103,7 @@ body {
 
 #content pre {
     padding: 8px;
-    background-color: #bcf;
+    background-color: #CCDDFF;
     color: #222;
     border: 1px solid #0076ff;
     white-space: pre-wrap;
@@ -133,6 +133,56 @@ body {
 
 .news p {
     padding-left: 5px;
+}
+
+.apidoc .tablist {
+    border-bottom: 1px solid #4076ff;
+}
+
+.apidoc .tablist li {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #4076ff;
+    border-bottom: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.apidoc .tablist a {
+    font-weight: bold;
+    color: #0076ff;
+    text-decoration: none;
+}
+
+.apidoc .tablist a:visited span {
+    color: #0076ff;
+    background-color: #ff0000;
+}
+
+.apidoc .tablist .current {
+    background-color: #DDEEFF;
+}
+
+.memproto {
+    white-space: pre-wrap;
+    border: 1px solid #4076ff;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 6px 0;
+    font-weight: bold;
+    font-size: 120%;
+    background-color: #CCDDFF;
+}
+
+.fragment {
+    padding: 6px;
+    background-color: #F0F0F0;
+    color: #222;
+    border: 1px solid #4076ff;
+    white-space: pre-wrap;
+    margin-left: 20px;
 }
 
 @media (max-width: 512px) {
