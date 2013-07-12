@@ -1,5 +1,6 @@
 AC_INIT(tntnet-homepage, 0.1, [Tommi Maekitalo <tommi@tntnet.org>])
 AM_INIT_AUTOMAKE
+LT_INIT([disable-static])
 
 abi_current=0
 abi_revision=0
@@ -7,6 +8,7 @@ abi_age=0
 sonumber=${abi_current}:${abi_revision}:${abi_age}
 AC_SUBST(sonumber)
 
+AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_HEADERS([lib/config.h])
 AC_CONFIG_SRCDIR([lib/tnthp/markdown.cpp])
 
@@ -22,32 +24,10 @@ AC_CHECK_HEADER([tnt/tntnet.h], , AC_MSG_ERROR([tntnet headers not found]))
 AC_CHECK_HEADER([boost/regex.h], , AC_MSG_ERROR([boost regex headers not found]))
 AC_CHECK_PROGS(ECPPC, [ecppc])
 
-AC_DEFUN([DOXYGEN_SRC_DIR], [
-
-  AC_ARG_WITH(
-    [$1],
-    AS_HELP_STRING([--with-$1=directory],
-                   [sets source directory of $1 (default: $srcdir/../$1)]),
-    [$2=$withval],
-    [$2=$srcdir/../$1])
-
-  doxysrcdir=`eval echo \$$2`
-  AC_CHECK_FILE($doxysrcdir/$3,, AC_MSG_ERROR([$1 headers not found]))
-  AC_SUBST($2)
-
-])
-
 DOXYGEN_SRC_DIR([cxxtools], [cxxtoolsdir], [include/cxxtools/arg.h])
 DOXYGEN_SRC_DIR([tntnet], [tntnetdir], [framework/common/tnt/tntnet.h])
 DOXYGEN_SRC_DIR([tntdb], [tntdbdir], [include/tntdb/connect.h])
-dnl AC_ARG_WITH(
-dnl   [cxxtools],
-dnl   AS_HELP_STRING([--with-cxxtools=directory],
-dnl                  [sets source directory of cxxtools (default: ../cxxtools)])
-dnl   [cxxtoolsdir=$withval],
-dnl   [cxxtoolsdir=../cxxtools])
-dnl AC_CHECK_FILE([$cxxtoolsdir/include/cxxtools/arg.h],, AC_MSG_ERROR([cxxtools headers not found])
-dnl AC_SUBST(cxxtoolsdir)
+AC_CONFIG_COMMANDS([mkdir], [$MKDIR_P htdocs/howto])
 
 AC_CONFIG_FILES([Makefile
                  include/Makefile

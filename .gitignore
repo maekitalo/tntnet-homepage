@@ -10,7 +10,6 @@ Makefile
 /depcomp
 /install-sh
 /ltmain.sh
-/m4/
 /missing
 /config.log
 /config.status
