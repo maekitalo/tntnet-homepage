@@ -6,7 +6,6 @@ html {
 
 /* Main body */
 body {
-    background: #eee;
     color: #404040;
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -164,16 +163,15 @@ body {
 }
 
 .memproto {
-    white-space: pre-wrap;
-    border: 1px solid #4076ff;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 6px 0;
-    font-weight: bold;
-    font-size: 120%;
+    border: 1px solid #0076ff;
+    border-radius: 6px;
+    padding: 3px;
     background-color: #CCDDFF;
+}
+
+td.memname {
+    color: #0076ff;
+    font-weight: bold;
 }
 
 .fragment {
@@ -181,8 +179,9 @@ body {
     background-color: #F0F0F0;
     color: #222;
     border: 1px solid #4076ff;
-    white-space: pre-wrap;
     margin-left: 20px;
+    margin-bottom: 20px;
+    font-family: monospace;
 }
 
 @media (max-width: 512px) {
