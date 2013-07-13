@@ -182,6 +182,11 @@ td.memname {
     margin-left: 20px;
     margin-bottom: 20px;
     font-family: monospace;
+    white-space: pre-wrap;
+}
+
+.fragment .line {
+    display: inline;
 }
 
 @media (max-width: 512px) {
