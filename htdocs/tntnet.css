@@ -42,15 +42,25 @@ body {
 
 #header a {
     position: absolute;
-    top: 25px;
-    left: 22%;
-    font-size: 32px;
-    color: black;
+    top: 8px;
+    left: 20%;
+    font-size: xx-large;
+    font-weight: bold;
     text-decoration: none;
+    color: #6d6d6d;
 }
 
 #header a:visited {
-    color: black;
+    color: #6d6d6d;
+}
+
+#subheader {
+    position: absolute;
+    top: 45px;
+    left: 20%;
+    font-size: large;
+    font-weight: bold;
+    color: #0076ff;
 }
 
 /* Main menu */
@@ -189,23 +199,52 @@ td.memname {
     display: inline;
 }
 
-@media (max-width: 512px) {
+@media (max-width: 320px) {
+    #logo {
+        height: 30px;
+    }
+    #header a {
+      top: 12px;
+      font-size: 14px;
+      left: 85px;
+    }
+    #header {
+        height: 30px;
+    }
+    #subheader {
+      left: 85px;
+      top: 30px;
+      font-size: 10px;
+    }
+
+}
+
+@media (min-width: 321px) and (max-width: 512px) {
     #logo {
         height: 40px;
     }
     #header a {
-      top: 15px;
+      top: 12px;
       font-size: 18px;
       left: 110px;
     }
     #header {
         height: 30px;
     }
+    #subheader {
+      left: 110px;
+      top: 35px;
+      font-size: 14px;
+    }
 
 }
+
 @media (min-width: 513px) and (max-width: 768px) {
     #header a {
-      left: 150px;
+      left: 148px;
+    }
+    #subheader {
+      left: 148px;
     }
 }
 @media (max-width: 768px) {
