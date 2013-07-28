@@ -30,8 +30,8 @@
 
         <ul class="nav">
           <li class="header">Documentation</li>
-          <li><a href="/quick-start-guide.html">Quick start guide</a></li>
-          <li><a href="/man.html">Man pages</a></li>
+          <li><a href="/quick-start-guide.html">Tntnet quick start guide</a></li>
+          <li><a href="/man.html">Tntnet man pages</a></li>
           <li><a href="/apidoc/html/index.html">Api documentation</a></li>
           <li><a href="/howto.html">Howto</a></li>
         </ul>
