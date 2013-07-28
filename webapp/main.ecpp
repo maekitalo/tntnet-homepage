@@ -16,7 +16,7 @@
 
       <div id="header">
         <a href="/">The Tntnet project</a>
-        <div id="subheader">C++ dynamite for the web</div>
+        <span id="subheader">C++ dynamite for the web</span>
         <img id="logo" src="/tntnet.png" alt="Tntnet logo">
       </div>
 
