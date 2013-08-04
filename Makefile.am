@@ -33,6 +33,6 @@ htdocs/howto/static-howto.markdown:
 htdocs/howto/tntdb.markdown:
 	cp @tntdbdir@/doc/tntdb.markdown htdocs/howto/tntdb.markdown
 
-htdocs/upload-howto.markdown:
-	cp @tntnetdir@/doc/upload-howto.markdown htdocs/upload-howto.markdown
+htdocs/howto/upload-howto.markdown:
+	cp @tntnetdir@/doc/upload-howto.markdown htdocs/howto/upload-howto.markdown
 
