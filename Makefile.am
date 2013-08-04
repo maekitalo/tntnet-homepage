@@ -9,7 +9,8 @@ noinst_DATA =  \
 	htdocs/howto/logging-howto.markdown \
 	htdocs/howto/rpc-howto.markdown \
 	htdocs/howto/static-howto.markdown \
-	htdocs/howto/tntdb.markdown
+	htdocs/howto/tntdb.markdown \
+	htdocs/howto/upload-howto.markdown
 
 htdocs/quick-start-guide.markdown:
 	cp @tntnetdir@/doc/quick-start-guide.markdown htdocs/quick-start-guide.markdown
@@ -31,3 +32,7 @@ htdocs/howto/static-howto.markdown:
 
 htdocs/howto/tntdb.markdown:
 	cp @tntdbdir@/doc/tntdb.markdown htdocs/howto/tntdb.markdown
+
+htdocs/upload-howto.markdown:
+	cp @tntnetdir@/doc/upload-howto.markdown htdocs/upload-howto.markdown
+
