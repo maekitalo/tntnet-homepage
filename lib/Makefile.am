@@ -8,3 +8,6 @@ libtntnet_homepage_la_SOURCES = \
 	markdown/markdown.cpp \
 	markdown/markdown-tokens.cpp \
 	tnthp/markdown.cpp
+
+EXTRA_DIST = \
+	markdown/LICENSE.TXT
