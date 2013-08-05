@@ -1,0 +1,27 @@
+<%pre>
+#include <cxxtools/directory.h>
+#include <cxxtools/regex.h>
+#include <fstream>
+</%pre>
+<%cpp>
+
+cxxtools::Directory dir("htdocs/howto");
+static cxxtools::Regex re("htdocs/howto/(.*).markdown");
+
+</%cpp>
+<h1>Howto</h1>
+
+<%cpp>
+for (cxxtools::Directory::const_iterator it = dir.begin(); it != dir.end(); ++it)
+{
+  std::ifstream in(it.path().c_str());
+  std::string title;
+  cxxtools::RegexSMatch m;
+  if (re.match(it.path(), m) && std::getline(in, title))
+  {
+</%cpp>
+<a href="howto/<$ m[1] $>.html"><$ title $></a><br>
+<%cpp>
+  }
+}
+</%cpp>
