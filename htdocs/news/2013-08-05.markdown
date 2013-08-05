@@ -1,0 +1,12 @@
+new homepage
+============
+
+We have a new homepage. Thank you for those who helped creating this.
+
+The homepage not only runs with tntnet but also uses tntnet technology. This
+makes it much easier to maintain the content.
+
+We had the doxygen generated API documentation and some howtos. Now we have also
+the man pages online. The man pages have been the actual reference for tntnet
+for quite some time but they were difficult to find. Now I hope, that people
+will get informations about tntnet easier and faster.
