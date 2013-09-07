@@ -106,7 +106,7 @@ the transport protocol here.
         // Json rpc
 
         // for the json rpc server we define a json server
-        cxxtools::json::RpcServer jsonServer(loop, ip, jport);
+        cxxtools::json::RpcServer jsonServer(loop, ip, port);
 
         // and register the functions in the server
         jsonServer.registerFunction("echo", echo);
