@@ -130,3 +130,13 @@ Most probably there are unresolved external symbols. Maybe you forgot to link th
 
 Try "ldd -r myapplication.so". This checks for unresolved symbols. If you get an error message, you also get a hint, what may be missing
 
+### When installing cxxtools and tntnet from the sources, I get an error, that libcxxtools.so.x can't be loaded
+
+Well, you have to update the cache of the dynamic linker by running `ldconfig`
+as root.
+
+Make also sure, that the path, where you installed cxxtools, tntnet and tntdb to
+is found by the runtime linker. The default path for the libraries is
+`/usr/local/lib`. You may need to add the path to your /etc/ld.conf or create a
+file in `/etc/ld.conf.d/`. On fedora I create a file /etc/ld.conf.d/local.conf
+with the content `/usr/local/lib` and run `ldconfig` as root then.
