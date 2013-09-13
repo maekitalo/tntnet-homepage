@@ -6,6 +6,8 @@ noinst_DATA =  \
 	htdocs/quick-start-guide.markdown \
 	htdocs/howto/argument-parsing-howto.markdown \
 	htdocs/howto/json-howto.markdown \
+	htdocs/howto/jsonquick-howto.markdown \
+	htdocs/howto/propertiesquick-howto.markdown \
 	htdocs/howto/logging-howto.markdown \
 	htdocs/howto/rpc-howto.markdown \
 	htdocs/howto/static-howto.markdown \
@@ -20,6 +22,12 @@ htdocs/howto/argument-parsing-howto.markdown:
 
 htdocs/howto/json-howto.markdown:
 	cp @cxxtoolsdir@/doc/json-howto.markdown htdocs/howto/json-howto.markdown
+
+htdocs/howto/jsonquick-howto.markdown:
+	cp @cxxtoolsdir@/doc/jsonquick-howto.markdown htdocs/howto/jsonquick-howto.markdown
+
+htdocs/howto/propertiesquick-howto.markdown:
+	cp @cxxtoolsdir@/doc/propertiesquick-howto.markdown htdocs/howto/propertiesquick-howto.markdown
 
 htdocs/howto/logging-howto.markdown:
 	cp @cxxtoolsdir@/doc/logging-howto.markdown htdocs/howto/logging-howto.markdown
