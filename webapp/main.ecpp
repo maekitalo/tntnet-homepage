@@ -8,6 +8,7 @@
     <title>Tntnet homepage</title>
     <meta charset="utf-8">
     <meta name="description" content="all about the tntnet project">
+    <meta name="keywords" content="C++ web webapplication development">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/tntnet.css" type="text/css">
   </head>
