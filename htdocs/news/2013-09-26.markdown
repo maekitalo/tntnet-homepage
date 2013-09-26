@@ -1,0 +1,6 @@
+Speech about tntnet on Youtube
+==============================
+
+On September 20th 2013 Tommi held a speech about tntnet at the Kieler Open
+Source und Linux Tage in german. The speech can be found on
+[youtube](http://www.youtube.com/watch?v=q3jmzgsWfUc)
