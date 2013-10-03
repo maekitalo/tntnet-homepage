@@ -171,6 +171,13 @@ body {
     background-color: #DDEEFF;
 }
 
+.title {
+    font-size: 120%;
+    color: #0076ff;
+    padding: 5px;
+    font-weight: bold;
+}
+
 .memproto {
     border: 1px solid #0076ff;
     border-radius: 6px;
