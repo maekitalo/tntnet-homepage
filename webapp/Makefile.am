@@ -5,6 +5,7 @@ pkglib_LTLIBRARIES = tntnet-homepage.la
 
 ecppSources = \
 	howto.ecpp \
+	index.ecpp \
 	markdown.ecpp \
 	main.ecpp \
 	news.ecpp

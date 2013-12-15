@@ -12,7 +12,8 @@
       <url>^/$</url>
       <pathinfo>@top_srcdir@/htdocs/tntnet.markdown</pathinfo>
       <args>
-        <next>markdown</next>
+        <next>index</next>
+        <htdocs>htdocs</htdocs>
       </args>
     </mapping>
 
