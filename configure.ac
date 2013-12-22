@@ -18,9 +18,12 @@ AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
 
+AX_BOOST_BASE([1.35], , AC_MSG_ERROR([boost library not found]))
+AX_BOOST_REGEX
+
 AC_LANG(C++)
 AC_CHECK_HEADER([tnt/tntnet.h], , AC_MSG_ERROR([tntnet headers not found]))
-AC_CHECK_HEADER([boost/regex.h], , AC_MSG_ERROR([boost regex headers not found]))
+AC_CHECK_HEADER([boost/regex.hpp], , AC_MSG_ERROR([boost regex headers not found]))
 AC_CHECK_PROGS(ECPPC, [ecppc])
 
 DOXYGEN_SRC_DIR([cxxtools], [cxxtoolsdir], [include/cxxtools/arg.h])
