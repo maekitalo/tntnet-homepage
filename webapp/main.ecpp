@@ -16,9 +16,9 @@
     <div id="wrap">
 
       <div id="header">
-        <a href="/">The Tntnet project</a>
+        <a href="/" class="maintitle">The Tntnet project</a>
         <span id="subheader">C++ dynamite for the web</span>
-        <img id="logo" src="/tntnet.png" alt="Tntnet logo">
+        <a href="/"><img id="logo" src="/tntnet.png" alt="Tntnet logo"></a>
       </div>
 
       <div id="menu">
@@ -35,7 +35,7 @@
           <li><a href="/man.html">Man pages</a></li>
           <li><a href="/apidoc/html/index.html">Api documentation</a></li>
           <li><a href="/howto.html">Howto</a></li>
-          <li><a href="https://github.com/maekitalo/tntnet/tree/master/sdk/demos/">Demos at github</a></li>
+          <li><a href="https://github.com/maekitalo/tntnet/tree/master/sdk/demos/" target="_blank">Demos at github</a></li>
         </ul>
 
         <ul class="nav">
