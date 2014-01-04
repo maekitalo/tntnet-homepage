@@ -35,6 +35,7 @@
           <li><a href="/man.html">Man pages</a></li>
           <li><a href="/apidoc/html/index.html">Api documentation</a></li>
           <li><a href="/howto.html">Howto</a></li>
+          <li><a href="https://github.com/maekitalo/tntnet/tree/master/sdk/demos/">Demos at github</a></li>
         </ul>
 
         <ul class="nav">
