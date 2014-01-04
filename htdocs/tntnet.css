@@ -209,7 +209,7 @@ td.memname {
     #logo {
         height: 30px;
     }
-    #header a {
+    #header .maintitle {
       top: 12px;
       font-size: 14px;
       left: 85px;
@@ -229,7 +229,7 @@ td.memname {
     #logo {
         height: 40px;
     }
-    #header a {
+    #header .maintitle {
       top: 12px;
       font-size: 18px;
       left: 110px;
@@ -246,7 +246,7 @@ td.memname {
 }
 
 @media (min-width: 513px) and (max-width: 768px) {
-    #header a {
+    #header .maintitle {
       left: 148px;
     }
     #subheader {
