@@ -6,3 +6,4 @@ Today we publish bugfix releases. No new features were added.
 You can find details about the fixes in the release notes of
 [cxxtools 2.2.1](/download/cxxtools-2.2.1/Releasenotes-2.2.1.markdown) and
 [tntnet 2.2.1](/download/tntnet-2.2.1/Releasenotes-2.2.1.markdown).
+The packages can be found on the [download page](/download.html)
