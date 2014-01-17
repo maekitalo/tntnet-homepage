@@ -6,11 +6,11 @@ stable versions
 
 ### tntnet
  * [the source of tntnet 2.2.1](download/tntnet-2.2.1.tar.gz)
- * [release notes](releasenotes-tntnet-2-2.html)
+ * [release notes](download/tntnet-2.2.1/Releasenotes-2.2.1.markdown)
 
 ### cxxtools
  * [the source of cxxtools 2.2.1](download/cxxtools-2.2.1.tar.gz)
- * [release notes](releasenotes-cxxtools-2-2.html)
+ * [release notes](download/cxxtools-2.2.1/Releasenotes-2.2.1.markdown)
 
 ### tntdb
  * [the source of tntdb 1.3](download/tntdb-1.3.tar.gz)
