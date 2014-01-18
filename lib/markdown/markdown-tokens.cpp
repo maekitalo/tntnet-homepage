@@ -365,7 +365,7 @@ std::string RawText::_processLinksImagesAndTags(const std::string &src,
 	//   "|(?:(!?)\\[(.+?)\\](?: *\\[(.*?)\\])?)"
 	//
 	static const boost::regex cExpression(
-		"(?:(!?)\\[([^\\]]+?)\\] *\\(([^\\(]*(?:\\(.*?\\).*?)*?)\\))" // Inline link or image
+		"(?:(!?)\\[([^\\]]+?)\\] *\\(([^\\()]*(?:\\(.*?\\).*?)*?)\\))" // Inline link or image
 		"|(?:(!?)\\[((?:[^]]*?\\[.*?\\].*?)|(?:.+?))\\](?: *\\[(.*?)\\])?)" // Reference link or image
 		"|(?:<(/?([a-zA-Z0-9]+).*?)>)" // potential HTML tag or auto-link
 	);
