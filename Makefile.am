@@ -6,6 +6,7 @@ noinst_DATA =  \
 	htdocs/quick-start-guide.markdown \
 	htdocs/howto/argument-parsing-howto.markdown \
 	htdocs/howto/binaryrpc-howto.markdown \
+	htdocs/howto/jquery-howto.markdown \
 	htdocs/howto/json-howto.markdown \
 	htdocs/howto/jsonquick-howto.markdown \
 	htdocs/howto/jsonrpc-howto.markdown \
@@ -43,6 +44,9 @@ htdocs/howto/logging-howto.markdown: @cxxtoolsdir@/doc/logging-howto.markdown
 
 htdocs/howto/rpc-howto.markdown: @cxxtoolsdir@/doc/rpc-howto.markdown
 	cp @cxxtoolsdir@/doc/rpc-howto.markdown htdocs/howto/rpc-howto.markdown
+
+htdocs/howto/jquery-howto.markdown: @tntnetdir@/doc/jquery-howto.markdown
+	cp @tntnetdir@/doc/jquery-howto.markdown htdocs/howto/jquery-howto.markdown
 
 htdocs/howto/static-howto.markdown: @tntnetdir@/doc/static-howto.markdown
 	cp @tntnetdir@/doc/static-howto.markdown htdocs/howto/static-howto.markdown
