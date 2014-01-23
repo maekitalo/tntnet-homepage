@@ -1,6 +1,6 @@
 Article about tntnet in german Linux Magazin
 ============================================
 
-The german [Linux Magazin](http://www.linux-magazin.de/) published a article about tntnet in his 1/14 issue.
+The german [Linux Magazin](http://www.linux-magazin.de/) published an article about tntnet in his 1/14 issue.
 The article was written by Olaf Radicke and Tommi Mäkitalo.
 You can find the article at [http://www.linux-magazin.de/Ausgaben/2014/01/Tntnet](http://www.linux-magazin.de/Ausgaben/2014/01/Tntnet).
