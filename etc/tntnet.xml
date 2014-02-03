@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tntnet>
+  <mappings>
+    <mapurl>
+      <url>^/download/(.*)$</url>
+      <target>static@tntnet</target>
+      <pathinfo>/home/tommi/download/$1</pathinfo>
+    </mapurl>
+  </mappings>
+
+  <virtualhosts>
+    <virtualhost>
+      <hostname>old</hostname>
+      <mappings>
+	<mapurl>
+	  <url>^/$</url>
+	  <target>static@tntnet</target>
+	  <pathinfo>/home/tommi/www.tntnet.org/htdocs/index.html</pathinfo>
+	</mapurl>
+	<mapurl>
+	  <url>^/(.*)$</url>
+	  <target>static@tntnet</target>
+	  <pathinfo>/home/tommi/www.tntnet.org/htdocs/$1</pathinfo>
+	</mapurl>
+	<mapurl>
+	  <url>^/download/(.*)$</url>
+	  <target>static@tntnet</target>
+	  <pathinfo>/home/tommi/download/$1</pathinfo>
+	</mapurl>
+      </mappings>
+    </virtualhost>
+    <virtualhost>
+      <hostname>^www\.tntnet\.org$</hostname>
+        <mappings>
+          <mapping>
+	    <url>^/webalizer/(.*)$</url>
+	    <target>static@tntnet</target>
+	    <pathinfo>/home/tommi/webalizer/$1</pathinfo>
+	  </mapurl>
+          <mapping>
+	    <url>^/webalizer/$</url>
+	    <target>static@tntnet</target>
+	    <pathinfo>/home/tommi/webalizer/index.html</pathinfo>
+	  </mapurl>
+
+          <!-- start page -->
+          <mapping>
+            <target>main@tntnet-homepage</target>
+            <url>^/$</url>
+            <pathinfo>/home/tommi/wwwnew.tntnet.org/htdocs/overview.markdown</pathinfo>
+            <args>
+              <htdocs>/home/tommi/wwwnew.tntnet.org/htdocs</htdocs>
+              <next>index</next>
+            </args>
+          </mapping>
+
+          <!-- lookup html pages in ecpp -->
+          <mapping>
+            <target>main@tntnet-homepage</target>
+            <url>^/(.*)\.html$</url>
+            <args>
+              <next>$1</next>
+              <htdocs>/home/tommi/wwwnew.tntnet.org/htdocs</htdocs>
+            </args>
+          </mapping>
+
+          <!-- lookup markdown pages -->
+          <mapping>
+            <target>main@tntnet-homepage</target>
+            <url>^/(.*)\.html$</url>
+            <pathinfo>/home/tommi/wwwnew.tntnet.org/htdocs/$1.markdown</pathinfo>
+            <args>
+              <next>markdown</next>
+            </args>
+          </mapping>
+          <mapping>
+            <target>main@tntnet-homepage</target>
+            <url>^/download/(.*)\.html$</url>
+            <pathinfo>/home/tommi/download/$1.markdown</pathinfo>
+            <args>
+              <next>markdown</next>
+            </args>
+          </mapping>
+
+          <!-- lookup html pages -->
+          <mapping>
+            <target>main@tntnet-homepage</target>
+            <url>^/(.*)\.html$</url>
+            <pathinfo>/home/tommi/wwwnew.tntnet.org/htdocs/$1.html</pathinfo>
+            <args>
+              <next>static@tntnet</next>
+            </args>
+          </mapping>
+
+          <!-- lookup static pages from htdocs -->
+          <mapping>
+            <target>static@tntnet</target>
+            <url>^/(.+)</url>
+            <pathinfo>/home/tommi/wwwnew.tntnet.org/htdocs/$1</pathinfo>
+          </mapping>
+
+          <!--<mapping>
+	    <url>^/download/(.*)$</url>
+	    <target>static@tntnet</target>
+	    <pathinfo>/home/tommi/download/$1</pathinfo>
+	  </mapurl>-->
+        </mappings>
+    </virtualhost>
+    <virtualhost>
+      <hostname>^tntnet\.org$</hostname>
+      <mappings>
+	<mapurl>
+	  <url>^/(.*)</url>
+	  <target>redirect@tntnet</target>
+	  <pathinfo>http://www.tntnet.org/$1</pathinfo>
+          <args>
+            <type>permanently</type>
+          </args>
+	</mapurl>
+      </mappings>
+    </virtualhost>
+  </virtualhosts>
+
+  <listeners>
+    <listener>
+      <ip>195.114.99.164</ip>
+      <port>80</port>
+    </listener>
+  </listeners>
+
+  <daemon>1</daemon>
+  <user>www-data</user>
+  <group>www-data</group>
+  <pidfile>/var/run/tntnet.pid</pidfile>
+  <!--<documentRoot>/var/www</documentRoot>-->
+  <compPath>
+    <entry>/usr/local/lib/tntnet</entry>
+    <entry>/usr/local/lib/tntnet-homepage</entry>
+  </compPath>
+  <logging>
+    <rootlogger>INFO</rootlogger>
+    <loggers>
+      <logger>
+        <category>tntnet</category>
+        <level>INFO</level>
+      </logger>
+    </loggers>
+    <file>/var/log/tntnet/tntnet.log</file>
+    <maxfilesize>1MB</maxfilesize>
+    <maxbackupindex>2</maxbackupindex>
+    <!-- <host>localhost:1234</host> --> <!--  # send log-messages with udp -->
+  </logging>
+  <mimeDb>/usr/local/etc/tntnet/mime.types</mimeDb>
+  <accessLog>/var/log/tntnet/access.log</accessLog>
+</tntnet>

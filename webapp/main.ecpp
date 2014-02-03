@@ -24,7 +24,8 @@
       <div id="menu">
         <ul class="nav">
           <li class="header">Overview</li>
-          <li><a href="/">Tntnet</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/tntnet.html">Tntnet</a></li>
           <li><a href="/cxxtools.html">Cxxtools</a></li>
           <li><a href="/tntdb.html">Tntdb</a></li>
         </ul>
