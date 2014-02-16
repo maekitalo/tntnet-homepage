@@ -205,6 +205,17 @@ td.memname {
     display: inline;
 }
 
+footer {
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    text-align: right;
+
+}
+footer .fmenu {
+    text-align: right;
+}
+
 @media (max-width: 320px) {
     #logo {
         height: 30px;

@@ -24,3 +24,5 @@ stamp-h1
 lib/config.h
 lib/config.h.in
 /tntnet.xml
+htdocs/apidoc/
+htdocs/howto/
