@@ -13,6 +13,7 @@ noinst_DATA =  \
 	htdocs/howto/propertiesquick-howto.markdown \
 	htdocs/howto/logging-howto.markdown \
 	htdocs/howto/rpc-howto.markdown \
+	htdocs/howto/serialization-howto.markdown \
 	htdocs/howto/static-howto.markdown \
 	htdocs/howto/tntdb.markdown \
 	htdocs/howto/upload-howto.markdown \
@@ -38,6 +39,9 @@ htdocs/howto/jsonrpc-howto.markdown: @cxxtoolsdir@/doc/jsonrpc-howto.markdown
 
 htdocs/howto/propertiesquick-howto.markdown: @cxxtoolsdir@/doc/propertiesquick-howto.markdown
 	cp @cxxtoolsdir@/doc/propertiesquick-howto.markdown htdocs/howto/propertiesquick-howto.markdown
+
+htdocs/howto/serialization-howto.markdown: @cxxtoolsdir@/doc/serialization-howto.markdown
+	cp @cxxtoolsdir@/doc/serialization-howto.markdown htdocs/howto/serialization-howto.markdown
 
 htdocs/howto/logging-howto.markdown: @cxxtoolsdir@/doc/logging-howto.markdown
 	cp @cxxtoolsdir@/doc/logging-howto.markdown htdocs/howto/logging-howto.markdown
