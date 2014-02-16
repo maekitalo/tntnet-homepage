@@ -55,16 +55,16 @@
       </div>
 
     </div>
-  </body>
-  <footer>
-    <span>Copyright &copy; 2004&minus;2014 by</span>
-    <a href="http://www.tntnet.org">Tntnet</a>
+    <footer>
+      <span>Copyright &copy; 2004&minus;2014 by</span>
+      <a href="http://www.tntnet.org">Tntnet</a>
 
-    <div class="fmenu">
-      <a href="#">Support</a>
-      <span>|</span>
-      <a href="#">Impressum</a>
-    </div>
-  </footer>
+      <div class="fmenu">
+        <a href="#">Support</a>
+        <span>|</span>
+        <a href="#">Impressum</a>
+      </div>
+    </footer>
+  </body>
 </html>
 % s.commit();
