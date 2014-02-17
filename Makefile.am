@@ -6,6 +6,7 @@ noinst_DATA =  \
 	htdocs/quick-start-guide.markdown \
 	htdocs/howto/argument-parsing-howto.markdown \
 	htdocs/howto/binaryrpc-howto.markdown \
+	htdocs/howto/csv-howto.markdown \
 	htdocs/howto/jquery-howto.markdown \
 	htdocs/howto/json-howto.markdown \
 	htdocs/howto/jsonquick-howto.markdown \
@@ -27,6 +28,9 @@ htdocs/howto/argument-parsing-howto.markdown: @cxxtoolsdir@/doc/argument-parsing
 
 htdocs/howto/binaryrpc-howto.markdown: @cxxtoolsdir@/doc/binaryrpc-howto.markdown
 	cp @cxxtoolsdir@/doc/binaryrpc-howto.markdown htdocs/howto/binaryrpc-howto.markdown
+
+htdocs/howto/csv-howto.markdown: @cxxtoolsdir@/doc/csv-howto.markdown
+	cp @cxxtoolsdir@/doc/csv-howto.markdown htdocs/howto/csv-howto.markdown
 
 htdocs/howto/json-howto.markdown: @cxxtoolsdir@/doc/json-howto.markdown
 	cp @cxxtoolsdir@/doc/json-howto.markdown htdocs/howto/json-howto.markdown
