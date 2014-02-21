@@ -59,9 +59,9 @@
         <a href="http://www.tntnet.org">Tntnet</a>
 
         <div class="fmenu">
-          <a href="#">Support</a>
+          <a href="/support.html">Support</a>
           <span>|</span>
-          <a href="#">Impressum</a>
+          <a href="/imprint.html">Imprint</a>
         </div>
       </footer>
     </div>
