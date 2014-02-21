@@ -6,7 +6,7 @@ Imprint
     65779 Kelkheim
     Germany
 
-    Phone: 0174 -3160646
+    Phone: +49 174 3160646
     Mail: tommi <at> tntnet <dot> org
 
 Editorial responsibility
