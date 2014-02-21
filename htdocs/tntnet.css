@@ -23,7 +23,8 @@ body {
     top: -10px;
     left: 0;
     right: 0;
-    min-height: 800px;
+    min-height: 620px;
+    padding-bottom: 30px;
 }
 
 /* Main header */
@@ -208,7 +209,7 @@ td.memname {
 footer {
     width: 100%;
     bottom: 0;
-    position: relative;
+    position: absolute;
     text-align: right;
 
 }
