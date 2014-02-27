@@ -3,14 +3,14 @@
 </%pre>
 % tnt::Savepoint s(reply);
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Tntnet homepage</title>
     <meta charset="utf-8">
-    <meta name="description" content="all about the tntnet project">
-    <meta name="keywords" content="C++ web webapplication development framework json xmlrpc xml-rpc jsonrpc json-rpc serialization http database postgresql sqlite mysql oracle tntnet tntdb cxxtools">
+    <meta name="author" content="Tommi Maekitalo" />
+    <meta name="description" content="Fast web server for high performance C++ web applications">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/tntnet.css" type="text/css">
+    <title>Tntnet homepage</title>
   </head>
   <body>
     <div id="wrap">
