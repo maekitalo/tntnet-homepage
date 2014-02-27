@@ -1,10 +1,12 @@
 Using Code::Blocks as IDE for Tntnet
 ====================================
 
-*Author*: Carsten Arnholm, January 2014
-<br>*License*: Tntnet (LGPL with template extension)
+*Carsten Arnholm*
 
+*Updated, January 2014*
 
+Introduction
+------------
 In this tutorial, we explain the basics of using the Code::Blocks as the IDE (Integrated Development Environment) for projects using Tntnet.
 
 
