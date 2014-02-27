@@ -6,7 +6,7 @@ ask us. We are friendly and have the technical knowhow.
 
 Our services:
 
- - Introduction to TNTNET
+ - Introduction to Tntnet
  - Project Consulting
  - Training
  - Lectures
