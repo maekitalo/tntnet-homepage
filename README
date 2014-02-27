@@ -1,4 +1,4 @@
-This is the web application which runs www.tntnet.org (not yet - will be soon)
+This is the web application which runs www.tntnet.org.
 
 The project is built using autotools. Run ./autogen.sh; ./configure; make to bild the project.
 
