@@ -40,6 +40,20 @@ TOPIC_3
 
 write here ...
 
+#### Lists
+Dot List
+
+* item 1
+  * item 2 are nest with 2 spaces from left
+* item 3
+
+Number List
+
+1. item 1
+1.1 item 1.1
+2. item 2
+3. item 3
+
 #### Links
 This is the Tntnet homepage <http://www.tntnet.org/> .
 This is the [Tntnet] homepage too!
