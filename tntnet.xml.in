@@ -140,6 +140,6 @@
   <!-- <maxBackgroundTasks>5</maxBackgroundTasks> -->
 
   <compPath>
-    <entry>@top_srcdir@/webapp/.libs</entry>
+    <entry>@top_builddir@/webapp/.libs</entry>
   </compPath>
 </tntnet>
