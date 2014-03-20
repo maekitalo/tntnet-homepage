@@ -12,9 +12,10 @@ Updated April 2014
  * [1.3 - How is Tntnet licensed?](#introduction-3)
  * [1.4 - How does Tntnet work?](#introduction-4)
  * [1.5 - Which operating systems does Tntnet run on?](#introduction-5)
- * [1.6 - Who developed Tntnet?](#introduction-6)
- * [1.7 - When should I use Tntnet?](#introduction-7)
- * [1.8 - Where can I get Tntnet?](#introduction-8)
+ * [1.6 - Does tntnet run under Windows?](#introduction-6)
+ * [1.7 - Who developed Tntnet?](#introduction-7)
+ * [1.8 - When should I use Tntnet?](#introduction-8)
+ * [1.9 - Where can I get Tntnet?](#introduction-9)
 
 * [2 - Development](#development)
  * [2.1 - What are the first steps?](#development-1)
@@ -78,13 +79,20 @@ Tntnet is usable in all POSIX compliant systems. It is known to work on various 
 [back to top](#top)
 
 <a name="introduction-6"></a>
+## 1.6 - Does tntnet run under Windows?
+
+No. Tntnet do not run under Windows. Until now nobody was willing to port tntnet to Windows. If someone want to port it to Windows, we'll love to support it.
+
+[back to top](#top)
+
+<a name="introduction-7"></a>
 ## 1.7 - Who developed Tntnet?
 
 Tntnet is developed and maintained by Tommi Mäkitalo, the main developer and some contributors under open source development rules.
 
 [back to top](#top)
 
-<a name="introduction-7"></a>
+<a name="introduction-8"></a>
 ## 1.8 - When should I use Tntnet?
 
 If your web application/service needs:
@@ -97,7 +105,7 @@ If your web application/service needs:
 
 [back to top](#top)
 
-<a name="introduction-8"></a>
+<a name="introduction-9"></a>
 ## 1.9 - Where can I get Tntnet?
 
 Currently there are three ways to get Tntnet and its components.
