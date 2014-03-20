@@ -80,7 +80,7 @@ Tntnet is usable in all POSIX compliant systems. It is known to work on various 
 <a name="introduction-6"></a>
 ## 1.7 - Who developed Tntnet?
 
-Tntnet is developed and maintained by Tommi M&auml;kitalo, the main developer and some contributors under open source development rules.
+Tntnet is developed and maintained by Tommi Mäkitalo, the main developer and some contributors under open source development rules.
 
 [back to top](#top)
 
