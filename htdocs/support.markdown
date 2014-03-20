@@ -11,4 +11,4 @@ Our services:
  - Training
  - Lectures
 
-Contact us for details at info@tntnet.org.
+Contact us for details at info <at> tntnet <dot> org.

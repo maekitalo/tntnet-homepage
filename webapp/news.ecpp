@@ -37,7 +37,7 @@ for (unsigned n = 0; n < files.size() && (count == 0 || n < count); ++n)
   if (!re.match(files[n], m))
     continue;
 
-  reply.out() << "<div class='news'><span class='newsdate'>" << m[1] << "</span>\n";
+  reply.out() << "<div class='news'>\n<h1 class='newsdate'>" << m[1] << "</h1>\n";
   std::ifstream in(files[n].c_str());
   markdown::Document doc;
   doc.read(in);

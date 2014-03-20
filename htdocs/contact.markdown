@@ -11,10 +11,10 @@ The mailing list is also accessible by web via gmane service at <a href="http://
 IRC
 ---
 
-Discussion about Tntnet is done at freenode-channel #tntnet.
+Discussion about Tntnet is done at <a href="http://www.freenode.net" target="_blank">freenode</a>-channel `#tntnet` at `irc.freenode.net`.
 
 Main developer
 --------------
 
 Tommi Mäkitalo
-e-mail: tommi@tntnet.org 
+e-mail: tommi <at> tntnet <dot> org

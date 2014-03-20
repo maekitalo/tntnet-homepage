@@ -68,9 +68,17 @@ the *tntdb::connect* function.
       }
     }
 
-If anything gets wrong there, a exception of type *tntdb::Error* is thrown.
+If anything goes wrong there, an exception of type *tntdb::Error* is thrown.
+
+Features
+--------
+
+* API for SQL databases
+* Support for Postgresql, Sqlite, Mysql and Oracle
+* Connection cache, statement cache
+* Extensible type system
 
 Further reading
 ---------------
 
-To learn more about tntdb read [the tntdb howto](howto/tntdb.html)
+To learn more about Tntdb read [the Tntdb howto](howto/tntdb.html)

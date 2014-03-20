@@ -4,6 +4,19 @@ html {
     overflow-y: scroll;
 }
 
+a {
+    color: #0076FF;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #052577;
+}
+
+hr {
+    border: 1px solid #eee;
+}
+
 img {
     max-width: 100%;
 }
@@ -27,8 +40,8 @@ body {
     top: -10px;
     left: 0;
     right: 0;
-    min-height: 620px;
-    padding-bottom: 30px;
+    min-height: 590px;
+    padding-bottom: 50px;
 }
 
 /* Main header */
@@ -124,17 +137,18 @@ body {
 }
 
 #content a:visited {
-    color: #6d6d6d; /*#038;*/
+    color: #6d6d6d;
 }
 
+/* Content news */
 .news {
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    padding-top: 5px;
+    border: 0px solid #ccc;
+    margin-bottom: 50px;
 }
 
 .news .newsdate {
-    font-weight: bold;
+    background-color: #fff;
+    color: #555;
 }
 
 .news h1 {
@@ -148,6 +162,7 @@ body {
     padding-left: 5px;
 }
 
+/* Content api docu */
 .apidoc .tablist {
     border-bottom: 1px solid #4076ff;
 }
@@ -210,6 +225,7 @@ td.memname {
     display: inline;
 }
 
+/* Footer */
 footer {
     width: 100%;
     bottom: 0;
@@ -221,6 +237,7 @@ footer .fmenu {
     text-align: right;
 }
 
+/* Responsive layout */
 @media (max-width: 320px) {
     #logo {
         height: 30px;

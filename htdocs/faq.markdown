@@ -1,142 +1,184 @@
-FAQ
-===
+<a name="top"></a>
+Frequently Asked Questions (FAQ)
+================================
 
-Basics
-------
+Updated April 2014
 
-### Is tntnet stable?
-Tntnet has been in active development since 2003. Code quality is one of the main things, which was held in mind when tntnet was developed. It was used in several commercial applications with high demand for stability.
+- - -
 
-### Who uses tntnet?
+* [1 - Introduction](#introduction)
+ * [1.1 - What is Tntnet?](#introduction-1)
+ * [1.2 - What are the goals of Tntnet?](#introduction-2)
+ * [1.3 - How is Tntnet licensed?](#introduction-3)
+ * [1.4 - How does Tntnet work?](#introduction-4)
+ * [1.5 - Which operating systems does Tntnet run on?](#introduction-5)
+ * [1.6 - Who developed Tntnet?](#introduction-6)
+ * [1.7 - When should I use Tntnet?](#introduction-7)
+ * [1.8 - Where can I get Tntnet?](#introduction-8)
 
-Unfortunately there is no long list of known users of tntnet. We hope to get more users in the future.
+* [2 - Development](#development)
+ * [2.1 - What are the first steps?](#development-1)
+ * [2.2 - Where do I find the documentation?](#development-2)
+ * [2.3 - Where do I find an example application?](#development-3)
+ * [2.4 - Why does Tntnet use a template engine?](#development-4)
+ * [2.5 - Can I reuse my existing C++ code?](#development-5)
 
-Just to name some, here is a short list:
+* [3 - Contributing](#contributing)
+ * [3.1 - How can I contribute?](#contributing-1)
+ * [3.2 - Where can I find the source code?](#contributing-2)
+ * [3.3 - How do I report a bug or submit a patch?](#contributing-3)
 
-  * Deutsche Börse AG
-  * Indexium AG
-  * http://live.vdr-developer.org/
-  * http://www.openzim.org/
-  * http://www.hotspotcenter.de/
+- - -
 
-### Is tntnet fast?
+<a name="introduction"></a>
+1 - Introduction
+----------------
 
-Tntnet applications are compiled into native code at compile time. So they run with a minimum overhead with the fastest possible speed.
+<a name="introduction-1"></a>
+## 1.1 - What is Tntnet?
 
-Tntnet itself is multithreaded, so that requests are processed in parallel. It is also highly optimized for speed. Benchmarks has shown its excellent performance.
+Tntnet is a [web application framework](http://en.wikipedia.org/wiki/Web_application_framework) for C++.
 
-### Why do you use a template language instead of a servlet like interface?
+Here a short overview:
 
-When a web developer designs web sites, he writes html code. The task of the application developer in the tntnet world is to add application logic into the web pages. That is easily done by just adding the program logic using ecpp tags. There is no need to translate the actual html code produced from the designer into long lists of print statements or similar.
+- [Tntnet](tntnet.html) represents the base function for [web application server](http://en.wikipedia.org/wiki/Comparison_of_application_servers),  [web template system](http://en.wikipedia.org/wiki/Web_template_system). It can be used as application server or as a standalone application.
 
-### Do I need to recompile, when I change the content of my web site?
+- [Cxxtools](cxxtools.html) is a C++ library providing basic and advanced system and network functionalities.
 
-You need to recompile only if your application logic changes but not the content. Take for example a image browser. It may read images from the file system or a database. If you add images, the application will be able to serve the new images without recompile or restart. But if you change the navigation logic, you need to recompile your application. This should not happen that often.
+- [Tntdb](tntdb.html) is C++ library which makes it really easy and safe to access SQL database systems.
 
-### Can tntnet serve static pages?
+[back to top](#top)
 
-Tntnet has a standard component called static@tntnet, which can serve static pages.
+<a name="introduction-2"></a>
+## 1.2 - What are the goals of Tntnet?
 
-### I changed by web application but the changes do not come through until I restart tntnet. Is there a way to do that?
+The goal is to provide an easy and convenient way to create web applications in C++ by embedding the code into HTML. With Tntnet web applications can be structured as desired. Tntnet is *policy free*, i.e. it lets developers the freedom to structure their applications as needed. Our components use ISO standards and are developed according to POSIX guidelines. This offers *investment protection*, i.e. a secure and reliable basis. Another important goal is stability of the API: Tntnet is already deployed in several commercial applications with high demand for stability. Thus good code quality is also essential for Tntnet's development.
 
-No. You must really recompile and restart your tntnet application server. There are no plans to add logic to tntnet to handle something like a hot swap.
+[back to top](#top)
 
-There are good technical reasons, why it is not possible to do that safely. Tntnet can't know, if applications still reference code, held in the original library and if you change the binary representation of your library, you do really have to delete your existing classes.
+<a name="introduction-3"></a>
+## 1.3 - How is Tntnet licensed?
 
-### I would like to separate my application logic from the presentation layer. Is that possible with tntnet?
+Tntnet is licensed under the Lesser General Public Licence (LGPL) with a template extension. It can be used in both open source and closed source scenarios. For more information please read the [License information](license.html).
 
-It is not only possible, but you should really do that.
+[back to top](#top)
 
-You can use #include in tntnet applications to import you application logic classes into your ecpp template. There are only few lines of glue code needed to access your application logic in the ecpp template.
+<a name="introduction-4"></a>
+## 1.4 - How does Tntnet work?
 
-### Can I reuse my existing C++ code?
+The first program from Tntnet that is called when building a web app is the ecpp compiler (ecppc), which compiles your ecpp pages into C++ classes. These are then compiled into native code using a C++ compiler. This code can either reside in a shared library (.so) or in an own executable linked against libtntnet (for details, see the [quick start guide](quick-start-guide.html)). Tntnet does not require to use a specific C++ compiler, you can use the compiler which fits best to your needs. Tntnet itself is multithreaded, so that requests are processed in parallel. It is highly optimized for speed. Benchmarks have shown its excellent performance.
 
-Of course you can. It is just easy to “web enable” existing C++ code. That's one of the great things about tntnet, that you can just reuse your existing code. There are so many C++-applications out there, which use other languages to add a web interface to the application. This leads to the problem, how to transfer the data into the other world.
+[back to top](#top)
 
-With tntnet you can just use the existing C++ classes in the web application. No rewrite or interfacing is needed.
+<a name="introduction-5"></a>
+## 1.5 - Which operating systems does Tntnet run on?
 
-### Does tntnet support databases?
+Tntnet is usable in all POSIX compliant systems. It is known to work on various GNU/Linux distributions and BSD derivatives, as well as on AIX and Solaris.
 
-Tntnet does not support databases. It does not need to, since you can use existing C++ classes and libraries. We suggest to look at tntdb, which is a easy to use database abstraction layer.
+[back to top](#top)
 
-### JSP/Perl/PHP/Ruby/whatever is better than tntnet.
+<a name="introduction-6"></a>
+## 1.7 - Who developed Tntnet?
 
-Well, go with it. If it fits better into your application it is perfectly OK to use that. Tntnet do not want to replace every existing web technology but offer only another alternative. We think, tntnet has to offer unique features and there are plenty of use cases, where tntnet will be the best choice.
+Tntnet is developed and maintained by Tommi M&auml;kitalo, the main developer and some contributors under open source development rules.
 
-### Does tntnet run under Windows?
+[back to top](#top)
 
-No. Tntnet do not run under windows. Until now nobody was willing to port tntnet to windows. But if you really want to have it, you can volunteer.
+<a name="introduction-7"></a>
+## 1.8 - When should I use Tntnet?
 
-### Does tntnet run under other operating systems?
+If your web application/service needs:
 
-Tntnet run under posix compatible systems. I know applications running under various kinds of linux, open-BSD, AIX and Solaris.
+* Good scalability with high performance
+* High security standards
+* Integration into existing C++ applications
+* Closed source
+* Low CPU performance like embedded systems
 
-C++
----
+[back to top](#top)
 
-### Why C++?
+<a name="introduction-8"></a>
+## 1.9 - Where can I get Tntnet?
 
-C++ is a great programming language with very sophisticated features. It is just great to use a programming language with such rich features in web development.
+Currently there are three ways to get Tntnet and its components.
 
-### C++ programs have often buffer overflows and memory leaks. How that fit into web development?
+1. Through the package manager in your operating system
+2. Through the [download page](download.html)
+3. Through [GitHub](https://github.com/maekitalo/tntnet), mainly if you want to have to absolutely latest version
 
-The programming language, which is sensitive to buffer overflows and memory leaks is called C. C++ is a different kind. If C++ is used correctly, you do not have to bother much about buffer overflows and memory leaks.
+**Note:** For productive use the best option is **1**, but you should fall back to **2** if those packages are outdated.
 
-To prevent buffer overflows, use e.g. std::string instead of a fixed size character array.
+[back to top](#top)
 
-To prevent memory leaks, avoid pointers. Prefer stack objects. Or take care, that you have you destruction code in a destructor. Put every object in some suitable scope.
+<a name="development"></a>
+2 - Development
+---------------
 
-And most important: learn C++. Read good books about C++.
+<a name="development-1"></a>
+## 2.1 - What are the first steps?
 
-### C++ is dead. Nobody uses C++ any more. Why should I bother?
+The  [Quick Start Guide](quick-start-guide.html) includes everything you need to get started. If you have any further questions, we are available via mailing list and IRC (details can be found on the [contact  page](contact.html)).
 
-When you read this, it is very presumable, that you sit in front of a program, written in C++. Most of the applications we use in our day to day work are written in C++. The problem is, that C++ programs do not tell, that they are written in C++. They do not need to install a C++ run time engine to run C++ applications. C++ programs also look just as programs should look like.
+[back to top](#top)
 
-Infrastructure
---------------
+<a name="development-2"></a>
+## 2.2 - Where do I find the documentation?
 
-### How many developers tntnet has?
+We have howto's, an API  documentation, man pages and a quick start guide. It can be found on our homepage and in the source code.
 
-Almost all of tntnet was developed by a single person - Tommi Mäkitalo.
+[back to top](#top)
 
-Normally you should really think if you really want to trust a application written and maintained by a single person.
+<a name="development-3"></a>
+## 2.3 - Where do I find an example application?
 
-A single person assures, that you have the same code quality all over the system. Also since tntnet is open source, you can really verify the code quality and if some day Tommi is gone or has lost his interest in tntnet, you have the source of tntnet.
+There are many small demos available on [GitHub](https://github.com/maekitalo/tntnet/tree/master/sdk/demos/).
+This website serves as an example too, you can find its source code on GitHub as well: [maekitalo/tntnet-homepage](https://github.com/maekitalo/tntnet-homepage)
 
-### Why www.tntnet.org is not running tntnet?
+[back to top](#top)
 
-This is not any more the case - www.tntnet.org runs with tntnet since in
-December 2012. It was not possible before since we did not have the
-infrastructure.
+<a name="development-4"></a>
+## 2.4 - Why does Tntnet use a template engine?
 
-Now we have a shiny new homepage with modern design and architecture running
-tntnet. The software, which runs the homepage can be found at github as well. It
-is also a showcase for using tntnet as a web server with dynamic content.
+When  a web developer designs web sites, he writes HTML code. The task of the application developer in the Tntnet world is to add application logic to the web pages. That is easily done by just adding the program logic using ecpp tags. There is no need to translate the actual html code produced from the designer into long lists of print statements or similar. You can use `#include` in Tntnet applications to import you application logic classes into your ecpp template. There are only few lines of glue code needed to access your application logic in the ecpp template.
 
-### Can I use tntnet in commercial applications?
+[back to top](#top)
 
-Tntnet is licensed under the LGPL with a template exception. This makes it possible to use tntnet in commercial closed source applications.
+<a name="development-5"></a>
+## 2.5 - Can I reuse my existing C++ code?
 
-### Do I need to publish my source code, when I use tntnet in my application?
+Of  course you can. It is just easy to "web enable" existing C++ code.  Thats one of the great things about Tntnet, that you can just reuse your existing code. There are so many C++ applications out there, which use other languages to add a web interface to the application. This leads to the problem, how to transfer the data into the other world. With Tntnet you can just use the existing C++ classes in the web application. No rewrite or interfacing is needed.
 
-Most web applications are written in interpreted languages like PHP, Ruby, Python or Perl, where the source is the application itself. So it is technologically necessary to deliver the source for your uses. That is not the case with tntnet. Tntnet applications are compiled into binary code and the source is not needed at run time. This makes it possible to deliver your application binary only. And the LGPL allows you to do that also.
+[back to top](#top)
 
-Development
------------
+<a name="contributing"></a>
+3 - Contributing
+----------------
 
-### After adding tntdb (or something else) to my tntnet application, the page is not loaded any more. What can I do?
+<a name="contributing-1"></a>
+## 3.1 - How can I contribute?
 
-Most probably there are unresolved external symbols. Maybe you forgot to link the application against tntdb. Not that you can link a shared library without error messages although there are unresolved symbols.
+We appreciate all efforts to improve Tntnet itself or any other part of this project.
 
-Try "ldd -r myapplication.so". This checks for unresolved symbols. If you get an error message, you also get a hint, what may be missing
+You can help in several ways:
 
-### When installing cxxtools and tntnet from the sources, I get an error, that libcxxtools.so.x can't be loaded
+* If you find a bug, [report it](#contributing-2)
+* Give general feedback or submit ideas [via IRC or email](contact.html)
+* If you are a developer and like Tntnet, it would be great if you just told others about it!
 
-Well, you have to update the cache of the dynamic linker by running `ldconfig`
-as root.
+[back to top](#top)
 
-Make also sure, that the path, where you installed cxxtools, tntnet and tntdb to
-is found by the runtime linker. The default path for the libraries is
-`/usr/local/lib`. You may need to add the path to your /etc/ld.conf or create a
-file in `/etc/ld.conf.d/`. On fedora I create a file /etc/ld.conf.d/local.conf
-with the content `/usr/local/lib` and run `ldconfig` as root then.
+<a name="contributing-2"></a>
+## 3.2 - Where can I find the source code?
+
+The source code is available on GitHub. Links to all repositories can be found on the [development](development.html) page.
+
+**Note:** In 2013 we moved the source code from SourceForge to GitHub. Don't use the code from SourceForge, it is outdated!
+
+[back to top](#top)
+
+<a name="contributing-3"></a>
+## 3.3 - How do I report a bug or submit a patch?
+
+You can write an email to the main developer directly or use the mailing list, see the [contact](contact.html) page.
+
+[back to top](#top)

@@ -162,3 +162,26 @@ application server to add 2 numbers.
       }
     }
 
+
+Features
+--------
+
+* Easy to use RPC (XML-RPC, JSON-RPC, binary-RPC)
+* Serialization framework (XML, JSON, CSV, Properties, binary)
+* Asynchronous I/O with performant signal/slot mechanismus
+* Logging
+* Unicode support
+* Multithreading, atomic operationen
+* Timer
+* Date, time, datetime, timestamp
+* MD5/HMAC/Base64/uuencode
+* String utility function (join, split)
+* Unit testing framework
+* File handling (directory, file attribut query)
+* Hexdumper
+* Policy based smart pointer (default: intrusive ref counted)
+
+Further reading
+---------------
+
+To learn more about Cxxtools read [the Cxxtools howto's](howto.html)

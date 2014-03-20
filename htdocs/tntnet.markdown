@@ -49,3 +49,18 @@ or subtracting a value to a session variable.
       </form>
      </body>
     </html>
+
+Features
+--------
+
+* Template engine for HTML
+* SSL support
+* Url mapping
+* API for http, http upload, authentifikation,
+* Setting for http headers and cookies
+* Automatical session management
+
+Further reading
+---------------
+
+To learn more about Tntnet read [the Tntnet man pages](man.html)
