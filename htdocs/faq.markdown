@@ -139,7 +139,7 @@ We have howto's, an API  documentation, man pages and a quick start guide. It ca
 <a name="development-3"></a>
 ## 2.3 - Where do I find an example application?
 
-There are many small demos available on [GitHub](https://github.com/maekitalo/tntnet/tree/master/demos/).
+There are many small demos available on [GitHub](https://github.com/maekitalo/tntnet/tree/master/demo/).
 This website serves as an example too, you can find its source code on GitHub as well: [maekitalo/tntnet-homepage](https://github.com/maekitalo/tntnet-homepage)
 
 [back to top](#top)
