@@ -52,6 +52,9 @@
       <target>static@tntnet</target>
       <url>^/(.+)</url>
       <pathinfo>@top_srcdir@/htdocs/$1</pathinfo>
+      <args>
+        <maxAge>604800</maxAge>
+      </args>
     </mapping>
 
   </mappings>
