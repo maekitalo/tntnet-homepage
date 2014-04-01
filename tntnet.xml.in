@@ -10,7 +10,7 @@
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/$</url>
-      <pathinfo>@top_srcdir@/htdocs/tntnet.markdown</pathinfo>
+      <pathinfo>@top_srcdir@/htdocs/overview.markdown</pathinfo>
       <args>
         <next>index</next>
         <htdocs>htdocs</htdocs>
@@ -52,6 +52,9 @@
       <target>static@tntnet</target>
       <url>^/(.+)</url>
       <pathinfo>@top_srcdir@/htdocs/$1</pathinfo>
+      <args>
+        <maxAge>604800</maxAge>
+      </args>
     </mapping>
 
   </mappings>
