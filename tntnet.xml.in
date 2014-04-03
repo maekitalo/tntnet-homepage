@@ -10,7 +10,7 @@
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/$</url>
-      <pathinfo>@top_srcdir@/htdocs/tntnet.markdown</pathinfo>
+      <pathinfo>htdocs/tntnet.markdown</pathinfo>
       <args>
         <next>index</next>
         <htdocs>htdocs</htdocs>
@@ -31,7 +31,7 @@
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/(.*)\.html$</url>
-      <pathinfo>@top_srcdir@/htdocs/$1.markdown</pathinfo>
+      <pathinfo>htdocs/$1.markdown</pathinfo>
       <args>
         <next>markdown</next>
       </args>
@@ -41,7 +41,7 @@
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/(.*)\.html$</url>
-      <pathinfo>@top_srcdir@/htdocs/$1.html</pathinfo>
+      <pathinfo>$1.html</pathinfo>
       <args>
         <next>static@tntnet</next>
       </args>
@@ -51,10 +51,12 @@
     <mapping>
       <target>static@tntnet</target>
       <url>^/(.+)</url>
-      <pathinfo>@top_srcdir@/htdocs/$1</pathinfo>
+      <pathinfo>$1</pathinfo>
     </mapping>
 
   </mappings>
+
+  <documentRoot>htdocs</documentRoot>
 
   <!-- listen to a port (empty string means any local interface) -->
   <listeners>
@@ -140,6 +142,6 @@
   <!-- <maxBackgroundTasks>5</maxBackgroundTasks> -->
 
   <compPath>
-    <entry>@top_builddir@/webapp/.libs</entry>
+    <entry>webapp/.libs</entry>
   </compPath>
 </tntnet>
