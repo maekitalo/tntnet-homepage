@@ -21,6 +21,6 @@ CLEANFILES = $(ecppSources:.ecpp=.cpp)
 SUFFIXES=.ecpp .jpg .cpp
 
 .ecpp.cpp:
-	$(AM_V_GEN)$(ECPPC) -I $(top_srcdir)/webapp -p -o $@ $<
+	$(AM_V_GEN)$(ECPPC) -I $(top_srcdir)/webapp -o $@ $<
 .jpg.cpp:
 	$(AM_V_GEN)$(ECPPC) -b -m image/jpeg -o $@ $<
