@@ -18,7 +18,12 @@ noinst_DATA =  \
 	htdocs/howto/static-howto.markdown \
 	htdocs/howto/tntdb.markdown \
 	htdocs/howto/upload-howto.markdown \
-	htdocs/howto/xmlrpc-howto.markdown
+	htdocs/howto/xmlrpc-howto.markdown \
+	htdocs/tntnet.css.gz \
+	htdocs/tntnet.css
+
+$(top_builddir)/htdocs/tntnet.css.gz: $(top_srcdir)/htdocs/tntnet.css
+	$(GZIP) < htdocs/tntnet.css > htdocs/tntnet.css.gz
 
 htdocs/quick-start-guide.markdown: @tntnetdir@/doc/quick-start-guide.markdown
 	cp @tntnetdir@/doc/quick-start-guide.markdown htdocs/quick-start-guide.markdown

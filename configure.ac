@@ -25,6 +25,7 @@ AC_LANG(C++)
 AC_CHECK_HEADER([tnt/tntnet.h], , AC_MSG_ERROR([tntnet headers not found]))
 AC_CHECK_HEADER([boost/regex.hpp], , AC_MSG_ERROR([boost regex headers not found]))
 AC_CHECK_PROGS(ECPPC, [ecppc])
+AC_CHECK_PROGS(GZIP, [gzip])
 
 DOXYGEN_SRC_DIR([cxxtools], [cxxtoolsdir], [include/cxxtools/arg.h])
 DOXYGEN_SRC_DIR([tntnet], [tntnetdir], [framework/common/tnt/tntnet.h])
