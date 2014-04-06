@@ -1,5 +1,9 @@
 /* tntnet.css */
 
+html {
+    overflow-y: scroll;
+}
+
 a {
     color: #0076FF;
     text-decoration: underline;
