@@ -13,7 +13,7 @@
       <pathinfo>@top_srcdir@/htdocs/overview.markdown</pathinfo>
       <args>
         <next>index</next>
-        <htdocs>htdocs</htdocs>
+        <htdocs>@top_srcdir@/htdocs</htdocs>
       </args>
     </mapping>
 
@@ -23,7 +23,7 @@
       <url>^/(.*)\.html$</url>
       <args>
         <next>$1</next>
-        <htdocs>htdocs</htdocs>
+        <htdocs>@top_srcdir@/htdocs</htdocs>
       </args>
     </mapping>
 
@@ -31,7 +31,7 @@
     <mapping>
       <target>main@tntnet-homepage</target>
       <url>^/(.*)\.html$</url>
-      <pathinfo>htdocs/$1.markdown</pathinfo>
+      <pathinfo>@top_srcdir@/htdocs/$1.markdown</pathinfo>
       <args>
         <next>markdown</next>
       </args>
@@ -51,7 +51,7 @@
     <mapping>
       <target>static@tntnet</target>
       <url>^/(.+)</url>
-      <pathinfo>@top_srcdir@/htdocs/$1</pathinfo>
+      <pathinfo>$1</pathinfo>
       <args>
         <maxAge>604800</maxAge>
       </args>
@@ -59,7 +59,7 @@
 
   </mappings>
 
-  <documentRoot>htdocs</documentRoot>
+  <documentRoot>@top_srcdir@/htdocs</documentRoot>
 
   <!-- listen to a port (empty string means any local interface) -->
   <listeners>
