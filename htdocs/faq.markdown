@@ -2,7 +2,7 @@
 Frequently Asked Questions (FAQ)
 ================================
 
-Updated April 2014
+Updated January 2015
 
 - - -
 
