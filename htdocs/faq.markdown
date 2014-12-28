@@ -201,6 +201,7 @@ Tntnet itself can be used as a shared libraries and as a runtime environment lik
 Therefore, it is important to distinguish between a development platform and hosting (deployment) platform.
 
 Typical structure of packages:
+
 cxxtools:
 - Include
 - Develop
