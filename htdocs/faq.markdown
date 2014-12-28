@@ -101,7 +101,7 @@ If your web application/service needs:
 * Good scalability with high performance
 * High security standards
 * Integration into existing C++ applications
-* Closed source
+* Binary executable
 * Low CPU performance like embedded systems
 
 [back to top](#top)
