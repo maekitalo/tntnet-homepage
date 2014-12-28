@@ -197,7 +197,7 @@ You can write an email to the main developer directly or use the mailing list, s
 
 We use GNU autotools for a build system and we develop according to the POSIX standards.
 Cxxtools and tntdb are shared libraries and are treated as such. Tntnet needs cxxtools as a requirement. 
-Tntnet itself can be used as a shared libraries and as a runtime environment like JSP (java server pages). 
+Tntnet itself can be used as a shared libraries and as a runtime environment like JavaServer Pages (JSP). 
 Therefore, it is important to distinguish between a development platform and hosting (deployment) platform.
 
 Typical structure of packages:
@@ -219,6 +219,6 @@ tntdb:
 
 Tntdb requires a database (Oracle, SQLite, MySQL, Postgres) and can be configured for one specific database, e.g.: tntdb-sqlite, to avoid having all those databases installed.
 
-**Note:** GNU/TLS, OpenSSL will be enabled in the src tarbal configurations as standart.
+**Note:** GNU/TLS, OpenSSL will be enabled in the source tarball configurations as standard.
 
 [back to top](#top)
