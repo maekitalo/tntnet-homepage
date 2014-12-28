@@ -203,20 +203,20 @@ Therefore, it is important to distinguish between a development platform and hos
 Typical structure of packages:
 
 cxxtools:
-- Include
-- Develop
-- Demos
+- Library   ->  /usr/lib/,  /usr/share/doc/
+- Develop   ->  /usr/bin/,  /usr/lib/,  /usr/include/
+- Demos     ->  /usr/share/demos/
 
 tntnet:
-- Runtime
-- Include
-- Develop
-- Demos
+- Runtime   ->  /usr/bin/,  /usr/share/doc/,  /usr/share/man/
+- Library   ->  /usr/lib/,  /usr/share/doc/
+- Develop   ->  /usr/bin/,  /usr/lib/,  /usr/include/,  /usr/share/man/
+- Demos     ->  /usr/share/demos/
 
 tntdb:
-- Include
-- Develop
-- Demos
+- Library   ->  /usr/lib/,  /usr/share/doc/
+- Develop   ->  /usr/lib/,  /usr/include/,  /usr/share/doc/
+- Demos     ->  /usr/share/demos/
 
 Tntdb requires a database (Oracle, SQLite, MySQL, Postgres) and can be configured for one specific database, e.g.: tntdb-sqlite, to avoid having all those databases installed.
 
