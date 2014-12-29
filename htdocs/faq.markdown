@@ -202,21 +202,14 @@ Therefore, it is important to distinguish between a development platform and hos
 
 Typical structure of packages:
 
-cxxtools:
-- Include
-- Develop
-- Demos
-
-tntnet:
 - Runtime
-- Include
+ - This have only a minimum of library and the executable tntnet, the default install path are `/usr/lib` and `/usr/bin` and for minimum of documentation (licence, readme, manpage, etc.) are in `/usr/share/doc/<name>/*` , `/user/share/man/`
+- Library
+ - This have basically all library he need to used for the runtime and self executable and a API documentation, the default install path are `/usr/lib/` and `/usr/share/doc/<name>/*`
 - Develop
+ - This contains all library, header includes and a suite of tool, eg.: `ecppc`, `tntnet-project`. The install path are `/usr/bin`, `/usr/lib`, `/usr/lib/<name>/*`, `/usr/share/man/`, `/usr/share/doc/<name>/*`
 - Demos
-
-tntdb:
-- Include
-- Develop
-- Demos
+ - This are the set of Demos, he can install with source and exectable in `/usr/share/demos/<name>/bin/*`, `/usr/share/demos/<name>/src/*`
 
 Tntdb requires a database (Oracle, SQLite, MySQL, Postgres) and can be configured for one specific database, e.g.: tntdb-sqlite, to avoid having all those databases installed.
 
