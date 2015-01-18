@@ -1,15 +1,16 @@
-<h1 id="tntnet-xml-8-quot-2006-07-23-quot-Tntnet-quot-Tntnet-users-guide-quot">tntnet.xml 8 &quot;2006-07-23&quot; Tntnet &quot;Tntnet users guide&quot;</h1><h2 id="NAME">NAME</h2><p>tntnet.xml - configuration file for <a class="manpage-reference" href="../man8/tntnet.8.html">tntnet(8)</a></p><h2 id="DESCRIPTION">DESCRIPTION</h2><p>Tntnet is configured using a xml file. The name of the file is <em>tntnet.xml</em>. The
+<h1 id="tntnet-xml-7-quot-2006-07-23-quot-tntnet-quot-tntnet"><a name="tntnet-xml-7-quot-2006-07-23-quot-tntnet-quot-tntnet" href="#tntnet-xml-7-quot-2006-07-23-quot-tntnet-quot-tntnet" class="md2man-permalink" title="permalink"></a><span class="md2man-title">tntnet.xml</span> <span class="md2man-section">7</span> <span class="md2man-date">&quot;2006-07-23&quot;</span> <span class="md2man-source">Tntnet</span> <span class="md2man-manual">&quot;Tntnet</span></h1><h2 id="name"><a name="name" href="#name" class="md2man-permalink" title="permalink"></a>NAME</h2><p>tntnet.xml - configuration file for <a class="md2man-reference" href="../man8/tntnet.8.html">tntnet(8)</a></p><h2 id="description"><a name="description" href="#description" class="md2man-permalink" title="permalink"></a>DESCRIPTION</h2><p>Tntnet is configured using a xml file. The name of the file is <em>tntnet.xml</em>. The
 root node of <em>tntnet.xml</em> should be <code>tntnet</code> while it is not checked. Most of
 the settings are just single values. They are described here in alphabetical
-order.</p><h2 id="SETTINGS">SETTINGS</h2><p>This section describes the variables, used by Tntnet (8).</p><dl><dt><code>&lt;accessLog&gt;</code><em>filename</em><code>&lt;/accessLog&gt;</code></dt><dd>Writes a log entry for each request in a common format. This format is
-compatible with most log file analyze systems for http servers.</dd></dl><dl><dd>The log file has the fields: <code>peer-ip</code> - <code>username</code> [<code>time</code>] &quot;<code>http-method</code>
-<code>query-string</code> HTTP/<code>major-version</code>.<code>minor-version</code>&quot; <code>http-return-code</code>
-<code>content-size</code> &quot;<code>referer</code>&quot; &quot;<code>user-agent</code>&quot;</dd></dl><dl><dd>The <code>username</code>, <code>referer</code> and <code>user-agent</code> may be &#39;-&#39; when the value is not
+order.</p><h2 id="settings"><a name="settings" href="#settings" class="md2man-permalink" title="permalink"></a>SETTINGS</h2><p>This section describes the variables, used by Tntnet (8).</p><p><code>&lt;accessLog&gt;</code><em>filename</em><code>&lt;/accessLog&gt;</code></p><dl><dd>Writes a log entry for each request in a common format. This format is
+compatible with most log file analyze systems for http servers.</dd></dl><dl><dd>The log file has the fields: <code>peer ip</code> - <code>username</code> [<code>time</code>] &quot;<code>http method</code>
+<code>query string</code> HTTP/<code>major version</code>.<code>minor version</code>&quot; <code>http return code</code>
+<code>content size</code> &quot;<code>referer</code>&quot; &quot;<code>user agent</code>&quot;</dd></dl><dl><dd>The <code>username</code>, <code>referer</code> and <code>user agent</code> may be &#39;-&#39; when the value is not
 available. Also the <code>content-size</code> can be empty in some cases.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;accessLog&gt;/var/log/tntnet/access.log&lt;/accessLog
-</code></pre><p><code>&lt;bufferSize&gt;</code><em>bytes</em><code>&lt;/bufferSize&gt;</code></p><dl><dd>Specifies the number of bytes sent in a single system-call. This does not
-limit anything in application-level. It does not affect e.g. savepoints or
-exception-handling. Component-output is collected completely and then passed
-in chunks of <code>bufferSize</code> bytes to the operating system.</dd></dl><dl><dd>The default value is 16384.</dd></dl><p><code>&lt;comppath&gt;</code> [ <code>&lt;entry&gt;</code><em>path1</em><code>&lt;/entry&gt;</code> ] <code>&lt;/comppath&gt;</code></p><dl><dd><code>comppath</code> specifies, where tntnet should search for webapplications. Tntnet
+</code></pre>
+<p><code>&lt;bufferSize&gt;</code><em>bytes</em><code>&lt;/bufferSize&gt;</code></p><dl><dd>Specifies the number of bytes sent in a single system call. This does not
+limit anything in application level. It does not affect e.g. savepoints or
+exception handling. Component output is collected completely and then passed
+in chunks of <code>bufferSize</code> bytes to the operating system.</dd></dl><dl><dd>The default value is 16384.</dd></dl><p><code>&lt;compPath&gt;</code> [ <code>&lt;entry&gt;</code><em>path1</em><code>&lt;/entry&gt;</code> ] <code>&lt;/compPath&gt;</code></p><dl><dd><code>comppath</code> specifies, where tntnet should search for webapplications. Tntnet
 searches first in the current directory and then in each directory, you
 specify here, until a library is found. You can repeat the directive as many
 times as desired to add more entries. If it is not found, the next
@@ -17,88 +18,140 @@ times as desired to add more entries. If it is not found, the next
   &lt;entry&gt;/usr/local/lib/tntnet&lt;/entry&gt;
   &lt;entry&gt;/usr/local/share/tntnet&lt;/entry&gt;
 &lt;/comppath&gt;
-</code></pre><p><code>&lt;chroot&gt;</code><em>directory</em><code>&lt;/chroot&gt;</code></p><dl><dd>Does a <a class="manpage-reference" href="../man2/chroot.2.html">chroot(2)</a>-system call on startup, which locks the process into the directory at system-level.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;chroot&gt;/var/tntnet&lt;/chroot&gt;
-</code></pre><p><code>&lt;daemon&gt;</code><em>0|1</em><code>&lt;/daemon&gt;</code></p><dl><dd>If this flag is set to 1, Tntnet forks at startup and terminates the
-parent-process on successful initialization.</dd></dl><p><code>&lt;dir&gt;</code><em>directory</em><code>&lt;/dir&gt;</code></p><dl><dd>Changes the current working directory of the process on startup.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;dir&gt;/var/tntnet&lt;/dir&gt;
-</code></pre><p><code>&lt;enableCompression&gt;</code><em>yes|no</em><code>&lt;/enableCompression&gt;</code></p><dl><dd>Specifies, if Tntnet should use gzip-compression at http-level. By default
-Tntnet use compression. A http-client like a web browser can send a header
+</code></pre>
+<p><code>&lt;chroot&gt;</code><em>directory</em><code>&lt;/chroot&gt;</code></p><dl><dd>Does a <a class="md2man-reference" href="../man2/chroot.2.html">chroot(2)</a> system call on startup, which locks the process into the
+directory at system level.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;chroot&gt;/var/tntnet&lt;/chroot&gt;
+</code></pre>
+<p><code>&lt;daemon&gt;</code><em>0|1</em><code>&lt;/daemon&gt;</code></p><dl><dd>If this flag is set to 1, Tntnet forks at startup and terminates the
+parent process on successful initialization.</dd></dl><p><code>&lt;dir&gt;</code><em>directory</em><code>&lt;/dir&gt;</code></p><dl><dd>Changes the current working directory of the process on startup.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;dir&gt;/var/tntnet&lt;/dir&gt;
+</code></pre>
+<p><code>&lt;defaultContentType&gt;</code><em>contentType</em><code>&lt;/defaultContentType&gt;</code></p><dl><dd>Sets the content type header of the reply. The content type may be changed in
+the application using <code>reply.setContentType(&quot;something&quot;)</code>.</dd></dl><dl><dd>By default &quot;text/html; charset=UTF-8&quot; is set.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;defaultContentType&gt;text/html; charset=ISO-8858-1&lt;/defaultContentType&gt;
+</code></pre>
+<p><code>&lt;enableCompression&gt;</code><em>yes|no</em><code>&lt;/enableCompression&gt;</code></p><dl><dd>Specifies, if Tntnet should use gzip compression at http level. By default
+Tntnet use compression. A http client like a web browser can send a header
 &quot;Accept-Encoding&quot;, to tell Tntnet, that it would accept compressed data.
 Tntnet then can decide, if it use compression. When the body is complete,
 Tntnet tries to compress the body. If the data can be compressed by more than
 10%, Tntnet sends this compressed data. With this flag, this feature can be
-turned off.</dd></dl><dl><dd>Compression slows down processing but reduces the network-load. Normally the
-size of html-pages can be compressed by about 70%, while Tntnet slows down by
+turned off.</dd></dl><dl><dd>Compression slows down processing but reduces the network load. Normally the
+size of html pages can be compressed by about 70%, while Tntnet slows down by
 up to 30%.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;enableCompression&gt;no&lt;/enableCompression&gt;
-</code></pre><p><code>&lt;errorLog&gt;</code><em>filename</em><code>&lt;/errorLog&gt;</code></p><dl><dd>Redirects stderr to the specified file when tntnet runs as a daemon. If
+</code></pre>
+<p><code>&lt;environment&gt;</code> <code>&lt;name1&gt;</code><em>value1</em><code>&lt;/name1&gt;</code> <code>&lt;name2&gt;</code><em>value2</em><code>&lt;/name2&gt;</code> <code>&lt;/environment&gt;</code></p><dl><dd>Sets environment variables.</dd></dl><p><code>&lt;errorLog&gt;</code><em>filename</em><code>&lt;/errorLog&gt;</code></p><dl><dd>Redirects stderr to the specified file when tntnet runs as a daemon. If
 ErrorLog is not set stderr is redirected to /dev/null.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;errorLog&gt;/var/log/tntnet/error.log&lt;/errorLog&gt;
-</code></pre><p><code>&lt;group&gt;</code><em>unix-group-id</em><code>&lt;/group&gt;</code></p><dl><dd>Changes the group under which tntnet runs.</dd></dl><dl><dd>The user is changes using the system call <a class="manpage-reference" href="../man2/setgid.2.html">setgid(2)</a>, which is only allowed,
+</code></pre>
+<p><code>&lt;group&gt;</code><em>unix-group-id</em><code>&lt;/group&gt;</code></p><dl><dd>Changes the group under which tntnet runs.</dd></dl><dl><dd>The user is changes using the system call <a class="md2man-reference" href="../man2/setgid.2.html">setgid(2)</a>, which is only allowed,
 when tntnet starts as root user.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;group&gt;tntnet-group&lt;/group&gt;
-</code></pre><p><code>&lt;keepAliveTimeout&gt;</code><em>milliseconds</em><code>&lt;/keepAliveTimeout&gt;</code></p><dl><dd>Sets the timeout for keep-alive requests.</dd></dl><dl><dd>Tntnet tries to do keep-alive-requests wherever possible. This has the effect,
-that tntnet can receive multiple requests within a single tcp-connection. The
+</code></pre>
+<p><code>&lt;keepAliveTimeout&gt;</code><em>milliseconds</em><code>&lt;/keepAliveTimeout&gt;</code></p><dl><dd>Sets the timeout for keep-alive requests.</dd></dl><dl><dd>Tntnet tries to do keep-alive-requests wherever possible. This has the effect,
+that tntnet can receive multiple requests within a single tcp connection. The
 connection times out after KeepAliveTimeout milliseconds. The timeout defaults
 to 15000ms.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;keepAliveTimeout&gt;300000&lt;/keepAliveTimeout&gt;
-</code></pre><p><code>&lt;keepAliveMax&gt;</code><em>number</em><code>&lt;/keepAliveMax&gt;</code></p><dl><dd>Sets the maximum number of request per tcp-connection. This defaults to 100.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;keepAliveTimeout&gt;10&lt;/keepAliveTimeout&gt;
-</code></pre><p><code>&lt;listeners&gt;</code><em>listener definition</em><code>&lt;/listeners&gt;</code></p><dl><dd>Specifies, on which local interfaces tntnet waits for connections. There can
-be more than one Listen-directives, in which case tntnet waits on every
+</code></pre>
+<p><code>&lt;keepAliveMax&gt;</code><em>number</em><code>&lt;/keepAliveMax&gt;</code></p><dl><dd>Sets the maximum number of request per tcp connection. This defaults to 100.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;keepAliveTimeout&gt;10&lt;/keepAliveTimeout&gt;
+</code></pre>
+<p><code>&lt;listeners&gt;</code><em>listener definition</em><code>&lt;/listeners&gt;</code></p><dl><dd>Specifies, on which local interfaces tntnet waits for connections. There can
+be more than one Listen directives, in which case tntnet waits on every
 address.</dd></dl><dl><dd>See separate section <em>Listeners</em></dd></dl><p><code>&lt;logging&gt;</code><em>listener definition</em><code>&lt;/logging&gt;</code></p><dl><dd>Configures logging. See separate section <em>logging</em></dd></dl><p><code>&lt;listenRetry&gt;</code><em>number</em><code>&lt;/listenRetry&gt;</code></p><dl><dd>On startup Tntnet calls listen on the specified port. When the systemcall
 returns with an error, Tntnet tries again and fails after the specified number
 of attempts.</dd></dl><dl><dd>The default number is 5.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;listenRetry&gt;10&lt;/listenRetry&gt;
-</code></pre><p><code>&lt;listenBacklog&gt;</code><em>number</em><code>&lt;/listenBacklog&gt;</code></p><dl><dd>The system-call <a class="manpage-reference" href="../man3p/listen.3p.html">listen(3p)</a> needs a parameter backlog, which specifies, how
-many pending connections the operating-system should queue before it starts to
+</code></pre>
+<p><code>&lt;listenBacklog&gt;</code><em>number</em><code>&lt;/listenBacklog&gt;</code></p><dl><dd>The system call <a class="md2man-reference" href="../man3p/listen.3p.html">listen(3p)</a> needs a parameter backlog, which specifies, how
+many pending connections the operating system should queue before it starts to
 ignore new request. The value is configurable here.</dd></dl><dl><dd>The default value is 16.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;ListenBacklog&gt;64&lt;/ListenBacklog&gt;
-</code></pre><p><code>&lt;mappings&gt;</code><em>urlmappings</em><code>&lt;/mappings&gt;</code></p><dl><dd>This is the most important setting for tntnet. It specifies, which components
-schould be called on which urls.</dd></dl><dl><dd>For details see the section <em>Url mapping</em>.</dd></dl><p><code>&lt;maxUrlMapCache&gt;</code><em>number</em><code>&lt;/maxUrlMapCache&gt;</code></p><dl><dd>Mapping urls to components is done using regular expressions. Executing these
+</code></pre>
+<p><code>&lt;mappings&gt;</code><em>urlmappings</em><code>&lt;/mappings&gt;</code></p><dl><dd>This is the most important setting for tntnet. It specifies, which components
+schould be called on which urls.</dd></dl><dl><dd>For details see the section <em>URL MAPPING</em>.</dd></dl><p><code>&lt;maxUrlMapCache&gt;</code><em>number</em><code>&lt;/maxUrlMapCache&gt;</code></p><dl><dd>Mapping urls to components is done using regular expressions. Executing these
 expressions is quite expensive while the number of different urls is quite
 limited in typical web applications. Hence tntnet caches the results.</dd></dl><dl><dd>The caching algorithm is very simple. Tntnet just collects the results in a
 map. When the maximum size of the list is reached, it is cleared. This makes
 management of the cache very cheap.</dd></dl><dl><dd>This setting sets the maximum number of entries in the map.</dd></dl><dl><dd>If you see frequently a warning message, that the cache is cleared, you may
 consider increasing the size.</dd></dl><dl><dd>The default value is 8192.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;maxUrlMapCache&gt;32768&lt;/maxUrlMapCache&gt;
-</code></pre><p><code>&lt;maxRequestSize&gt;</code><em>number</em><code>&lt;/maxRequestSize&gt;</code></p><dl><dd>This directive limits the size of the request. After <em>number</em> Bytes the
-connection is just closed. This prevents denial-of-service-attacks through
+</code></pre>
+<p><code>&lt;maxRequestSize&gt;</code><em>number</em><code>&lt;/maxRequestSize&gt;</code></p><dl><dd>This directive limits the size of the request. After <em>number</em> Bytes the
+connection is just closed. This prevents denial of service attacks through
 long requests. Every request is read into memory, so it must fit into it.
-Bear in mind, that if you use file-upload-fields a request might be larger
+Bear in mind, that if you use file upload fields a request might be larger
 than just a few bytes.</dd></dl><dl><dd>The value defaults to 0, which means, that there is no limit at all.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;maxRequestSize&gt;65536&lt;/maxRequestSize&gt;
-</code></pre><p><code>&lt;maxRequestTime&gt;</code><em>seconds</em><code>&lt;/maxRequestTime&gt;</code></p><dl><dd>In daemon mode tntnet has a watchdog, which restarts tntnet when the maximum
+</code></pre>
+<p><code>&lt;maxRequestTime&gt;</code><em>seconds</em><code>&lt;/maxRequestTime&gt;</code></p><dl><dd>In daemon mode tntnet has a watchdog, which restarts tntnet when the maximum
 request time is exceeded. This happens, when a request is in a endless loop or
 otherwise hangs. Restarting tntnet looses all active sessions and the
 currently running requests. Therefore the timeout should be well long enough
 for the longes request.</dd></dl><dl><dd>The default value is 600 seconds, which is normally much longer than a http
 request should run. If the Timeout is set to 0, the watchdog is deactivated.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;maxRequestTime&gt;1200&lt;/maxRequestTime&gt;
-</code></pre><p><code>&lt;minThreads&gt;</code><em>number</em><code>&lt;/minThreads&gt;</code></p><dl><dd>Tntnet uses a dynamic pool of worker-threads, which wait for incoming
+</code></pre>
+<p><code>&lt;minThreads&gt;</code><em>number</em><code>&lt;/minThreads&gt;</code></p><dl><dd>Tntnet uses a dynamic pool of worker threads, which wait for incoming
 requests. MinThreads specifies, how many worker threads there have to be. This
 defaults to 5.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;minThreads&gt;10&lt;/minThreads&gt;
-</code></pre><p><code>&lt;minCompressSize&gt;</code><em>number</em><code>&lt;/minCompressSize&gt;</code></p><dl><dd>Http-compression for replies smaller than this are not compressed at all.</dd></dl><dl><dd>The default value for this is 1024.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;minCompressSize&gt;256&lt;/minCompressSize&gt;
-</code></pre><p><code>&lt;mimeDb&gt;</code><em>filename</em><code>&lt;/mimeDb&gt;</code></p><dl><dd>Specify filename for mime db. The default is /etc/mime.types.</dd></dl><dl><dd>The format of the file is just like this /etc/mime.types. A mime type is
+</code></pre>
+<p><code>&lt;minCompressSize&gt;</code><em>number</em><code>&lt;/minCompressSize&gt;</code></p><dl><dd>Http compression for replies smaller than this are not compressed at all.</dd></dl><dl><dd>The default value for this is 1024.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;minCompressSize&gt;256&lt;/minCompressSize&gt;
+</code></pre>
+<p><code>&lt;mimeDb&gt;</code><em>filename</em><code>&lt;/mimeDb&gt;</code></p><dl><dd>Specify filename for mime db. The default is /etc/mime.types.</dd></dl><dl><dd>The format of the file is just like this /etc/mime.types. A mime type is
 followed after white space by a list of file extensions delimited by white
-space.</dd></dl><p><code>&lt;maxThreads&gt;</code><em>number</em><code>&lt;/maxThreads&gt;</code></p><dl><dd>Tntnet uses a dynamic pool of worker-threads, which wait for incoming
+space.</dd></dl><p><code>&lt;maxThreads&gt;</code><em>number</em><code>&lt;/maxThreads&gt;</code></p><dl><dd>Tntnet uses a dynamic pool of worker threads, which wait for incoming
 requests. <code>maxThreads</code> limits the number of threads.</dd></dl><dl><dd>The default is 100.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;maxThreads&gt;200&lt;/maxThreads&gt;
-</code></pre><p><code>&lt;pidFile&gt;</code><em>filename</em><code>&lt;/pidFile&gt;</code></p><dl><dd>When run in daemon-mode, tntnet writes the process-id of the monitor-process
-to filename. When the monitor-process is deactivated, the pid of the
-worker-process is written. This ensures, that sending a sigkill to the the
-stored process-id stops tntnet.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;pidFile&gt;/var/run/tntnet.pid&lt;/pidFile&gt;
-</code></pre><p><code>&lt;queueSize&gt;</code><em>number</em><code>&lt;/queueSize&gt;</code></p><dl><dd>Tntnet has a request-queue, where new requests wait for service. This sets a
+</code></pre>
+<p><code>&lt;pidfile&gt;</code><em>filename</em><code>&lt;/pidfile&gt;</code></p><dl><dd>When run in daemon mode, tntnet writes the process id of the monitor process
+to filename. When the monitor process is deactivated, the pid of the
+worker process is written. This ensures, that sending a sigkill to the the
+stored process id stops tntnet.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;pidfile&gt;/var/run/tntnet.pid&lt;/pidfile&gt;
+</code></pre>
+<p><code>&lt;queueSize&gt;</code><em>number</em><code>&lt;/queueSize&gt;</code></p><dl><dd>Tntnet has a request queue, where new requests wait for service. This sets a
 maximum size of this queue, after wich new requests are not accepted.</dd></dl><dl><dd>The default value is 1000.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;queueSize&gt;50&lt;/queueSize&gt;
-</code></pre><p><code>&lt;sessionTimeout&gt;</code><em>seconds</em><code>&lt;/sessionTimeout&gt;</code></p><dl><dd>This sets the number of seconds without requests after which a sesssion is
+</code></pre>
+<p><code>&lt;server&gt;</code><em>name</em><code>&lt;/server&gt;</code></p><dl><dd>Set the server response header. Tntnet sets the http header &quot;Server:&quot; to
+&quot;Tntnet/version&quot; by default. Whith this setting the header can be changed.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;server&gt;Myserver version 1.2&lt;/server&gt;
+</code></pre>
+<p><code>&lt;sessionTimeout&gt;</code><em>seconds</em><code>&lt;/sessionTimeout&gt;</code></p><dl><dd>This sets the number of seconds without requests after which a sesssion is
 timed out.</dd></dl><dl><dd>The default value is 300 seconds.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;sessionTimeout&gt;600&lt;/sessionTimeout&gt;
-</code></pre><p><code>&lt;socketReadTimeout&gt;</code><em>milliseconds</em><code>&lt;/socketReadTimeout&gt;</code></p><dl><dd>A worker-thread waits for some milliseconds on incoming data. If there is no
-data, the job is put into a queue and another thread waits with <a class="manpage-reference" href="../man2/poll.2.html">poll(2)</a> on
+</code></pre>
+<p><code>&lt;socketReadTimeout&gt;</code><em>milliseconds</em><code>&lt;/socketReadTimeout&gt;</code></p><dl><dd>A worker thread waits for some milliseconds on incoming data. If there is no
+data, the job is put into a queue and another thread waits with <a class="md2man-reference" href="../man2/poll.2.html">poll(2)</a> on
 incoming data on multiple sockets. The workerthreads are freed and they can
 respond to other requests quickly. The default value is 10 milliseconds, which
-is good for normal operation. A value of 0 results in non-blocking read. If
+is good for normal operation. A value of 0 results in non blocking read. If
 timeout is reached, this does not mean, that the socket is closed. A small
 timeout reduces contextswitches on slow connections.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;socketReadTimeout&gt;0&lt;/socketReadTimeout&gt;
-</code></pre><p><code>&lt;socketWriteTimeout&gt;</code><em>milliseconds</em><code>&lt;/socketWriteTimeout&gt;</code></p><dl><dd>This defines the time, how long the workerthreads wait on write.  If the
+</code></pre>
+<p><code>&lt;socketWriteTimeout&gt;</code><em>milliseconds</em><code>&lt;/socketWriteTimeout&gt;</code></p><dl><dd>This defines the time, how long the workerthreads wait on write.  If the
 timeout is exceeded, the socket is closed and the browser might not get all
 data.  The default value is 10000 milliseconds.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;socketWriteTimeout&gt;20000&lt;/socketWriteTimeout&gt;
-</code></pre><p><code>&lt;threadStartDelay&gt;</code><em>ms</em><code>&lt;/threadStartDelay&gt;</code></p><dl><dd>When additional worker threads are needed tntnet waits the number of
+</code></pre>
+<p><code>&lt;threadStartDelay&gt;</code><em>ms</em><code>&lt;/threadStartDelay&gt;</code></p><dl><dd>When additional worker threads are needed tntnet waits the number of
 milliseconds before it starts additional threads to prevent high load when
 starting many threads at once.</dd></dl><dl><dd>The default value is 10ms.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;threadStartDelay&gt;1000&lt;/threadStartDelay&gt;
-</code></pre><p><code>&lt;user&gt;</code><em>username</em><code>&lt;/user&gt;</code></p><dl><dd>Changes the user under which tntnet answers requests.</dd></dl><dl><dd>The user is changes using the system call <a class="manpage-reference" href="../man2/setuid.2.html">setuid(2)</a>, which is only allowed,
+</code></pre>
+<p><code>&lt;user&gt;</code><em>username</em><code>&lt;/user&gt;</code></p><dl><dd>Changes the user under which tntnet answers requests.</dd></dl><dl><dd>The user is changes using the system call <a class="md2man-reference" href="../man2/setuid.2.html">setuid(2)</a>, which is only allowed,
 when tntnet starts as root user.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;user&gt;www-data&lt;/user&gt;
-</code></pre><h2 id="URL-MAPPING">URL MAPPING</h2><p>Tntnet is a web server, which receives http requests from a http client and
+</code></pre>
+<p><code>&lt;virtualhosts&gt; { &lt;virtualhost&gt; &lt;hostname&gt;</code><em>hostname-regex</em><code>&lt;/hostname&gt;</code><em>mappings</em><code>&lt;/virtualhost&gt; }&lt;/virtualhosts&gt;</code></p><dl><dd>Defines mappings for virtual hosts. These mappings are valid only when the
+host header matches the <em>hostname-regex</em>. See section <em>URL MAPPING</em> for
+details about how to define actual mappings</dd></dl><dl><dd>A <em>vhost</em> entry in the mappings should be empty since it is already specified
+for the whole group.</dd></dl><dl><dd>The mappings defined here are always matched before the mappings on the top
+level of the configuration.</dd></dl><dl><dd><em>Example</em></dd></dl><pre><code>&lt;virtualhosts&gt;
+  &lt;virtualhost&gt;
+    &lt;hostname&gt;www\.tntnet\.org&lt;/hostname&gt;
+    &lt;mappings&gt;
+      &lt;mapping&gt;
+        &lt;url&gt;^/$&lt;/url&gt;
+        &lt;target&gt;static@tntent&lt;/target&gt;
+        &lt;pathinfo&gt;htdocs/index.html&lt;/pathinfo&gt;
+      &lt;/mapping&gt;
+      &lt;mapping&gt;
+        &lt;url&gt;^/(.*)$&lt;/url&gt;
+        &lt;target&gt;static@tntent&lt;/target&gt;
+        &lt;pathinfo&gt;htdocs/$1&lt;/pathinfo&gt;
+      &lt;/mapping&gt;
+    &lt;/mappings&gt;
+  &lt;/virtualhost&gt;
+&lt;/virtualhosts&gt;
+</code></pre>
+<h2 id="url-mapping"><a name="url-mapping" href="#url-mapping" class="md2man-permalink" title="permalink"></a>URL MAPPING</h2><p>Tntnet is a web server, which receives http requests from a http client and
 answers them. A http request has a url and other attributes, which are used to
 decide, how the answer should look like. This is done my mapping urls to components.</p><p>A component is something, which generates a http reply. They are normally
-generated with the ecpp compiler <a class="manpage-reference" href="../man1/ecppc.1.html">ecppc(1)</a>. The ecppc compiler generated C++
+generated with the ecpp compiler <a class="md2man-reference" href="../man1/ecppc.1.html">ecppc(1)</a>. The ecppc compiler generated C++
 classes with component names. The classes are compiled and linked into a shared
 library. Both the component name and the shared library name is needed to
 identify a component.</p><p>The component identifier is a string built from the component name, the @
@@ -117,7 +170,7 @@ mapping where the condition is met.</p><p>Also when the condition is met, but th
 continues with the next mapping.</p><p>When the end of the list is reached and no mapping returned a http reply code,
 tntnet replies with http not found (404) error.</p><p>So how these mapping are specified then?</p><p>The mapping contains 3 kind of nodes:</p><dl><dt><code>conditions</code></dt><dd>Multiple conditions can be specified. All conditions must be met when the
 mapping is to be used.</dd></dl><dl><dd>The most important is <code>&lt;url&gt;</code>, which contains a extended regular expression
-(see <a class="manpage-reference" href="../man7/regex.7.html">regex(7)</a> for details). This expression is checked against the url of the
+(see <a class="md2man-reference" href="../man7/regex.7.html">regex(7)</a> for details). This expression is checked against the url of the
 request. If the url tag is omitted, the mapping is used for every url.</dd></dl><dl><dd>The condition <code>&lt;vhost&gt;</code> specifies the virtual host, for which this mapping is
 valid. When this is specified, the mapping is only valid for requests, where
 the virtual host matches the setting. The value is also a extended regular
@@ -173,7 +226,8 @@ is returned.</dd></dl><p><em>Example</em></p><pre><code>&lt;mappings&gt;
     &lt;/args&gt;
   &lt;/mapping&gt;
 &lt;/mappings&gt;
-</code></pre><h2 id="LISTENERS">LISTENERS</h2><p>The section <code>&lt;listeners&gt;</code> specifies the ip addresses and ports, where tntnet
+</code></pre>
+<h2 id="listeners"><a name="listeners" href="#listeners" class="md2man-permalink" title="permalink"></a>LISTENERS</h2><p>The section <code>&lt;listeners&gt;</code> specifies the ip addresses and ports, where tntnet
 waits for incoming requests. Multiple listeners may be defined, when tntnet
 should listen on multiple ip addresses or ports.</p><p>Each listener is defined in a node <code>&lt;listener&gt;</code>. A listener must have a subnode
 <code>&lt;ip&gt;</code> and <code>&lt;port&gt;</code>. The node <code>&lt;ip&gt;</code> may contain a ip address or hostname or may
@@ -193,4 +247,5 @@ unencrypted http is used here.</p><p><em>Example</em></p><pre><code>&lt;listener
     &lt;certificate&gt;tntnet.pem&lt;/certificate&gt;
   &lt;/listener&gt;
 &lt;/listeners&gt;
-</code></pre><h2 id="AUTHOR">AUTHOR</h2><p>This manual page was written by Tommi Mäkitalo <a href="mailto:tommi@tntnet.org">tommi@tntnet.org</a>.</p><h2 id="SEE-ALSO">SEE ALSO</h2><p>tntnet (1)</p>
+</code></pre>
+<h2 id="author"><a name="author" href="#author" class="md2man-permalink" title="permalink"></a>AUTHOR</h2><p>This manual page was written by Tommi Mäkitalo <a href="mailto:tommi@tntnet.org">tommi@tntnet.org</a>.</p><h2 id="see-also"><a name="see-also" href="#see-also" class="md2man-permalink" title="permalink"></a>SEE ALSO</h2><p>tntnet (1)</p>

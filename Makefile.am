@@ -2,6 +2,20 @@ ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = 	include 	lib 	webapp
 
+if GENMAN
+
+MANPAGES = \
+	htdocs/man/tntnet.8.html \
+	htdocs/man/tntnet-defcomp.1.html \
+	htdocs/man/ecpp.7.html \
+	htdocs/man/ecppc.1.html \
+	htdocs/man/tntnet.xml.7.html \
+	htdocs/man/tntnet-project.1.html \
+	htdocs/man/ecppll.1.html \
+	htdocs/man/ecppl.1.html
+
+endif
+
 noinst_DATA =  \
 	htdocs/quick-start-guide.markdown \
 	htdocs/howto/argument-parsing-howto.markdown \
@@ -20,7 +34,8 @@ noinst_DATA =  \
 	htdocs/howto/upload-howto.markdown \
 	htdocs/howto/xmlrpc-howto.markdown \
 	htdocs/tntnet.css.gz \
-	htdocs/tntnet.css
+	htdocs/tntnet.css \
+	$(MANPAGES)
 
 $(top_builddir)/htdocs/tntnet.css.gz: $(top_srcdir)/htdocs/tntnet.css
 	$(GZIP) < htdocs/tntnet.css > htdocs/tntnet.css.gz
@@ -72,4 +87,32 @@ htdocs/howto/upload-howto.markdown: @tntnetdir@/doc/upload-howto.markdown
 
 htdocs/howto/xmlrpc-howto.markdown: @cxxtoolsdir@/doc/xmlrpc-howto.markdown
 	cp @cxxtoolsdir@/doc/xmlrpc-howto.markdown htdocs/howto/xmlrpc-howto.markdown
+
+#
+# man pages
+#
+
+htdocs/man/tntnet.8.html: @tntnetdir@/doc/man/tntnet.8.markdown
+	@MD2MAN_HTML@ @tntnetdir@/doc/man/tntnet.8.markdown >htdocs/man/tntnet.8.html
+
+htdocs/man/tntnet-defcomp.1.html: @tntnetdir@/doc/man/tntnet-defcomp.1.markdown
+	@MD2MAN_HTML@ @tntnetdir@/doc/man/tntnet-defcomp.1.markdown >htdocs/man/tntnet-defcomp.1.html
+
+htdocs/man/ecpp.7.html: @tntnetdir@/doc/man/ecpp.7.markdown
+	@MD2MAN_HTML@ @tntnetdir@/doc/man/ecpp.7.markdown >htdocs/man/ecpp.7.html
+
+htdocs/man/ecppc.1.html: @tntnetdir@/doc/man/ecppc.1.markdown
+	@MD2MAN_HTML@ @tntnetdir@/doc/man/ecppc.1.markdown >htdocs/man/ecppc.1.html
+
+htdocs/man/tntnet.xml.7.html: @tntnetdir@/doc/man/tntnet.xml.7.markdown
+	@MD2MAN_HTML@ @tntnetdir@/doc/man/tntnet.xml.7.markdown >htdocs/man/tntnet.xml.7.html
+
+htdocs/man/tntnet-project.1.html: @tntnetdir@/doc/man/tntnet-project.1.markdown
+	@MD2MAN_HTML@ @tntnetdir@/doc/man/tntnet-project.1.markdown >htdocs/man/tntnet-project.1.html
+
+htdocs/man/ecppll.1.html: @tntnetdir@/doc/man/ecppll.1.markdown
+	@MD2MAN_HTML@ @tntnetdir@/doc/man/ecppll.1.markdown >htdocs/man/ecppll.1.html
+
+htdocs/man/ecppl.1.html: @tntnetdir@/doc/man/ecppl.1.markdown
+	@MD2MAN_HTML@ @tntnetdir@/doc/man/ecppl.1.markdown >htdocs/man/ecppl.1.html
 

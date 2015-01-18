@@ -27,10 +27,21 @@ AC_CHECK_HEADER([boost/regex.hpp], , AC_MSG_ERROR([boost regex headers not found
 AC_CHECK_PROGS(ECPPC, [ecppc])
 AC_CHECK_PROGS(GZIP, [gzip])
 
+AC_ARG_ENABLE([md2man],
+  AS_HELP_STRING([--enable-md2man], [enable generation of man pages]),
+  [enable_md2man=$enableval],
+  [enable_md2man=no])
+
+AM_CONDITIONAL(GENMAN, test x$enable_md2man = xyes)
+
+AS_IF([test "$enable_md2man" = "yes"],
+    AC_CHECK_PROGS(MD2MAN_HTML, [md2man-html])
+)
+
 DOXYGEN_SRC_DIR([cxxtools], [cxxtoolsdir], [include/cxxtools/arg.h])
 DOXYGEN_SRC_DIR([tntnet], [tntnetdir], [framework/common/tnt/tntnet.h])
 DOXYGEN_SRC_DIR([tntdb], [tntdbdir], [include/tntdb/connect.h])
-AC_CONFIG_COMMANDS([mkdir], [$MKDIR_P htdocs/howto])
+AC_CONFIG_COMMANDS([mkdir], [$MKDIR_P htdocs/howto; $MKDIR_P htdocs/man])
 
 AC_CONFIG_FILES([Makefile
                  include/Makefile
