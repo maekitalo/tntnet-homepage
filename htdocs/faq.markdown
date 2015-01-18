@@ -2,7 +2,7 @@
 Frequently Asked Questions (FAQ)
 ================================
 
-Updated April 2014
+Updated January 2015
 
 - - -
 
@@ -28,6 +28,7 @@ Updated April 2014
  * [3.1 - How can I contribute?](#contributing-1)
  * [3.2 - Where can I find the source code?](#contributing-2)
  * [3.3 - How do I report a bug or submit a patch?](#contributing-3)
+ * [3.4 - I'm a package maintainer, what do i need to know?](#contributing-4)
 
 - - -
 
@@ -188,5 +189,37 @@ The source code is available on GitHub. Links to all repositories can be found o
 ## 3.3 - How do I report a bug or submit a patch?
 
 You can write an email to the main developer directly or use the mailing list, see the [contact](contact.html) page.
+
+[back to top](#top)
+
+<a name="contributing-4"></a>
+## 3.4 - I'm a package maintainer, what do i need to know?
+
+We use GNU autotools for a build system and we develop according to the POSIX standards.
+Cxxtools and tntdb are shared libraries and are treated as such. Tntnet needs cxxtools as a requirement. 
+Tntnet itself can be used as a shared libraries and as a runtime environment like JavaServer Pages (JSP). 
+Therefore, it is important to distinguish between a development platform and hosting (deployment) platform.
+
+Typical structure of packages:
+
+cxxtools:
+- Include
+- Develop
+- Demos
+
+tntnet:
+- Runtime
+- Include
+- Develop
+- Demos
+
+tntdb:
+- Include
+- Develop
+- Demos
+
+Tntdb requires a database (Oracle, SQLite, MySQL, Postgres) and can be configured for one specific database, e.g.: tntdb-sqlite, to avoid having all those databases installed.
+
+**Note:** GNU/TLS, OpenSSL will be enabled in the source tarball configurations as standard.
 
 [back to top](#top)
