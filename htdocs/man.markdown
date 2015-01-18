@@ -6,6 +6,6 @@ Tntnet man pages
 * [ecpp(7)](man/ecpp.7.html)
 * [ecppc(1)](man/ecppc.1.html)
 * [tntnet.xml(7)](man/tntnet.xml.7.html)
-* [tntnet-config(1)](man/tntnet-config.1.html)
+* [tntnet-project(1)](man/tntnet-project.1.html)
 * [ecppl(1)](man/ecppl.1.html)
 * [ecppll(1)](man/ecppll.1.html)
