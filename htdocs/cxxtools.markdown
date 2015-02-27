@@ -162,6 +162,9 @@ application server to add 2 numbers.
       }
     }
 
+Both programs must be linked against `cxxtools` and `cxxtools-json`:
+
+    g++ -lcxxtools -lcxxtools-json -o myprogram myprogram.cpp
 
 Features
 --------
