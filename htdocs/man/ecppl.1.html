@@ -1,8 +1,1 @@
-<h1 id="ecppl-1-quot-2006-07-23-quot-Tntnet-quot-Tntnet-users-guide-quot">ecppl 1 &quot;2006-07-23&quot; Tntnet &quot;Tntnet users guide&quot;</h1><h2 id="NAME">NAME</h2><p>ecppl - language-extractor for <a class="manpage-reference" href="../man7/ecpp.7.html">ecpp(7)</a></p><h2 id="SYNOPSIS">SYNOPSIS</h2><p><code>ecppl</code> [<code>-I</code> <em>dir</em>] [<code>-ln</code>] [<code>-o</code> <em>output-filename</em>] <em>ecpp-filename</em> ...</p><h2 id="DESCRIPTION">DESCRIPTION</h2><p><code>ecppl</code> is the language extractor for ecpp. Ecpp - the template language used
-with tntnet - supports internationalized applications. In ecpp templates a tag
-&lt;i18n&gt; changes the meaning of curly braces. A phrase, which is enclosed in curly
-braces, can be translated. At runtime the phrase is looked up in a
-language-library. This mode can be quit with the tag &lt;/i18n&gt;. Phrases must not
-have newlines or tabs.</p><p>Every phrase, which is marked as translatable, is extracted with ecppl and
-written to standard output or to a specified output-filename line by line.</p><h2 id="OPTIONS">OPTIONS</h2><dl><dt><code>-I</code> <em>dir</em></dt><dd>Search include-files in directory. This option can be passed multiple times.
-All specified directories are searched in turn for include-files.</dd></dl><dl><dt><code>-l</code></dt><dd>Extract language-phrases (the default)</dd></dl><dl><dt><code>-n</code></dt><dd>Extract non-language-phrases</dd></dl><dl><dt><code>-o</code> <em>filename</em></dt><dd>Specify output filename</dd></dl><h2 id="AUTHOR">AUTHOR</h2><p>This manual page was written by Tommi Mäkitalo <a href="mailto:tommi@tntnet.org">tommi@tntnet.org</a>.</p><h2 id="SEE-ALSO">SEE ALSO</h2><p><a class="manpage-reference" href="../man8/tntnet.8.html">tntnet(8)</a>, <a class="manpage-reference" href="../man7/ecpp.7.html">ecpp(7)</a>, <a class="manpage-reference" href="../man1/ecppll.1.html">ecppll(1)</a>.</p>
+md2man-html ecppl.1.markdown
