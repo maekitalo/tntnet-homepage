@@ -33,7 +33,8 @@
           <li class="header">Documentation</li>
           <li><a href="/quick-start-guide.html">Start guide</a></li>
           <li><a href="/man.html">Man pages</a></li>
-          <li><a href="/apidoc/html/index.html">Api docs</a></li>
+          <li><a href="/apidoc_stable/html/index.html">Api docs stable</a></li>
+          <li><a href="/apidoc_master/html/index.html">Api docs master</a></li>
           <li><a href="/howto.html">Howto</a></li>
           <li><a href="/demos.html">Demos</a></li>
         </ul>
@@ -43,6 +44,7 @@
           <li><a href="/faq.html">FAQ</a></li>
           <li><a href="/news.html">News</a></li>
           <li><a href="/download.html">Downloads</a></li>
+          <li><a href="/references.html">References</a></li>
           <li><a href="/development.html">Development</a></li>
           <li><a href="/license.html">License</a></li>
           <li><a href="/contact.html">Contact</a></li>
