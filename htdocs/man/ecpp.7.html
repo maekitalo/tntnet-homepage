@@ -1,1 +1,153 @@
-md2man-html ecpp.7.markdown
+<h1 id="ecpp-7-quot-2006-07-23-quot-tntnet-quot-tntnet"><a name="ecpp-7-quot-2006-07-23-quot-tntnet-quot-tntnet" href="#ecpp-7-quot-2006-07-23-quot-tntnet-quot-tntnet" class="md2man-permalink" title="permalink"></a><span class="md2man-title">ecpp</span> <span class="md2man-section">7</span> <span class="md2man-date">&quot;2006-07-23&quot;</span> <span class="md2man-source">Tntnet</span> <span class="md2man-manual">&quot;Tntnet</span></h1><h2 id="name"><a name="name" href="#name" class="md2man-permalink" title="permalink"></a>NAME</h2><p>ecpp - template language for <a class="md2man-reference" href="../man8/tntnet.8.html">tntnet(8)</a></p><h2 id="description"><a name="description" href="#description" class="md2man-permalink" title="permalink"></a>DESCRIPTION</h2><p><code>ecpp</code> is the template language used by the tntnet system to generate dynamic
+content.</p><p>A template consists of normal content (normally html data) enriched with
+special tags, which trigger some special handling.</p><p>One ecpp file is compiled into a C++ class. The C++ class is placed into the
+namespace component. A ecpp file compiled into a C++ class is called component.
+The name of the class is the basename of the file.</p><h3 id="request-reply-qparam"><a name="request-reply-qparam" href="#request-reply-qparam" class="md2man-permalink" title="permalink"></a><code>request</code>, <code>reply</code>, <code>qparam</code></h3><p>Each component has 3 parameters: <code>request</code>, <code>reply</code> and <code>qparam</code>.  <code>request</code>
+holds information about the client request like http headers and the url, but
+also additional parameters specified in the config file <a class="md2man-reference" href="../man7/tntnet.xml.7.html">tntnet.xml(7)</a>. The
+type of request is <code>tnt::HttpRequest</code>.</p><p><code>reply</code> receives the answer from the component. The component can set additional
+http headers here, set cookies and - most important - generate output. The most
+important methods here are <code>reply.out()</code> and <code>reply.sout()</code>. Both return a
+<code>std::ostream</code>, which receives the output of the component. <code>reply.sout()</code> has a
+filter installed, which translates some characters, whith special meanings in
+html to the corresponding html entities. The characters are <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code>
+and <code>&#39;</code>. This is useful for printing values from variables to the html code.</p><p><code>qparam</code> holds the query parameters parsed from GET- or POST-parameters or
+received from other components. The type of qparam is <code>tnt::query_params</code>.
+Normally you use a <code>&lt;%args&gt;</code> block to specify the parameters, but there are
+special cases, where it is useful to access these directly.</p><h3 id="component-adressing"><a name="component-adressing" href="#component-adressing" class="md2man-permalink" title="permalink"></a>component adressing</h3><p>Each component has a unique name. The name is composed from the classname, the
+character &#39;@&#39; and the name of the shared library, it is located. Components can
+have internal subcomponents.  The name of the internal subcomponent is appended
+to the classname separated by a dot (.).</p><h3 id="special-rule-for-line-feeds-after-a-lt-something-gt-tag"><a name="special-rule-for-line-feeds-after-a-lt-something-gt-tag" href="#special-rule-for-line-feeds-after-a-lt-something-gt-tag" class="md2man-permalink" title="permalink"></a>special rule for line feeds after a <code>&lt;/%something&gt;</code>-tag</h3><p>A line feed immediately after a closing tag for all <code>&lt;%something&gt;</code> blocks are
+ignored. Hence blocks followed immediately one after another does not generate
+white space in output, which is often undesirable.</p><h3 id="errorhandling"><a name="errorhandling" href="#errorhandling" class="md2man-permalink" title="permalink"></a>errorhandling</h3><p>Errorhandling is done by exception. Tntnet catches all exceptions thrown by
+components and handles them properly. Exceptions must be derived from
+std::exception. Exceptions derived from <code>tnt::HttpError</code>, are handled
+separately. They carry a http return code, which is sent to the client. Other
+exceptions derived from std::exception, result in a http error code 500
+(Internal Server Error).</p><h2 id="tags"><a name="tags" href="#tags" class="md2man-permalink" title="permalink"></a>TAGS</h2><dl><dt><code>&lt;$ expr $&gt;</code></dt><dd>Print expressions expr to the outputstream. The characters <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code>
+and <code>&#39;</code>, which have special meanings in html, are translated to the
+corresponding html entities.</dd></dl><dl><dt><code>&lt;$$ expr $&gt;</code></dt><dd>Print expressions expr without translating characters with special meaning in
+html to html entities to the output stream.</dd></dl><dl><dt><code>&lt;? cond ? expr ?&gt;</code></dt><dd>Conditional output. Print expression expr to the outputstream, if cond
+evaluates to true. Characters with special meaning in html are translated to
+the corresponding html entities.</dd></dl><dl><dt><code>&lt;?? cond ? expr ?&gt;</code></dt><dd>Conditional output. Print expression expr to the outputstream, if cond
+evaluates to true. Characters with special meaning in html are not translated
+to the corresponding html entities.</dd></dl><dl><dt><code>&lt;&amp; component [ arguments ] &gt;</code></dt><dd>Call the specified component. The output of the component is printed into the
+outputstream. If the component name does not start with a letter, the
+ecpp compiler treats it as a expression, which returns the name of the
+component. You must surround the expression in brackets, if it contains
+spaces.</dd></dl><dl><dd>The arguments part specify the parameters, the component will receive.
+Arguments are name value pairs separated by &#39;=&#39;. They are put in the
+qparam parameter of the component and are normally declared in the
+<code>&lt;%args&gt;</code> block. Values can be specified in 3 forms:</dd></dl><dl><dd>As a plain word without spaces</dd></dl><dl><dd>As a string enclosed in quotation marks</dd></dl><dl><dd>As a expression enclosed in brackets</dd></dl><dl><dd>A single plain word in the argumentlist is treated as a variable of type
+cxxtools::query_params and a copy is passed to the component. Other
+parameters are added to this copy. If you want to pass all parameters of the
+current component put the variable qparam as a plain word in the argument
+list.</dd></dl><dl><dt><code>&lt;/&amp;component&gt;</code></dt><dd>Closing tag for a component call. When components are called, this
+closing tag might occur later. The code in <code>&lt;%close&gt;</code> block is placed here.</dd></dl><dl><dt><code>&lt;{...}&gt;</code></dt><dd>C++ inline processing block. The code in this block is copied into the
+C++ class unchanged.</dd></dl><dl><dd>A linefeed after the closing tag is not ignored.</dd></dl><dl><dt><code>&lt;#...#&gt;</code></dt><dd>Comment block. Everything in this block is ignored.</dd></dl><dl><dt><code>&lt;%application [ scope=&quot;component|page|shared|global&quot; ] &gt;...&lt;/%application&gt;</code></dt><dd>Variables defined here, have the lifetime of the application.</dd></dl><dl><dd>Application scope is automatically locked.</dd></dl><dl><dt><code>&lt;%args&gt;...&lt;/%args&gt;</code></dt><dd>Defines GET or POST parameters recieved by the component.</dd></dl><dl><dd>Each argument has a name and optionally a default value. The default value is
+delimited by &#39;=&#39; from the name. A single argument definition followed by a
+semicolon (;). In the component a variable with the same name of type
+std::string is defined, which receives the value.</dd></dl><dl><dd>A argument name can be prefixed by a type definition. The ecpp compiler
+generates code, which tries to convert the value with the
+input stream operator. This means, that each type, which can be read from a
+input stream (std::istream) can be used. If the argument can&#39;t be converted,
+a exception is thrown.</dd></dl><dl><dd>Argumentnames can be postfixed by empty square brackets. This defines a
+std::vector with the specified type or std::string, if no type is specified.
+This way multiple values with the same name can be received. If a type is
+specified, each value is converted to the target type.</dd></dl><dl><dt><code>&lt;%attr&gt;...&lt;/%attr&gt;</code></dt><dd>Components may define attributes, which can be queried from other components.
+These values are strings and are defined by specifying a name followed by &#39;=&#39;
+and the string value. No type is allowed here.</dd></dl><dl><dd>A other component can the fetch a reference to the component using
+<code>fetchComp(name)</code>. <code>fetchComp</code> is a member of the base class
+<code>tnt::EcppComponent</code> of components built with ecpp.</dd></dl><dl><dd>The component has then a member method <code>getAttribute(name)</code>, which returns the
+attribute or a empty string when not found. A different default string can be
+passed as a second parameter to <code>getAttribute</code>.</dd></dl><h3 id="example"><a name="example" href="#example" class="md2man-permalink" title="permalink"></a>Example:</h3><dl><dd>A content component specifies a title:</dd></dl><pre><code>&lt;%attr&gt;
+title = &quot;my title&quot;;
+&lt;/%attr&gt;
+</code></pre>
+<dl><dd>A component <code>webmain</code> want to add a title depending on a content component:</dd></dl><pre><code>&lt;head&gt;
+  &lt;title&gt;
+    &lt;$ fetchComp(&quot;theContent&quot;).getAttribute(&quot;title&quot;, &quot;default title&quot;) $&gt;
+  &lt;/title&gt;
+  ...
+</code></pre>
+<dl><dd>To separte the C++ code from the html, the actual doing can be moved to a C++
+section. The component can then be also called later to generate the content:</dd></dl><pre><code>&lt;%cpp&gt;
+  tnt::Component&amp; theContent = fetchComp(&quot;theContent&quot;);
+  std::string title = theContent.getAttribute(&quot;title&quot;, &quot;default title&quot;);
+&lt;/%cpp&gt;
+&lt;head&gt;
+  &lt;title&gt;&lt;$ title $&gt;&lt;/title&gt;
+  ...
+  &lt;div id=&quot;contnent&quot;&gt;
+    &lt;{ theContent(request, reply, qparam); }&gt;
+  &lt;/div&gt;
+</code></pre>
+<dl><dt><code>&lt;%close&gt;...&lt;/%close&gt;</code></dt><dd>Code in these tags is placed into the calling component, when a closing tag
+<code>&lt;/&amp;component&gt;</code> is found.</dd></dl><dl><dd>The <code>&lt;%close&gt;</code> receives the same parameters like the corresponding normal
+component call.</dd></dl><dl><dd>This tag is deprecated and should not be used any more.</dd></dl><dl><dt><code>&lt;%config&gt;...&lt;/%config&gt;</code></dt><dd>Often webapplications need some configuration like database names or
+login information to the database. These configuratioin variables can be read
+from the tntnet.xml. Variablenames ended with a semicolon are defined as
+static std::string variables and filled from tntnet.xml. A variable can be
+prepended by a type. The value from tntnet.xml is then converted with a
+std::istream.</dd></dl><dl><dd>You can also specify a default value by appending a &#39;=&#39; and the value to the
+variable.</dd></dl><h3 id="example-1"><a name="example-1" href="#example-1" class="md2man-permalink" title="permalink"></a>Example:</h3><pre><code>&lt;%config&gt;
+  dburl = &quot;sqlite:db=mydbfile.sqlite&quot;;
+  int maxvalue = 10;
+&lt;/%config&gt;
+</code></pre>
+<dl><dt>tntnet.xml:</dt><dd>    <code>&lt;dburl&gt;postgresql:dbname=mydb&lt;/dburl&gt;</code></dd></dl><dl><dt><code>&lt;%cpp&gt;...&lt;/%cpp&gt;</code></dt><dd>C++ processing block. The code between these tags are copied into the
+C++ class unchanged.</dd></dl><dl><dd>A linefeed after the closing tag is ignored.</dd></dl><dl><dt><code>&lt;%def name&gt;...&lt;/%def&gt;</code></dt><dd>Defines a internal subcomponent with the name name, which can be called like
+other components.</dd></dl><dl><dt><code>&lt;%doc&gt;...&lt;/%doc&gt;</code></dt><dd>Comment block. Everything in this block is ignored.</dd></dl><dl><dd>A linefeed after the closing tag is ignored.</dd></dl><dl><dt><code>&lt;%get&gt;...&lt;/%get&gt;</code></dt><dd>Works like a <code>&lt;%args&gt;</code> block but receives only GET parameters.</dd></dl><dl><dt><code>&lt;%i18n&gt;...&lt;/%i18n&gt;</code></dt><dd>Encloses a block of text data, which is to be translated. See <a class="md2man-reference" href="../man1/ecppl.1.html">ecppl(1)</a> and
+<a class="md2man-reference" href="../man1/ecppll.1.html">ecppll(1)</a> for details.</dd></dl><dl><dt><code>&lt;%include&gt;filename&lt;/%include&gt;</code></dt><dd>The specified file is read and compiled.</dd></dl><dl><dt><code>&lt;%param&gt;...&lt;/%param&gt;</code></dt><dd>Defines parameter received from calling components. In contrast to
+query parameters these variables can be of any type. The syntax (and the
+underlying technology) is the same like in scoped variables. See the
+description about scoped variables to see how to define parameters. The main
+difference is, that a parameter variable has no scope, since the parameter is
+always local to the component.</dd></dl><dl><dt><code>&lt;%out&gt; expr &lt;/%out&gt;</code></dt><dd>Same as <code>&lt;$$ ... $&gt;</code>. Prints the contained C++ expression expr.</dd></dl><dl><dt><code>&lt;%post&gt;...&lt;/%post&gt;</code></dt><dd>Works like a <code>&lt;%args&gt;</code> block but receives only POST parameters.</dd></dl><dl><dt><code>&lt;%pre&gt;...&lt;/%pre&gt;</code></dt><dd>Defines C++ code, which is placed outside the C++ class and outside the
+namespace definition.  This is a good place to define #include directives.</dd></dl><dl><dt><code>&lt;%request [ scope=&quot;component|page|shared|global&quot; ] &gt;...&lt;/%request&gt;</code></dt><dd>Define request scope variables. Variables defined here, has the lifetime of
+the request.</dd></dl><dl><dt><code>&lt;%session [ scope=&quot;component|page|shared|global&quot; ] &gt;...&lt;/%session&gt;</code></dt><dd>Variables defined here, has the lifetime of the session.</dd></dl><dl><dd>Sessions are identified with cookies. If a <code>&lt;%session&gt;</code> block is defined
+somewhere in a component, a session cookie is sent to the client.</dd></dl><dl><dd>Sessions are automatically locked.</dd></dl><dl><dt><code>&lt;%securesession [ scope=&quot;component|page|shared|global&quot; ] &gt;...&lt;/%securesession&gt;</code></dt><dd>Secure session is just like session but a secure cookie is used to identify
+the session. Secure cookies are transfered only over a ssl connection from
+the browser and hence the variables are only kept in a ssl secured
+application.</dd></dl><dl><dd>If a variable defined here is used in a non ssl page, the variable values are
+lost after the current request.</dd></dl><dl><dt><code>&lt;%sout&gt; expr &lt;/%sout&gt;</code></dt><dd>Same as <code>&lt;$ ... $&gt;</code>. Prints the contained C++ expression expr. The characters
+<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code> and <code>&#39;</code>, which have special meanings in html, are translated to the
+corresponding html entities.</dd></dl><dl><dt><code>&lt;%thread [ scope=&quot;component|page|shared|global&quot; ] &gt;...&lt;/%thread&gt;</code></dt><dd>Variables defined here, has the lifetime of the thread. Each thread has his
+own instance of these variables.</dd></dl><dl><dd>Thread scope variables do not need to be locked at all, because they are only
+valid in the current thread.</dd></dl><h2 id="scoped-variables"><a name="scoped-variables" href="#scoped-variables" class="md2man-permalink" title="permalink"></a>SCOPED VARIABLES</h2><p>Scoped variables are c++ variables, whose lifetime is handled by tntnet. These
+variables has a lifetime and a scope. The lifetime is defined by the tag, used
+to declare the variable and the scope is passed as a parameter to the tag.</p><p>There are 5 different lifetimes for scoped variables:</p><dl><dt><code>request</code></dt><dd>The variable is valid in the current request. The tag is <code>&lt;%request&gt;</code>.</dd></dl><dl><dt><code>application</code></dt><dd>The variable is valid in the application. The tag is <code>&lt;%application&gt;</code>. The
+application is specified by the shared library of the top level component.</dd></dl><dl><dt><code>session</code></dt><dd>The variable is valid for the current session. The tag is <code>&lt;%session&gt;</code>. If at
+least session variable is declared in the current request, a session cookie is
+sent to the client.</dd></dl><dl><dt><code>thread</code></dt><dd>The variable is valid in the current thread. The tag is <code>&lt;%thread&gt;</code>.</dd></dl><dl><dt><code>param</code></dt><dd>The variable receives parameters. The tag is <code>&lt;%param&gt;</code>.</dd></dl><p>And 3 scopes:</p><dl><dt><code>component</code></dt><dd>The variable is only valid in the same component. This is the default scope.</dd></dl><dl><dt><code>page</code></dt><dd>The variable is shared between the components in a single ecpp file. You can
+specify multiple internal subcomponents in a <code>&lt;%def&gt;</code> block. Variables, defined
+in page scope are shared between these subcomponents.</dd></dl><dl><dt><code>global</code> or <code>shared</code></dt><dd>Variables are shared between all components. If you define the same variable
+with shared scope in different components, they must have the same type. This
+is achieved most easily defining them in a separate file and include them
+with a <code>&lt;%include&gt;</code> block. The <code>global</code> and <code>shared</code> are just synonyms.</dd></dl><dl><dd>Variables are automatically locked as needed.  If you use session variables,
+tntnet ensures, that all requests of the same session are serialized. If you
+use application variables, tntnet serializes all requests to the same
+application scope. Request and thread scope variables do not need to be
+locked at all, because they are not shared between threads.</dd></dl><h3 id="syntax-of-scoped-variables"><a name="syntax-of-scoped-variables" href="#syntax-of-scoped-variables" class="md2man-permalink" title="permalink"></a>Syntax of scoped variables</h3><p>Scoped variables are declared with exactly the same syntax as normal variables
+in c++ code. They can be of any type and are instantiated, when needed.
+Objects, which do not have default constructors, need to be specified with
+proper constructor parameters in brackets or separated by &#39;=&#39;. The parameters
+are only used, if the variable need to be instantiated. This means, that
+parameters to e.g. application scope variables are only used once. When the
+same component is called later in the same or another request, the parameters
+are not used any more.</p><h3 id="examples"><a name="examples" href="#examples" class="md2man-permalink" title="permalink"></a>Examples</h3><p>Specify a application specific shared variable, which is initialized with 0:</p><pre><code>&lt;%application&gt;
+unsigned count = 0;
+&lt;/%application&gt;
+</code></pre>
+<p>Specify a variable with a user defined type, which holds the state of the
+session:</p><pre><code>&lt;%session&gt;
+MyClass sessionState;
+&lt;/%session&gt;
+</code></pre>
+<p>Specify a persistent databaseconnection, which is initialized, when first needed
+and hold for the lifetime of the current thread. This variable may be used in
+other components:</p><pre><code>&lt;%thread scope=&quot;shared&quot;&gt;
+tntdb::Connection conn(dburl);
+&lt;/%thread&gt;
+</code></pre>
+<h2 id="author"><a name="author" href="#author" class="md2man-permalink" title="permalink"></a>AUTHOR</h2><p>This manual page was written by Tommi Mäkitalo <a href="mailto:tommi@tntnet.org">tommi@tntnet.org</a>.</p><h2 id="see-also"><a name="see-also" href="#see-also" class="md2man-permalink" title="permalink"></a>SEE ALSO</h2><p><a class="md2man-reference" href="../man8/tntnet.8.html">tntnet(8)</a>, <a class="md2man-reference" href="../man1/ecppc.1.html">ecppc(1)</a></p>
