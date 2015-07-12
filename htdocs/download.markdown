@@ -19,7 +19,15 @@ stable versions
 development versions
 --------------------
 
-no development versions currently available
+### tntnet
+ * [the source of tntnet 2.3rc1](download/tntnet-2.3rc1.tar.gz)
+
+### cxxtools
+ * [the source of cxxtools 2.3rc1](download/cxxtools-2.3rc1.tar.gz)
+
+### tntdb
+ * [the source of tntdb 1.3rc3](download/tntdb-1.3rc3.tar.gz)
+
 
 other downloads
 ---------------
