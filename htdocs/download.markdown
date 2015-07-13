@@ -26,7 +26,7 @@ development versions
  * [the source of cxxtools 2.3rc1](download/cxxtools-2.3rc1.tar.gz)
 
 ### tntdb
- * [the source of tntdb 1.3rc3](download/tntdb-1.3rc3.tar.gz)
+ * [the source of tntdb 1.4rc1](download/tntdb-1.4rc1.tar.gz)
 
 
 other downloads
