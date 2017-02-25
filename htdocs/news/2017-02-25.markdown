@@ -1,0 +1,8 @@
+Release candidates for cxxtools, tntnet and tntdb
+=================================================
+
+Way too long since release. The git versions are much more stable
+and sophisticated than the versions currently declared as stable.
+So you should really use this new release candidates.
+
+You can find links at the [download page](/download.html)

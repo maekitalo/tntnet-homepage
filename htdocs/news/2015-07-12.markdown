@@ -4,4 +4,4 @@ Release candidates for cxxtools, tntnet and tntdb
 Many many smaller and larger changes has be done in all 3 projects. It is time
 to prepare for new releases.
 
-You can find release candidates ant he [download page](/download.html).
+You can find release candidates at the [download page](/download.html).
