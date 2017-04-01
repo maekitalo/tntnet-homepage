@@ -20,10 +20,10 @@ development versions
 --------------------
 
 ### tntnet
- * [the source of tntnet 3.0rc1](download/tntnet-3.0rc1.tar.gz)
+ * [the source of tntnet 3.0rc2](download/tntnet-3.0rc2.tar.gz)
 
 ### cxxtools
- * [the source of cxxtools 3.0rc1](download/cxxtools-3.0rc1.tar.gz)
+ * [the source of cxxtools 3.0rc2](download/cxxtools-3.0rc2.tar.gz)
 
 ### tntdb
  * [the source of tntdb 1.4rc2](download/tntdb-1.4rc2.tar.gz)
