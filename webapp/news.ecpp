@@ -23,11 +23,16 @@ log_info("read news from directory \"" << basedir << '"');
 cxxtools::Directory dir(basedir);
 static cxxtools::Regex re("/news/([0-9]+-[0-9]+-[0-9]+).markdown$");
 
+log_debug("read directory entries");
+
 std::vector<std::string> files;
 for (cxxtools::Directory::const_iterator it = dir.begin(); it != dir.end(); ++it)
 {
+  log_finer(it.path());
   files.push_back(it.path());
 }
+
+log_debug(files.size() << " directory entries found");
 
 std::sort(files.begin(), files.end(), std::greater<std::string>());
 
@@ -35,7 +40,12 @@ for (unsigned n = 0; n < files.size() && (count == 0 || n < count); ++n)
 {
   cxxtools::RegexSMatch m;
   if (!re.match(files[n], m))
+  {
+    log_finer(files[n] << " no match");
     continue;
+  }
+
+  log_finer(files[n] << " match");
 
   reply.out() << "<div class='news'>\n<h1 class='newsdate'>" << m[1] << "</h1>\n";
   std::ifstream in(files[n].c_str());
