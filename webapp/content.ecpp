@@ -9,9 +9,9 @@
     try
     {
       unsigned ret = callComp(next, request, reply, qparam);
-      if (ret != HTTP_OK)
+      if (ret != HTTP_OK && ret != DEFAULT)
       {
-        log_debug("return code not HTTP_OK: " << ret);
+        log_debug("return code not OK " << ret);
         return ret;
       }
     }
